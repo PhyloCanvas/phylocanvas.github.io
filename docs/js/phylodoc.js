@@ -41,16 +41,9 @@ var html_data = {};
 /***** Function to load content on menu click *****/
 var loadTemplate = function(ele) {
     var url = '';
-    if(!$(ele).length) {
-        url= ele + '.html';
-        //alert(url);
-        $('#content').load(url);
-        $('html, body').animate({ scrollTop: 0 }, 'slow');
-        return;
-    }
 
     var _id = $(ele).attr('data-id');
-    url= _id + '.html';
+    url = 'docs/' + _id + '.html';
 
     if(_id === 'play') {
         return;
@@ -97,13 +90,13 @@ function createOverviewTree() {
     });
 
     // load tree via AJAX and render using default params
-    phylocanvas.load('data/tree.nwk');
+    phylocanvas.load('docs/data/tree.nwk');
 }
 
 
 function getData()
 {
-    phylocanvas.AJAX('data/mrsa.json', 'GET', '', colour);
+    phylocanvas.AJAX('docs/data/mrsa.json', 'GET', '', colour);
 }
 
 function colour(response) {
