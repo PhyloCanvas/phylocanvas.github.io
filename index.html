@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>PhyloCanvas</title>
+
+        <meta name="viewport" content="width=device-width" />
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+        <link rel="icon" type="image/png"  href="img/EpiCollect.png">
+        <!-- Optional theme -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+        <!-- <link href='http://fonts.googleapis.com/css?family=News+Cycle' rel='stylesheet' type='text/css'> -->
+        <link href='http://fonts.googleapis.com/css?family=Roboto:400,300,700,500,100' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="./docs/css/phylodoc.css">
+    </head>
+    <body>
+
+
+    <nav class="navbar navbar-inverse navbar-static-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="leftMenuToggle" data-target="">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Phylocanvas</a>
+        </div>
+      </div>
+    </nav>
+        <div class="hidden-xs">
+          <a id="fork" target="_blank" href="https://github.com/ImperialCollegeLondon/PhyloCanvas"><img src="https://camo.githubusercontent.com/a6677b08c955af8400f44c6298f40e7d19cc5b2d/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f677261795f3664366436642e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_gray_6d6d6d.png"></a>
+        </div>
+
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-2 col-md-3 col-sm-3">
+              <nav id="leftmenu" class="hidden-xs">
+                  <div id="accordion_menu">
+                      <ul>
+                        <li><a class="active" data-id="overview">Overview</a></li>
+                        <li><a target="_blank" data-id="play" href="phylocanvas_app.html">Play</a></li>
+                        <li><a data-id="getting_started">Getting Started</a></li>
+                        <li><a data-id="tech_doc">Technical Doc</a></li>
+                        <li><a data-id="api_ref">API Reference</a></li>
+                        <li><a data-id="code_samples">Code Samples</a></li>
+                        <li><a data-id="faqs">FAQs</a></li>
+                      </ul>
+                  </div>
+              </nav>
+            </div>
+            <div id="content" class="col-lg-9 col-md-8 col-sm-8">
+
+            </div>
+          </div>
+        </div>
+      <footer class="footer">
+        <div class="container">
+        <p></p>
+        </div>
+      </footer>
+    </body>
+    <script src="//code.jquery.com/jquery-2.1.1.min.js"></script>
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+    <script src="./js/phylodoc.js"></script>
+    <script type="application/javascript" src="https://cdn.rawgit.com/ImperialCollegeLondon/PhyloCanvas/master/src/scripts/PhyloCanvas.js"></script>
+
+</html>
