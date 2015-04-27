@@ -1,47 +1,97 @@
-<section id="getting_started">
-  <h1>How to use</h1>
-  <hr>
-  <div id="initialize">
-      <h3>Clone from GitHub</h3>
-      <p>
-        Use below command to clone PhyloCanvas repository from GitHub to your local machine
-      </p>
-      <pre class="code">$ git clone https://github.com/ImpericalCollegeLondon/PhyloCanvas.git</pre>
-      <br>
-      <h3>Add to HTML</h3>
-      <p>
-        Use<code> &lt;script&gt; </code>tag to add PhyloCanvas to your HTML page. See example below.<br>
-      </p>
-      <pre class="code">
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>PhyloCanvas</title>
+
+    <meta name="viewport" content="width=device-width" />
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+    <link rel="icon" type="image/png"  href="img/phylocanvas_logo.png">
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+    <link href='http://fonts.googleapis.com/css?family=Roboto:400,300,700,500,100' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="css/phylodoc.css">
+  </head>
+  <body>
+    <nav class="navbar navbar-inverse navbar-static-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="leftMenuToggle" data-target="">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Phylocanvas</a>
+        </div>
+      </div>
+    </nav>
+    <div class="hidden-xs">
+      <a id="fork" target="_blank" href="https://github.com/ImperialCollegeLondon/PhyloCanvas"><img src="https://camo.githubusercontent.com/a6677b08c955af8400f44c6298f40e7d19cc5b2d/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f677261795f3664366436642e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_gray_6d6d6d.png"></a>
+    </div>
+
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-2 col-md-3 col-sm-3">
+          <nav id="leftmenu" class="hidden-xs">
+              <div id="accordion_menu">
+                  <ul>
+                    <li><a class="" href="../index.html">Overview</a></li>
+                    <li><i class="glyphicon glyphicon-cloud-upload"> </i> <a target="_blank" href="phylocanvas_app.html">Live Upload</a></li>
+                    <li><a class="active" href="getting_started.html">Getting Started</a></li>
+                    <li><a class="" href="tech_doc.html">Technical Doc</a></li>
+                    <li><a class="" href="api_ref.html">API Reference</a></li>
+                    <li><a class="" href="code_samples.html">Code Samples</a></li>
+                    <li><a class="" href="contact.html">Contact Us</a></li>
+                  </ul>
+              </div>
+          </nav>
+        </div>
+        <div id="content" class="col-lg-9 col-md-8 col-sm-8">
+          <section id="getting_started">
+            <h1>How to use</h1>
+            <hr>
+            <div id="initialize">
+                <h3>Clone from GitHub</h3>
+                <p>
+                  Use below command to clone PhyloCanvas repository from GitHub to your local machine
+                </p>
+                <pre class="code">$ git clone https://github.com/ImpericalCollegeLondon/PhyloCanvas.git</pre>
+                <br>
+                <h3>Add to HTML</h3>
+                <p>
+                  Use<code> &lt;script&gt; </code>tag to add PhyloCanvas to your HTML page. See example below.<br>
+                </p>
+                <pre class="code">
 &lt;script type="application/javascript" src="/PhyloCanvas/src/scripts/PhyloCanvas.js"&gt;&lt;/script&gt</pre>
 
-      <p>Remember to adjust the URL to suit the location of the PhyloCanvas code within your project</p>
-      <br>
-      <h3>Initialize and Load your Tree</h3>
-      <p>You only need 2 lines of code to get your phylocanvas instance up and running.
-        <ul class="circle">
-          <li>One to initialize the viewer and </li>
-          <li>Second to load the file. </li>
-        </ul>
-      </p>
+                <p>Remember to adjust the URL to suit the location of the PhyloCanvas code within your project</p>
+                <br>
+                <h3>Initialize and Load your Tree</h3>
+                <p>You only need 2 lines of code to get your phylocanvas instance up and running.
+                  <ul class="circle">
+                    <li>One to initialize the viewer and </li>
+                    <li>Second to load the file. </li>
+                  </ul>
+                </p>
 
-      <pre class="code">
+                <pre class="code">
 var phylocanvas = new PhyloCanvas.Tree(<i>div</i>, <i>[config object]</i>); // initialize your tree viewer
 phylocanvas.load(<i>Newick / Nexus</i>); // load your tree file</pre>
-    <p>
-      Where
-      <dl class="dl-horizontal">
-        <dt><i>div</i></dt>
-        <dd>ID of the <code>&lt;div&gt;</code> or the element itself used to draw the tree</dd>
-        <dt><i>config object</i></dt>
-        <dd>Optional parameters used to configure the tree <a href="api_ref.html">See more config options</a></dd>
-        <dt><i>Newick</i></dt>
-        <dd> A string or a file that contains a Newick or Nexus formatted tree <a target="_blank" href="docs/data/simple_tree.nwk">Sample Newick</a></dd>
-      </dl>
-    </p>
+              <p>
+                Where
+                <dl class="dl-horizontal">
+                  <dt><i>div</i></dt>
+                  <dd>ID of the <code>&lt;div&gt;</code> or the element itself used to draw the tree</dd>
+                  <dt><i>config object</i></dt>
+                  <dd>Optional parameters used to configure the tree <a href="api_ref.html">See more config options</a></dd>
+                  <dt><i>Newick</i></dt>
+                  <dd> A string or a file that contains a Newick or Nexus formatted tree <a target="_blank" href="docs/data/simple_tree.nwk">Sample Newick</a></dd>
+                </dl>
+              </p>
 
-    <h3> Your final HTML </h3>
-<pre>
+              <h3> Your final HTML </h3>
+          <pre>
 &lt;!DOCTYPE html&gt;
 &lt;html&gt;
   &lt;head&gt;
@@ -59,6 +109,24 @@ phylocanvas.load(<i>Newick / Nexus</i>); // load your tree file</pre>
     &lt;div id="phylocanvasDiv"&gt;&lt;/div&gt;
   &lt;/body&gt;
 &lt;/html&gt;</pre>
-    <a class="showExample" data-height="450" data-href="http://jsbin.com/heyofibifo/4/embed?output">View live</a>
-  </div>
-</section>
+              <a class="showExample" data-height="450" data-href="http://jsbin.com/heyofibifo/4/embed?output">View live</a>
+            </div>
+          </section>
+        </div>
+      </div>
+    </div>
+    <footer class="footer">
+      <p>cGPS <i class="fa fa-copyright"></i> &copy; 2015</p>
+    </footer>
+  </body>
+  <script src="//code.jquery.com/jquery-2.1.1.min.js"></script>
+  <!-- Latest compiled and minified JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+  <script src="js/phylodoc.js"></script>
+  <script type="application/javascript" src="https://cdn.rawgit.com/ImperialCollegeLondon/PhyloCanvas/master/src/scripts/PhyloCanvas.js"></script>
+  <script>
+    window.onload = function() {
+      createOverviewTree();
+    }
+  </script>
+</html>

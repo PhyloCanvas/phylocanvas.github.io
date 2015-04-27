@@ -5,21 +5,6 @@ $(document).ready(function(){
     $('#leftmenu').toggleClass('hidden-xs')
   });
 
-	$('#accordion_menu li a').on('click', function(){
-        if($(this).attr('data-id') === 'play') {
-            return;
-        }
-		loadTemplate(this);
-		// $('#content section').hide();
-		// $('#content section#'+$(this).attr('data-id')).show();
-		$('#accordion_menu li a').removeClass('active');
-		$(this).addClass('active');
-
-		if($(this).children('ul').length) {
-			$(this).children('ul').slideDown();
-		}
-	});
-
 	/**** For github fork stick on scroll ****/
 	var s = $("#fork");
 	var pos = s.position();
@@ -32,48 +17,7 @@ $(document).ready(function(){
 		}
 	});
 
-  var fragment = (window.location.hash)? window.location.hash.substring(1) : 'overview';
-  show(fragment);
 });
-
-// To cache data loaded from the server
-var html_data = {};
-/***** Function to load content on menu click *****/
-var loadTemplate = function(ele) {
-    var url = '';
-
-    var _id = $(ele).attr('data-id');
-    url = 'docs/' + _id + '.html';
-
-    if(_id === 'play') {
-        return;
-    }
-
-    window.location = window.location.href.split('#')[0] + '#' + _id;
-
-    if(html_data[_id]) {
-    	$('#content').html('');
-    	$('#content').append(html_data[_id]);
-        if(phylocanvas)
-            phylocanvas.resizeToContainer();
-    }
-    else {
-	    $('#content').load(url, function (responseText, textStatus, req) {
-	        if (textStatus == "error") {
-	          $('#content').html('<h2><i class="fa fa-thumbs-o-down oblue"></i>This page is currently not available. Please try after some time</h2>');
-	          return;
-	        }
-		    if(_id == "overview") {
-				createOverviewTree();
-		    }
-
-		    html_data[_id] = $('#content section');
-	    });
-	}
-};
-function show(div_id) {
-	$('#accordion_menu li').find("[data-id="+div_id+"]").click();
-}
 
 var phylocanvas;
 function createOverviewTree() {
@@ -154,23 +98,4 @@ $(document).on('click','.showExample', {}, function(e){
       $(this).html('View live');
     }
 });
-
-function setIframeHeight(ifrm) {
-    var doc = ifrm.contentWindow || ifrm.contentDocument.parentWindow;
-    ifrm.style.visibility = 'hidden';
-    ifrm.style.height = "10px"; // reset to minimal height ...
-    // IE opt. for bing/msn needs a bit added or scrollbar appears
-    ifrm.style.height = getDocHeight( doc ) + 4 + "px";
-    ifrm.style.visibility = 'visible';
-}
-
-function getDocHeight(doc) {
-    doc = doc || document;
-    // stackoverflow.com/questions/1145850/
-    var body = doc.body, html = doc.documentElement;
-    var height = Math.max( body.scrollHeight, body.offsetHeight,
-        html.clientHeight, html.scrollHeight, html.offsetHeight );
-    return height;
-}
-
 
