@@ -39,37 +39,28 @@
                     <li><a class="" href="../index.html">Overview</a></li>
                     <li><i class="glyphicon glyphicon-cloud-upload"> </i> <a target="_blank" href="phylocanvas_app.html">Live Upload</a></li>
                     <li><a class="" href="getting_started.html">Getting Started</a></li>
-                    <li><a class="active" href="tech_doc.html">Technical Doc</a></li>
+                    <li><a class="" href="tech_doc.html">Technical Doc</a></li>
                     <li><a class="" href="api_ref.html">API Reference</a></li>
                     <li><a class="" href="code_samples.html">Code Samples</a></li>
-                    <li><a class="" href="contact.html">Contact Us</a></li>
+                    <li><a class="active" href="contact.html">Contact Us</a></li>
                   </ul>
               </div>
           </nav>
         </div>
         <div id="content" class="col-lg-9 col-md-8 col-sm-8">
           <section id="tech_doc">
-            <h1> Technical Information </h1><hr>
-            <h3>Code Structure</h3>
-            <p>The PhyloCanvas code is Object-oriented and uses the prototype
-              of a JavaScript "class" to describe the class functions.<p>
-
-            <p>As well as providing an organisational structure for the code, using
-            the prototype means that the code for the functions isn't copied into memory
-            for each instance of PhyloCanvas.</p>
-
-            <h3>Rendering</h3>
-            <p>The rendering engine for PhyloCanvas is designed
-              to minimise the amount of load that is placed on the client browser.
-              As such the rendering events only fire when the user performs an action
-              such as zooming or panning through the tree.
+            <h1> Contact Us </h1><hr>
+            <p>
+              The Centre for Genomic Pathogen Surveillance (cGPS)<br>
+              Wellcome Trust Sanger Institute<br>
+              Wellcome Trust Genome Campus<br>
+              Hinxton<br>
+              Cambridge, UK <br>
+              CB10 1SA
             </p>
-            <p>The rendering itself is split into 2 phases, a pre-render to
-              perform all the calculations related to determining the postion
-              and layout of the tree, leaving only the actual drawing of the tree
-              at the correct positon (offset) and zoom level. </p>
-            <p>When a subtree of the main tree is redrawn from a branch or
-            a branch is rotated the tree reset and then pre-render must be re-run.</p>
+            <p>
+              <i class="glyphicon glyphicon-envelope"></i> <a href="mailto:cgps@sanger.ac.uk?subject=PhyloCanvas Web Query">cGPS@sanger.ac.uk</a>
+            </p>
           </section>
         </div>
       </div>
