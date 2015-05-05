@@ -63,6 +63,7 @@
               <li><a href="#cs_rotateBranch">Rotate Branch</a></li>
               <li><a href="#cs_search">Search Highlight</a></li>
               <li><a href="#cs_contextMenu">Context Menu</a></li>
+              <li><a href="#cs_overlayMetadata">Overlay Metadata</a></li>
 
             </ul>
             <a href="#code_samples" class='gotop'>Top</a>
@@ -247,6 +248,27 @@ phylocanvas = new PhyloCanvas.Tree('phylocanvas', {
 
               <a class="showExample" data-height="480" data-href="http://jsbin.com/bucodoneta/8/embed?output">View live</a>
             </div>
+
+            <a href="#code_samples" class='gotop'>Top</a>
+            <div id="cs_overlayMetadata">
+              <h3>Overlay Metadata</h3>
+              <p>If you store an object as {column_name: value} in the <code>data</code> attribute of each leaf node, then you could overlay metadata on to the tree by using the function <code>viewMetadataColumns()</code></p>
+              <p> <i>value = 0/1</i>.  All true values will be drawn as a rectangular block representing a presence or absence.</p>
+              <p><code>viewMetadataColumns()</code> takes an array of column names as argument which is same as the column name stored in the <code>data</code> object. If no arguments are specified, then it will overlay all columns </p>
+              <p>See example below </p>
+<pre>
+// Creating data object for few leaf nodes after tree load
+phylocanvas.branches['1']['data'] = {'Column1': 1, 'Column2': 0};
+phylocanvas.branches['3']['data'] = {'Column1': 0, 'Column2': 1};
+phylocanvas.branches['9']['data'] = {'Column1': 0, 'Column2': 1};
+
+phylocanvas.viewMetadataColumns(); // Display columns
+</pre>
+
+              <p><code>showMetadata = true/false</code> is used to show or hide metadata</p>
+              <a class="showExample" data-height="480" data-href="http://jsbin.com/rokonigeqa/4/embed?output">View live</a>
+            </div>
+
           </section>
         </div>
       </div>

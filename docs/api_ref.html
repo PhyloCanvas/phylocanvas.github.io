@@ -337,7 +337,7 @@
                   </tr>
 
                   <tr>
-                    <td>treetype</td>
+                    <td>treeType</td>
                     <td>string (default : radial)</td>
                     <td>which branchRenderer to use, supplied renderers are:
                       radial, rectangular, circular, diagonal and hierarchy</td>
@@ -367,6 +367,29 @@
                     <td>double</td>
                     <td>The current Zoom level</td>
                   </tr>
+
+                  <tr>
+                    <td>shotMetadata</td>
+                    <td>boolean (default: <code>false</code>)</td>
+                    <td>
+                      Show / hide metadata. <br>
+                      Metadata should be stored in the <code>data</code> object of each leaf node in the below format <br>
+                      <pre>
+  data: {
+    columnheading1: value (0/1),
+    columnheading2: value (0/1),
+    columnheading3: value (0/1),
+    columnheadingN: value (0/1)
+  }</pre>
+                      Once rendered, all true values (1) will be shown in a rectangular block representing presence or absence in a tabular format;
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>color1</td>
+                    <td>rgb/hex/color-names</td>
+                    <td>Color to be used for the overlayed rectangular block representing presence or absence</td>
+                  </tr>
+
                 </table>
               </div>
 
