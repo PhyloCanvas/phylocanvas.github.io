@@ -1,11 +1,10 @@
 body{
 	font-family: 'Roboto', sans-serif;
 	font-size: 16px;
-    font-weight: 400;
-	line-height:20pt;
+  font-weight: 400;
 	max-width:none;
-    padding-bottom: 20px;
-    height: 100%;
+  padding-bottom: 20px;
+  height: 100%;
 }
 
 h1{
@@ -15,6 +14,9 @@ h1{
 	text-shadow:none;
 }
 
+.container p{
+  line-height:20pt;
+}
 h1.pageheader{font-size:3.5em;border-bottom:1px solid #CCC;text-shadow:-1px 1px #eee,1px 1px #aaa}
 .light{font-weight:100;}
 p.question{font-size:18pt;font-weight:100;line-height:22pt}
@@ -32,19 +34,7 @@ p.answer{padding: 5px 80px;line-height:18pt;text-align:left}
   -webkit-font-smoothing: antialiased;
 }
 .btn-custom:hover {
-/*  background-color: hsl(273, 41%, 29%) !important;
-  background-repeat: repeat-x;
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#9f72c4", endColorstr="#4c2b68");
-  background-image: -khtml-gradient(linear, left top, left bottom, from(#9f72c4), to(#4c2b68));
-  background-image: -moz-linear-gradient(top, #9f72c4, #4c2b68);
-  background-image: -ms-linear-gradient(top, #9f72c4, #4c2b68);
-  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #9f72c4), color-stop(100%, #4c2b68));
-  background-image: -webkit-linear-gradient(top, #9f72c4, #4c2b68);
-  background-image: -o-linear-gradient(top, #9f72c4, #4c2b68);
-  background-image: linear-gradient(#9f72c4, #4c2b68);
-*/
   border-color: #4c2b68 #4c2b68 hsl(273, 41%, 21%);
-  /*color: #fff !important;*/
   -webkit-font-smoothing: antialiased;
   outline: none;
   box-shadow: 0 0 5px #9f72c4;
@@ -60,11 +50,7 @@ h3{
     text-shadow:none;
     line-height: 1.8em;
     border-bottom: 1px solid #eee;
-/*    background-image:url('../img/arrows.gif');
-    background-repeat: no-repeat;
-    background-position: left 15px;
-    padding-left: 15px;
-*/}
+}
 }
 h4{
     font-size:1.3em;
@@ -99,16 +85,9 @@ pre {
 .navbar-default .navbar-brand:hover {
   color: #faf7ff;
 }
-.container {
-    /*margin-top: 20px;*/
-    /*width: 80%;*/
-}
 #accordion_menu {
     padding: 20px 0px 0 5px;
-    /*background: #ccc;*/
     max-height: 400px;
-    /*width:220px;*/
-    /*position: fixed;*/
 }
 ul {
     list-style: none;
@@ -141,7 +120,6 @@ ul.circle {
     text-decoration: none;
 }
 #accordion_menu .active{
-    /*background: #eee;*/
     color: #444;
     padding-right: 12px;
     text-decoration: none;
@@ -154,10 +132,8 @@ ul.circle {
     z-index:999999;
     float: right;
     position: absolute;
-    /*top: 50px; */
     right: 0;
     border: 0;
-    /*position: fixed;   */
 }
 .stick {
     position:fixed !important;
@@ -179,7 +155,6 @@ ul.circle {
 dl {
     font-weight: 400;
     font-size: 0.9em;
-    /*font-size: 0.9em;*/
     background: #f6f6f6;
     border: 1px solid #ddd;
     border-radius: 5px;
@@ -188,7 +163,6 @@ dl {
 dl dt{
     padding: 4px 0px;
     font-weight: 400;
-    /*margin: 5px;*/
     color: #017D98;
 }
 dl dd {
@@ -228,7 +202,6 @@ table.properties {
 }
 #pc-buttons button{
     margin: 10px 0px;
-    /*font-weight: 300!important;*/
 }
 a.gotop{
     float: right;
@@ -257,7 +230,6 @@ a.gotop{
   z-index: 1;
   bottom: 0;
   width: 100%;
-  /* Set the fixed height of the footer here */
   line-height: 20px;
   font-weight: 400;
   font-size: 0.7em;
