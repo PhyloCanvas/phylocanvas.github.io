@@ -27,7 +27,7 @@
       </div>
     </nav>
     <div class="hidden-xs">
-      <a id="fork" target="_blank" href="https://github.com/ImperialCollegeLondon/PhyloCanvas"><img src="https://camo.githubusercontent.com/a6677b08c955af8400f44c6298f40e7d19cc5b2d/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f677261795f3664366436642e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_gray_6d6d6d.png"></a>
+      <a id="fork" target="_blank" href="https://github.com/PhyloCanvas/PhyloCanvas"><img src="https://camo.githubusercontent.com/a6677b08c955af8400f44c6298f40e7d19cc5b2d/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f677261795f3664366436642e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_gray_6d6d6d.png"></a>
     </div>
 
     <div class="container">
@@ -82,16 +82,15 @@ var phylocanvas = new PhyloCanvas.Tree(<i>div_name</i>, <i>[config object]</i>);
 var newick_file = "<path to your tree file>";
 phylocanvas.load(<i>newick_file</i>); // load your newick string or file</pre>
               <a class="showExample" data-height="375" data-href="http://jsbin.com/teqero/3/embed?output">View live</a> |
-              <a class="" target="_blank" href="https://raw.githubusercontent.com/jyothishnt/PhyloCanvas-API-Site/master/data/tree.nwk">View Newick file</a>
+              <a class="" target="_blank" href="https://raw.githubusercontent.com/PhyloCanvas/phylocanvas.github.io/master/docs/data/tree.nwk">View Newick file</a>
             </div>
 
             <a href="#code_samples" class='gotop'>Top</a>
             <div id="cs_setTreeType">
               <h3>Set Tree Type</h3>
-              <p></p>
+              <p class="cs_description"> A <code>typechanged</code> event is fired whenever a tree type is changed which invokes addSnapShot() to add a snapshot in the history. </p>
               <pre>
 phylocanvas.setTreeType('rectangular'); // Takes radial, rectangular, circular, diagonal and hierarchy</pre>
-              <p class="cs_description"> A <code>typechanged</code> event is fired whenever a tree type is changed which invokes addSnapShot() to add a snapshot in the history. </p>
               <a class="showExample" data-height="450" data-href="http://jsbin.com/pofuwu/4/embed?output">View live</a>
             </div>
 
@@ -135,7 +134,10 @@ phylocanvas.setTextSize = 20;</pre>
             <a href="#code_samples" class='gotop'>Top</a>
             <div id="cs_colorNodes">
               <h3>Color Nodes</h3>
-              <p><code>setNodeColourAndShape</code> is used to set the color and shape of a node.<br>
+              <p><code>setNodeColourAndShape</code> is used to set the color and shape of a node.</p>
+              <pre>
+phylocanvas.setNodeColourAndShape("1,2,3", 'orange', 'x');
+phylocanvas.draw(); </pre>
               <dl class="dl-horizontal">
                 <dt>nodeIds: (Array/String)</dt>
                 <dd>Array / comma separated string.</dd>
@@ -153,10 +155,7 @@ phylocanvas.setTextSize = 20;</pre>
                 <dt>Size</dt>
                 <dd>Size of the node </dd>
               </dl>
-              <pre>
-phylocanvas.setNodeColourAndShape("1,2,3", 'orange', 'x');
-phylocanvas.draw(); </pre>
-               <a class="showExample" data-height="375" data-href="http://jsbin.com/pubozo/4/embed?output">View live</a>
+              <a class="showExample" data-height="375" data-href="http://jsbin.com/pubozo/4/embed?output">View live</a>
             </div>
 
             <a href="#code_samples" class='gotop'>Top</a>
@@ -205,7 +204,7 @@ phylocanvas.draw();</pre>
               <h3>ContextMenu</h3>
               <p>Right Click menu choices, an array of dictionaries with properties<br>
               You could configure them at the time of Tree initialization like below.
-<pre>
+            <pre>
 // Construct tree object
 phylocanvas = new PhyloCanvas.Tree('phylocanvas', {
   // other options
@@ -227,23 +226,21 @@ phylocanvas = new PhyloCanvas.Tree('phylocanvas', {
   }]
 });</pre>
 
-              <p class="cs_description">
 
-                <dl class="dl-horizontal">
-                  <dt>text</dt>
-                    <dd>The label of the menu item</dd>
+              <dl class="dl-horizontal">
+                <dt>text</dt>
+                  <dd>The label of the menu item</dd>
 
-                  <dt>handler</dt>
-                    <dd>The function in the Tree object that the menu item invokes. If
-                    a node has been clicked on it is padded to the handler</dd>
+                <dt>handler</dt>
+                  <dd>The function in the Tree object that the menu item invokes. If
+                  a node has been clicked on it is padded to the handler</dd>
 
-                  <dt>internal</dt>
-                    <dd>Does this function apply to an internal node</dd>
+                <dt>internal</dt>
+                  <dd>Does this function apply to an internal node</dd>
 
-                  <dt>leaf</dt>
-                    <dd>Does this function apply to a leaf</dd>
-                </dl>
-              </p>
+                <dt>leaf</dt>
+                  <dd>Does this function apply to a leaf</dd>
+              </dl>
 
               <a class="showExample" data-height="480" data-href="http://jsbin.com/bucodoneta/8/embed?output">View live</a>
             </div>
@@ -254,7 +251,7 @@ phylocanvas = new PhyloCanvas.Tree('phylocanvas', {
               <p>If you store an object as {column_name: value} in the <code>data</code> attribute of each leaf node, then you could overlay metadata on to the tree by using the function <code>viewMetadataColumns()</code></p>
               <p> <i>value = 0/1</i>.  All true values will be drawn as a rectangular block representing a presence or absence.</p>
               <p><code>viewMetadataColumns()</code> takes an array of column names as argument which is same as the column name stored in the <code>data</code> object. If no arguments are specified, then it will overlay all columns </p>
-              <p>See example below </p>
+              <p>See example below:</p>
 <pre>
 // Creating data object for few leaf nodes after tree load
 phylocanvas.branches['1']['data'] = {'Column1': 1, 'Column2': 0};
@@ -263,9 +260,8 @@ phylocanvas.branches['9']['data'] = {'Column1': 0, 'Column2': 1};
 
 phylocanvas.viewMetadataColumns(); // Display columns
 </pre>
-
-              <p><code>showMetadata = true/false</code> is used to show or hide metadata</p>
               <a class="showExample" data-height="480" data-href="http://jsbin.com/rokonigeqa/4/embed?output">View live</a>
+              <p class="cs_description"><code>showMetadata = true/false</code> is used to show or hide metadata</p>
             </div>
 
           </section>
@@ -280,7 +276,7 @@ phylocanvas.viewMetadataColumns(); // Display columns
   <!-- Latest compiled and minified JavaScript -->
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
   <script src="js/phylodoc.js"></script>
-  <script type="application/javascript" src="https://cdn.rawgit.com/ImperialCollegeLondon/PhyloCanvas/master/src/scripts/PhyloCanvas.js"></script>
+  <script type="application/javascript" src="https://cdn.rawgit.com/PhyloCanvas/PhyloCanvas/master/src/scripts/PhyloCanvas.js"></script>
   <script>
     window.onload = function() {
       createOverviewTree();
