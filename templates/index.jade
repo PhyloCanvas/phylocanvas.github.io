@@ -1,0 +1,10 @@
+extends ./layout.jade
+
+block content
+  include ./index.html
+
+block post-scripts
+  script.
+    window.onload = function() {
+      createOverviewTree();
+    }
