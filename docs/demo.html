@@ -78,9 +78,8 @@
 
         var node = phylocanvas.leaves[0];
         node.triggerInternal = function() {
-          alert('Clicked leaf - ' + node.id);
+          alert('ID: ' + this.id);
         };
-
 
         phylocanvas.exportCurrentTreeView = function () {
           var dataUrl = canvasToImage(this, 'white');
