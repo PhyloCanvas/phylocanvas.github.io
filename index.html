@@ -9,8 +9,7 @@
     <link href="http://fonts.googleapis.com/css?family=Roboto:400,300,700,500,100" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="css/phylodoc.css">
   </head>
-  <body>
-<nav class="navbar navbar-inverse navbar-static-top">
+  <body><nav class="navbar navbar-inverse navbar-static-top">
   <div class="container">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle" data-toggle="leftMenuToggle" data-target="">
@@ -27,51 +26,50 @@
   <a id="fork" target="_blank" href="https://github.com/PhyloCanvas/PhyloCanvas"><img src="https://camo.githubusercontent.com/a6677b08c955af8400f44c6298f40e7d19cc5b2d/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f677261795f3664366436642e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_gray_6d6d6d.png"></a>
 </div>
 
-<div class="container">
-  <div class="row">
-    <div class="col-lg-2 col-md-3 col-sm-3">
-      <nav id="leftmenu" class="hidden-xs">
-          <div id="accordion_menu">
-              <ul>
-                <li><a class="active " href="index.html">Overview</a></li>
-                <li><i class="glyphicon glyphicon-cloud-upload"></i><a target="_blank" href="./docs/phylocanvas_app.html"> Live Upload</a></li>
-                <li><a class="" href="./docs/getting_started.html">Getting Started</a></li>
-                <li><a class="" href="./docs/tech_doc.html">Technical Doc</a></li>
-                <li><a class="" href="./docs/api_ref.html">API Reference</a></li>
-                <li><a class="" href="./docs/code_samples.html">Code Samples</a></li>
-                <li><a class="" href="./docs/contact.html">Contact Us</a></li>
-              </ul>
-          </div>
-      </nav>
-    </div>
-    <div id="content" class="col-lg-9 col-md-8 col-sm-8">
-      <section id="overview">
-        <div id="banner">
-          <h4 style="float: right">Version <b>1.5.0</b></h4>
-          <h1 class="pageheader"><img src="img/phylocanvas_logo.png" width="25%" style="padding: 10px 20px"><span class="light"> Phylo</span>Canvas</h1>
-          <a id="downloadButton" download="PhyloCanvas.js" href="https://raw.githubusercontent.com/PhyloCanvas/PhyloCanvas/master/src/scripts/PhyloCanvas.js" class="downloadButton btn btn-custom hidden-xs"><span class="glyphicon glyphicon-cloud-download" aria-hidden="true"></span> Download JS</a>
-          <a download="PhyloCanvas.js" href="https://raw.githubusercontent.com/PhyloCanvas/PhyloCanvas/master/src/scripts/PhyloCanvas.js" id="downloadButton" class="btn btn-custom visible-xs"><span class="glyphicon glyphicon-cloud-download" aria-hidden="true"></span> Download JS</a>
-        </div>
-
-        <div class="paragraph">
-          <p>PhyloCanvas is written entirely in browser-native JavaScript, using no external libraries, and uses the HTML5 Canvas element.</p>
-          <p>The intention of PhyloCanvas is to make a tree viewer that is as widely reusable, extensible and performant.</p>
-        </div>
-        <h3>Example</h3>
-
-        <div id="pc-buttons">
-          <button id="rectangular" class="btn btn-default btn-sm">Rectangular</button>
-          <button id="circular" class="btn btn-info btn-sm">Circular</button>
-          <button id="radial" class="btn btn-default btn-sm">Radial</button>
-          <button id="diagonal" class="btn btn-default btn-sm">Diagonal</button>
-          <button id="hierarchy" class="btn btn-default btn-sm">Hierarchical</button>
-        </div>
-        <div id="phylocanvas"></div><br>
-      </section>
-    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-2 col-md-3 col-sm-3"><nav id="leftmenu" class="hidden-xs">
+  <div id="accordion_menu">
+    <ul>
+      <li><a class="active " href="index.html">Overview</a></li>
+      <li><i class="glyphicon glyphicon-cloud-upload"></i><a target="_blank" href="./docs/phylocanvas_app.html"> Live Upload</a></li>
+      <li><a class="" href="./getting_started.html">Getting Started</a></li>
+      <li><a class="" href="./tech_doc.html">Technical Doc</a></li>
+      <li><a class="" href="./api_ref.html">API Reference</a></li>
+      <li><a class="" href="./code_samples.html">Code Samples</a></li>
+      <li><a class="" href="./contact.html">Contact Us</a></li>
+    </ul>
   </div>
-</div>
-<footer class="footer">
+</nav>
+
+        </div>
+        <div class="col-lg-9 col-md-8 col-sm-8"><section id="overview">
+  <div id="banner">
+    <h4 style="float: right">Version <b>1.5.0</b></h4>
+    <h1 class="pageheader"><img src="img/phylocanvas_logo.png" width="25%" style="padding: 10px 20px"><span class="light"> Phylo</span>Canvas</h1>
+    <a id="downloadButton" download="PhyloCanvas.js" href="https://raw.githubusercontent.com/PhyloCanvas/PhyloCanvas/master/src/scripts/PhyloCanvas.js" class="downloadButton btn btn-custom hidden-xs"><span class="glyphicon glyphicon-cloud-download" aria-hidden="true"></span> Download JS</a>
+    <a download="PhyloCanvas.js" href="https://raw.githubusercontent.com/PhyloCanvas/PhyloCanvas/master/src/scripts/PhyloCanvas.js" id="downloadButton" class="btn btn-custom visible-xs"><span class="glyphicon glyphicon-cloud-download" aria-hidden="true"></span> Download JS</a>
+  </div>
+
+  <div class="paragraph">
+    <p>PhyloCanvas is written entirely in browser-native JavaScript, using no external libraries, and uses the HTML5 Canvas element.</p>
+    <p>The intention of PhyloCanvas is to make a tree viewer that is as widely reusable, extensible and performant.</p>
+  </div>
+  <h3>Example</h3>
+
+  <div id="pc-buttons">
+    <button id="rectangular" class="btn btn-default btn-sm">Rectangular</button>
+    <button id="circular" class="btn btn-info btn-sm">Circular</button>
+    <button id="radial" class="btn btn-default btn-sm">Radial</button>
+    <button id="diagonal" class="btn btn-default btn-sm">Diagonal</button>
+    <button id="hierarchy" class="btn btn-default btn-sm">Hierarchical</button>
+  </div>
+  <div id="phylocanvas"></div><br>
+</section>
+
+        </div>
+      </div>
+    </div><footer class="footer">
   <p>&copy; 2015 cGPS</p>
 </footer>
 

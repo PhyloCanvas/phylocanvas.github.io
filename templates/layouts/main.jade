@@ -12,7 +12,18 @@ html
     link(href='http://fonts.googleapis.com/css?family=Roboto:400,300,700,500,100', rel='stylesheet', type='text/css')
     link(rel='stylesheet', href='css/phylodoc.css')
   body
-    block content
+    include ../fragments/navbar.html
+
+    block main
+      include ../fragments/github.html
+      .container
+        .row
+          .col-lg-2.col-md-3.col-sm-3
+            include ../fragments/menu.html
+          .col-lg-9.col-md-8.col-sm-8
+            block content
+
+    include ../fragments/footer.html
 
     block scripts
       script(src='//code.jquery.com/jquery-2.1.1.min.js')
