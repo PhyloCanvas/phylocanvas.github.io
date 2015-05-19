@@ -48,7 +48,7 @@ function colour(response) {
 
     var data = JSON.parse(response.response);
 
-    phylocanvas.setNodeColourAndShape(data.positive, colours[0], 'x');
+    phylocanvas.setNodeColourAndShape(data.positive, colours[0], 't');
     phylocanvas.setNodeColourAndShape(data.negative, colours[1], 'o');
 
     phylocanvas.backColour = function(node){
