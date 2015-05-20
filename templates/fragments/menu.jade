@@ -1,4 +1,4 @@
-- var currentPage = locals.filename.substring('templates/', '').replace('.jade', '')
+- var currentPage = locals.filename.replace('templates/', '').replace('.jade', '')
 
 mixin menu-item(page, description)
   - var isCurrentPage = (currentPage === page)

@@ -9,7 +9,7 @@
     "minimize": "^1.4.1"
   },
   "scripts": {
-    "build": "jade -o . templates/*.jade && minimize *.html --output *.html",
+    "build": "jade -o . templates/*.jade && for f in *.html; do minimize $f --output $f; done",
     "watch": "jade -w -P -o . templates/*.jade"
   },
   "repository": {
