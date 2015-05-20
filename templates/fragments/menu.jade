@@ -1,0 +1,20 @@
+- var currentPage = locals.filename.substring('templates/', '').replace('.jade', '')
+
+mixin menu-item(page, description)
+  - var isCurrentPage = (currentPage === page)
+  li
+    a(class=isCurrentPage ? 'active' : '', href="#{page}.html") #{description}
+
+nav#leftmenu.hidden-xs
+  #accordion_menu
+    ul
+      +menu-item('index', 'Overview')
+      +menu-item('code_samples', 'Code Samples')
+      +menu-item('getting_started', 'Getting Started')
+      +menu-item('api_ref', 'API Reference')
+      +menu-item('tech_doc', 'Technical Doc')
+      +menu-item('contact', 'Contact Us')
+      li
+        a(target='_blank', href='./docs/phylocanvas_app.html')
+          i.glyphicon.glyphicon-cloud-upload(style='padding-right: .5em')
+          | Live Upload

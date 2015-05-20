@@ -19,7 +19,8 @@ html
       .container
         .row
           .col-lg-2.col-md-3.col-sm-3
-            include ../fragments/menu.html
+            #{JSON.stringify(locals)}
+            include ../fragments/menu
           .col-lg-9.col-md-8.col-sm-8
             block content
 
