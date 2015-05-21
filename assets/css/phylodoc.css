@@ -142,19 +142,14 @@ ul.circle {
   color: #444;
   text-decoration: none;
 }
-#accordion_menu .active {
-  color: #444;
-  text-decoration: none;
-}
-#accordion_menu .active:after {
+
+#active-menu-item {
   color: #3f007d;
-  content: '>';
   font-size: .75em;
-  font-weight: bold;
+  padding-left: .325em;
   line-height: 19px;
-  padding-left: .75em;
-  vertical-align: middle;
 }
+
 #fork {
   z-index:999999;
   float: right;

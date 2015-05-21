@@ -1,0 +1,56 @@
+<section id="drag-and-drop">
+  <div id="filedrag">
+  	<div class="centermiddle">
+	  	<i class="glyphicon glyphicon-upload"></i>
+	  	<p class="info">Drag and drop your Newick tree and metadata CSV file</p>
+	  	<p id="messages"></p>
+	  </div>
+  	<div id="phylocanvas"></div>
+  </div>
+
+  <div id="slideDiv"  class="slideDiv">
+	  <ul class="slideUl">
+	  	<li id="metadata_li" data-toggle-id="metadataColumnsDiv" class="btn btn-default" data-text="Metadata Columns"><i class="fa fa-list-ul fa-xs"></i><span>Metadata</span></li>
+	  	<li id="tools_li" data-toggle-id="toolsDiv" class="btn btn-default"><i class="fa fa-cogs fa-fw"></i><span>Tools</span></li>
+	  </ul>
+
+	  <div id="metadataColumnsDiv" class="slideDivContent">
+	  	<p class="title">Metadata Columns</p>
+	  	<div id="metadataColumns"></div>
+	  </div>
+
+	  <div id="toolsDiv" class="pc-buttons slideDivContent">
+			<p class="title">Tools</p>
+        <p>Change Tree Type </p>
+        <button id="rectangular" class="btn btn-info btn-xs">Rectangular</button>
+        <button id="circular" class="btn btn-default btn-xs">Circular</button>
+        <button id="radial" class="btn btn-default btn-xs">Radial</button>
+        <button id="diagonal" class="btn btn-default btn-xs">Diagonal</button>
+        <button id="hierarchy" class="btn btn-default btn-xs">Hierarchical</button>
+        <hr>
+
+        <p>Node Align </p>
+        <button id="align" class="btn btn-default btn-xs">True/False</button>
+        <hr>
+
+        <p>Metadata</p>
+        <button id="metadata" class="btn btn-default btn-xs">Show/Hide</button>
+        <hr>
+
+        <p>Show/Hide Labels </p>
+        <button id="show" class="btn btn-default btn-xs">Show</button>
+        <button id="hide" class="btn btn-default btn-xs">Hide</button>
+        <button id="toggle" class="btn btn-default btn-xs">Toggle</button>
+        <hr>
+
+        <p>Node Size </p>
+        Node size: <div class="slider slider_node"></div>
+        Text size: <div class="slider slider_text"></div>
+        <hr>
+
+        <p>Search </p>
+        <input type="text" id="searchbox">
+      </div>
+	  </div>
+  </div>
+</section>

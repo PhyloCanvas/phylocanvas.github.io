@@ -3,7 +3,9 @@
 mixin menu-item(page, description)
   - var isCurrentPage = (currentPage === page)
   li
-    a(class=isCurrentPage ? 'active' : '', href=page === 'index' ? '/' : '/#{page}.html') #{description}
+    a(href=page === 'index' ? '/' : '/#{page}.html') #{description}
+    if (isCurrentPage)
+      i#active-menu-item.glyphicon.glyphicon-menu-right
 
 nav#leftmenu.hidden-xs
   #accordion_menu
@@ -12,9 +14,8 @@ nav#leftmenu.hidden-xs
       +menu-item('code_samples', 'Code Samples')
       +menu-item('getting_started', 'Getting Started')
       +menu-item('api_reference', 'API Reference')
-      +menu-item('architecture', 'Architecture')
       +menu-item('contact', 'Contact')
       li
-        a(target='_blank', href='./docs/phylocanvas_app.html')
+        a(target='_blank', href='./live_upload.html')
           i.glyphicon.glyphicon-cloud-upload(style='padding-right: .5em')
           | Live Upload

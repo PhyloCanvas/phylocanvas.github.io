@@ -43,7 +43,6 @@ body {
   background-color: #9e9ac8;
 }
 #filedrag .centermiddle {
-  background-image: url('img/phylocanvas_logo.png');
   height: 250px;
   padding: 25px;
   text-align: center;
@@ -182,4 +181,8 @@ p.title {
 .footer p {
   margin: 0px 10px;
   text-align: center;
+}
+
+.glyphicon-upload {
+  font-size: 4em;
 }

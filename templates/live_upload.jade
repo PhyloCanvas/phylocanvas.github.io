@@ -1,0 +1,11 @@
+extends ./layouts/single-column.jade
+
+block styles
+  link(rel='stylesheet', href='/assets/css/live_upload.css')
+
+block content
+  include ./content/live_upload.html
+
+block scripts
+  script(src='//code.jquery.com/ui/1.11.3/jquery-ui.min.js')
+  script(src='/assets/js/live_upload.js')
