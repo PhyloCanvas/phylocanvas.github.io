@@ -10,7 +10,7 @@
   },
   "scripts": {
     "build": "jade -o . templates/*.jade && for f in *.html; do minimize $f --output $f; done",
-    "watch": "jade -w -P -o . ./templates/*.jade"
+    "watch": "jade -w -P -o . templates/*.jade"
   },
   "repository": {
     "type": "git",
