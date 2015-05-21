@@ -1,10 +1,4 @@
 extends ./layouts/main.jade
 
 block content
-  include ./pages/getting_started.html
-
-block post-scripts
-  script(type='application/javascript').
-    window.onload = function() {
-      createOverviewTree();
-    }
+  include ./content/getting_started.html

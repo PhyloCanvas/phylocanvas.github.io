@@ -3,7 +3,7 @@
 mixin menu-item(page, description)
   - var isCurrentPage = (currentPage === page)
   li
-    a(class=isCurrentPage ? 'active' : '', href="#{page}.html") #{description}
+    a(class=isCurrentPage ? 'active' : '', href=page === 'index' ? '/' : '/#{page}.html') #{description}
 
 nav#leftmenu.hidden-xs
   #accordion_menu
