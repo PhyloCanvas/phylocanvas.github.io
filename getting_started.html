@@ -1,86 +1,6 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>PhyloCanvas</title>
-    <meta name="viewport" content="width=device-width"><!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
-    <link rel="icon" type="image/png" href="/assets/img/phylocanvas_logo.png"><!-- Optional theme -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
-    <link href="http://fonts.googleapis.com/css?family=Roboto:400,300,700,500,100" rel="stylesheet" type="text/css">
-    <link rel="stylesheet" href="/assets/css/phylodoc.css">
-  </head>
-  <body><nav class="navbar navbar-inverse navbar-static-top">
-  <div class="container">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="leftMenuToggle" data-target="">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand" href="#">PhyloCanvas</a>
-    </div>
-  </div>
-</nav>
-<div class="hidden-xs">
-  <a id="fork" target="_blank" href="https://github.com/PhyloCanvas/PhyloCanvas"><img src="https://camo.githubusercontent.com/a6677b08c955af8400f44c6298f40e7d19cc5b2d/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f677261795f3664366436642e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_gray_6d6d6d.png"></a>
-</div>
-
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-2 col-md-3 col-sm-3">
-          <nav id="leftmenu" class="hidden-xs">
-            <div id="accordion_menu">
-              <ul>
-                          <li><a href="/">Overview</a>
-                          </li>
-                          <li><a href="/code_samples.html">Code Samples</a>
-                          </li>
-                          <li><a href="/getting_started.html">Getting Started</a><i id="active-menu-item" class="glyphicon glyphicon-menu-right"></i>
-                          </li>
-                          <li><a href="/api_reference.html">API Reference</a>
-                          </li>
-                          <li><a href="/contact.html">Contact</a>
-                          </li>
-                <li><a target="_blank" href="./live_upload.html"><i style="padding-right: .5em" class="glyphicon glyphicon-cloud-upload"></i>Live Upload</a></li>
-              </ul>
-            </div>
-          </nav>
-        </div>
-        <div id="content" class="col-lg-9 col-md-8 col-sm-8">
-<section id="getting_started">
-  <h1>Getting Started</h1>
-  <div id="initialize">
-    <h3>Clone from GitHub</h3>
-    <p>
-      Clone the PhyloCanvas repository from GitHub to your local machine:
-    </p>
-    <pre class="code">$ git clone https://github.com/PhyloCanvas/PhyloCanvas.git</pre>
-    <h3>Add to HTML</h3>
-    <p>
-      Use a <code>&lt;script&gt;</code> tag to add PhyloCanvas to your HTML page:
-    </p>
-    <pre class="code"><code>&lt;script type="application/javascript" src="/PhyloCanvas/src/scripts/PhyloCanvas.js"&gt;&lt;/script&gt;</code></pre>
-
-    <p>Remember to adjust the URL to suit the location of the PhyloCanvas code within your project</p>
-    <h3>Initialize and Load Tree</h3>
-    <p>You only need 2 lines of code to get your phylocanvas instance up and running:
-    </p>
-    <pre class="code">
+<!DOCTYPE html><html><head><title>PhyloCanvas</title><meta name=viewport content="width=device-width"><link rel=stylesheet href=https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css><link rel=icon type=image/png href=/assets/img/phylocanvas_logo.png><link rel=stylesheet href=https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css><link href="http://fonts.googleapis.com/css?family=Roboto:400,300,700,500,100" rel=stylesheet type=text/css><link rel=stylesheet href=/assets/css/phylodoc.css></head><body><nav class="navbar navbar-inverse navbar-static-top"><div class=container><div class=navbar-header><button type=button class=navbar-toggle data-toggle=leftMenuToggle data-target><span class=sr-only>Toggle navigation</span> <span class=icon-bar></span> <span class=icon-bar></span> <span class=icon-bar></span></button> <a class=navbar-brand href=#>PhyloCanvas</a></div></div></nav><div class=hidden-xs><a id=fork target=_blank href=https://github.com/PhyloCanvas/PhyloCanvas><img src=https://camo.githubusercontent.com/a6677b08c955af8400f44c6298f40e7d19cc5b2d/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f677261795f3664366436642e706e67 alt="Fork me on GitHub" data-canonical-src=https://s3.amazonaws.com/github/ribbons/forkme_right_gray_6d6d6d.png></a></div><div class=container><div class=row><div class="col-lg-2 col-md-3 col-sm-3"><nav id=leftmenu class=hidden-xs><div id=accordion_menu><ul><li><a href="/">Overview</a></li><li><a href=/code_samples.html>Code Samples</a></li><li><a href=/getting_started.html>Getting Started</a><i id=active-menu-item class="glyphicon glyphicon-menu-right"></i></li><li><a href=/api_reference.html>API Reference</a></li><li><a href=/contact.html>Contact</a></li><li><a target=_blank href=./live_upload.html><i style="padding-right: .5em" class="glyphicon glyphicon-cloud-upload"></i>Live Upload</a></li></ul></div></nav></div><div id=content class="col-lg-9 col-md-8 col-sm-8"><section id=getting_started><h1>Getting Started</h1><div id=initialize><h3>Clone from GitHub</h3><p>Clone the PhyloCanvas repository from GitHub to your local machine:</p><pre class=code>$ git clone https://github.com/PhyloCanvas/PhyloCanvas.git</pre><h3>Add to HTML</h3><p>Use a <code>&lt;script&gt;</code> tag to add PhyloCanvas to your HTML page:</p><pre class=code><code>&lt;script type="application/javascript" src="/PhyloCanvas/src/scripts/PhyloCanvas.js"&gt;&lt;/script&gt;</code></pre><p>Remember to adjust the URL to suit the location of the PhyloCanvas code within your project</p><h3>Initialize and Load Tree</h3><p>You only need 2 lines of code to get your phylocanvas instance up and running:</p><pre class=code>
 var phylocanvas = new PhyloCanvas.Tree(<em>div</em>, <em>[config object]</em>); // initialize your tree viewer
-phylocanvas.load(<em>Newick / Nexus</em>); // load your tree file</pre>
-
-    <dl class="dl-horizontal">
-      <dt><em>div</em></dt>
-      <dd>ID of the <code>&lt;div&gt;</code> or the element itself used to draw the tree</dd>
-      <dt><em>config object</em></dt>
-      <dd>Optional <a href="api_ref.html">configuration options</a></dd>
-      <dt><em>Newick</em></dt>
-      <dd> A string containing a Newick or Nexus formatted tree, or a URL to a Newick or Nexus file (<a target="_blank" href="docs/data/simple_tree.nwk">Sample Newick File</a>)</dd>
-    </dl>
-
-    <h3>Final HTML</h3>
-    <pre>
+phylocanvas.load(<em>Newick / Nexus</em>); // load your tree file</pre><dl class=dl-horizontal><dt><em>div</em></dt><dd>ID of the <code>&lt;div&gt;</code> or the element itself used to draw the tree</dd><dt><em>config object</em></dt><dd>Optional <a href=api_ref.html>configuration options</a></dd><dt><em>Newick</em></dt><dd>A string containing a Newick or Nexus formatted tree, or a URL to a Newick or Nexus file (<a target=_blank href=docs/data/simple_tree.nwk>Sample Newick File</a>)</dd></dl><h3>Final HTML</h3><pre>
 &lt;!DOCTYPE html&gt;
 &lt;html&gt;
 &lt;head&gt;
@@ -98,20 +18,4 @@ phylocanvas.load(<em>Newick / Nexus</em>); // load your tree file</pre>
     }
   &lt;/script&gt;
 &lt;/body&gt;
-&lt;/html&gt;</pre>
-    <a class="showExample" data-height="450" data-href="http://jsbin.com/heyofibifo/4/embed?output">View live</a>
-  </div>
-</section>
-
-        </div>
-      </div>
-    </div><footer class="footer">
-  <p>&copy; 2015 - Centre for Genomic Pathogen Surveillance</p>
-</footer>
-
-    <script src="//code.jquery.com/jquery-2.1.1.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
-    <script src="/assets/js/phylodoc.js"></script>
-    <script type="application/javascript" src="https://cdn.rawgit.com/PhyloCanvas/PhyloCanvas/v1.6.0/src/scripts/PhyloCanvas.js"></script>
-  </body>
-</html>
+&lt;/html&gt;</pre><a class=showExample data-height=450 data-href=http://jsbin.com/heyofibifo/4/embed?output>View live</a></div></section></div></div></div><footer class=footer><p>&copy; 2015 - Centre for Genomic Pathogen Surveillance</p></footer><script src=//code.jquery.com/jquery-2.1.1.min.js></script><script src=https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js></script><script src=/assets/js/phylodoc.js></script><script type=application/javascript src=https://cdn.rawgit.com/PhyloCanvas/PhyloCanvas/v1.6.0/src/scripts/PhyloCanvas.js></script></body></html>

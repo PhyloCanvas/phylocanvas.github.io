@@ -1,202 +1,31 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>PhyloCanvas</title>
-    <meta name="viewport" content="width=device-width"><!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
-    <link rel="icon" type="image/png" href="/assets/img/phylocanvas_logo.png"><!-- Optional theme -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
-    <link href="http://fonts.googleapis.com/css?family=Roboto:400,300,700,500,100" rel="stylesheet" type="text/css">
-    <link rel="stylesheet" href="/assets/css/phylodoc.css">
-  </head>
-  <body><nav class="navbar navbar-inverse navbar-static-top">
-  <div class="container">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="leftMenuToggle" data-target="">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand" href="#">PhyloCanvas</a>
-    </div>
-  </div>
-</nav>
-<div class="hidden-xs">
-  <a id="fork" target="_blank" href="https://github.com/PhyloCanvas/PhyloCanvas"><img src="https://camo.githubusercontent.com/a6677b08c955af8400f44c6298f40e7d19cc5b2d/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f677261795f3664366436642e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_gray_6d6d6d.png"></a>
-</div>
-
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-2 col-md-3 col-sm-3">
-          <nav id="leftmenu" class="hidden-xs">
-            <div id="accordion_menu">
-              <ul>
-                          <li><a href="/">Overview</a>
-                          </li>
-                          <li><a href="/code_samples.html">Code Samples</a><i id="active-menu-item" class="glyphicon glyphicon-menu-right"></i>
-                          </li>
-                          <li><a href="/getting_started.html">Getting Started</a>
-                          </li>
-                          <li><a href="/api_reference.html">API Reference</a>
-                          </li>
-                          <li><a href="/contact.html">Contact</a>
-                          </li>
-                <li><a target="_blank" href="./live_upload.html"><i style="padding-right: .5em" class="glyphicon glyphicon-cloud-upload"></i>Live Upload</a></li>
-              </ul>
-            </div>
-          </nav>
-        </div>
-        <div id="content" class="col-lg-9 col-md-8 col-sm-8"><section id="code_samples">
-  <h1>Code Samples</h1>
-  <p>This page includes live examples on how to use the functionalities of PhyloCanvas.</p>
-  <ul>
-    <li><a href="#cs_loadATreeFile">Load Tree</a></li>
-    <li><a href="#cs_setTreeType">Set Tree Type</a></li>
-    <li><a href="#cs_showHideLabels">Show/Hide Labels</a></li>
-    <li><a href="#cs_collapseExpand">Collapse/Expand</a></li>
-    <li><a href="#cs_increaseNodeSize">Increase Node Size</a></li>
-    <li><a href="#cs_colorNodes">Color Nodes</a></li>
-    <li><a href="#cs_backColour">Color Branches</a></li>
-    <li><a href="#cs_rotateBranch">Rotate Branch</a></li>
-    <li><a href="#cs_search">Search Highlight</a></li>
-    <li><a href="#cs_contextMenu">Context Menu</a></li>
-    <li><a href="#cs_overlayMetadata">Overlay Metadata</a></li>
-  </ul>
-  <a href="#code_samples" class='gotop'>Top</a>
-  <div id="cs_loadATreeFile" class="section">
-    <h3>Load Tree</h3>
-    <p class="title">Using Newick string:<p>
-    <pre>
+<!DOCTYPE html><html><head><title>PhyloCanvas</title><meta name=viewport content="width=device-width"><link rel=stylesheet href=https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css><link rel=icon type=image/png href=/assets/img/phylocanvas_logo.png><link rel=stylesheet href=https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css><link href="http://fonts.googleapis.com/css?family=Roboto:400,300,700,500,100" rel=stylesheet type=text/css><link rel=stylesheet href=/assets/css/phylodoc.css></head><body><nav class="navbar navbar-inverse navbar-static-top"><div class=container><div class=navbar-header><button type=button class=navbar-toggle data-toggle=leftMenuToggle data-target><span class=sr-only>Toggle navigation</span> <span class=icon-bar></span> <span class=icon-bar></span> <span class=icon-bar></span></button> <a class=navbar-brand href=#>PhyloCanvas</a></div></div></nav><div class=hidden-xs><a id=fork target=_blank href=https://github.com/PhyloCanvas/PhyloCanvas><img src=https://camo.githubusercontent.com/a6677b08c955af8400f44c6298f40e7d19cc5b2d/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f677261795f3664366436642e706e67 alt="Fork me on GitHub" data-canonical-src=https://s3.amazonaws.com/github/ribbons/forkme_right_gray_6d6d6d.png></a></div><div class=container><div class=row><div class="col-lg-2 col-md-3 col-sm-3"><nav id=leftmenu class=hidden-xs><div id=accordion_menu><ul><li><a href="/">Overview</a></li><li><a href=/code_samples.html>Code Samples</a><i id=active-menu-item class="glyphicon glyphicon-menu-right"></i></li><li><a href=/getting_started.html>Getting Started</a></li><li><a href=/api_reference.html>API Reference</a></li><li><a href=/contact.html>Contact</a></li><li><a target=_blank href=./live_upload.html><i style="padding-right: .5em" class="glyphicon glyphicon-cloud-upload"></i>Live Upload</a></li></ul></div></nav></div><div id=content class="col-lg-9 col-md-8 col-sm-8"><section id=code_samples><h1>Code Samples</h1><p>This page includes live examples on how to use the functionalities of PhyloCanvas.</p><ul><li><a href=#cs_loadATreeFile>Load Tree</a></li><li><a href=#cs_setTreeType>Set Tree Type</a></li><li><a href=#cs_showHideLabels>Show/Hide Labels</a></li><li><a href=#cs_collapseExpand>Collapse/Expand</a></li><li><a href=#cs_increaseNodeSize>Increase Node Size</a></li><li><a href=#cs_colorNodes>Color Nodes</a></li><li><a href=#cs_backColour>Color Branches</a></li><li><a href=#cs_rotateBranch>Rotate Branch</a></li><li><a href=#cs_search>Search Highlight</a></li><li><a href=#cs_contextMenu>Context Menu</a></li><li><a href=#cs_overlayMetadata>Overlay Metadata</a></li></ul><a href=#code_samples class=gotop>Top</a><div id=cs_loadATreeFile class=section><h3>Load Tree</h3><p class=title>Using Newick string:</p><p><pre>
 var phylocanvas = new PhyloCanvas.Tree(<em>div_name</em>, <em>[config object]</em>);
 var newick_str = "(A:0.1,B:0.2,(C:0.3,D:0.4)E:0.5)F;"
-phylocanvas.load(<em>newick_str</em>);</pre>
-    <a class="showExample" data-height="375" data-href="http://jsbin.com/jepuqi/4/embed?output">View live</a>
-
-    <p class="title">Using Newick file:<p>
-    <pre class="code">
+phylocanvas.load(<em>newick_str</em>);</pre><a class=showExample data-height=375 data-href=http://jsbin.com/jepuqi/4/embed?output>View live</a></p><p class=title>Using Newick file:</p><p><pre class=code>
 var phylocanvas = new PhyloCanvas.Tree(<em>div_name</em>, <em>[config object]</em>);
 var newick_file = "&lt;path to your tree file&gt;";
-phylocanvas.load(<em>newick_file</em>); </pre>
-    <a class="showExample" data-height="375" data-href="http://jsbin.com/teqero/5/embed?output">View live</a> |
-    <a class="" target="_blank" href="https://raw.githubusercontent.com/PhyloCanvas/phylocanvas.github.io/master/docs/data/tree.nwk">View Newick file</a>
-  </div>
-
-  <a href="#code_samples" class='gotop'>Top</a>
-  <div id="cs_setTreeType">
-    <h3>Set Tree Type</h3>
-    <p class="cs_description">A <code>typechanged</code> event is fired whenever a tree type is changed which invokes addSnapShot() to add a snapshot in the history.</p>
-    <pre>
-phylocanvas.setTreeType('rectangular'); // Takes radial, rectangular, circular, diagonal and hierarchy</pre>
-    <a class="showExample" data-height="450" data-href="http://jsbin.com/pofuwu/5/embed?output">View live</a>
-  </div>
-
-  <a href="#code_samples" class='gotop'>Top</a>
-  <div id="cs_showHideLabels">
-    <h3>Show/Hide Labels</h3>
-    <p>To show or hide labels use the below functions:</p>
-    <pre>
+phylocanvas.load(<em>newick_file</em>); </pre><a class=showExample data-height=375 data-href=http://jsbin.com/teqero/5/embed?output>View live</a> | <a target=_blank href=https://raw.githubusercontent.com/PhyloCanvas/phylocanvas.github.io/master/docs/data/tree.nwk>View Newick file</a></p></div><a href=#code_samples class=gotop>Top</a><div id=cs_setTreeType><h3>Set Tree Type</h3><p class=cs_description>A <code>typechanged</code> event is fired whenever a tree type is changed which invokes addSnapShot() to add a snapshot in the history.</p><pre>
+phylocanvas.setTreeType('rectangular'); // Takes radial, rectangular, circular, diagonal and hierarchy</pre><a class=showExample data-height=450 data-href=http://jsbin.com/pofuwu/5/embed?output>View live</a></div><a href=#code_samples class=gotop>Top</a><div id=cs_showHideLabels><h3>Show/Hide Labels</h3><p>To show or hide labels use the below functions:</p><pre>
 phylocanvas.displayLabels();
 phylocanvas.hideLabels();
 // or
-phylocanvas.toggleLabels();</pre>
-    <a class="showExample" data-height="450" data-href="http://jsbin.com/kivola/3/embed?output">View live</a>
-  </div>
-
-  <a href="#code_samples" class='gotop'>Top</a>
-  <div id="cs_collapseExpand">
-    <h3>Collapse/Expand</h3>
-    <p>Each <code>Branch</code> has <code>collapsed = true/false</code> property which is used while drawing the tree to see if the branch has to be collapsed or not.
-      The example below shows how you traverse through each branch and collapse one that matches a branch id.
-    </p>
-    <pre>
+phylocanvas.toggleLabels();</pre><a class=showExample data-height=450 data-href=http://jsbin.com/kivola/3/embed?output>View live</a></div><a href=#code_samples class=gotop>Top</a><div id=cs_collapseExpand><h3>Collapse/Expand</h3><p>Each <code>Branch</code> has <code>collapsed = true/false</code> property which is used while drawing the tree to see if the branch has to be collapsed or not. The example below shows how you traverse through each branch and collapse one that matches a branch id.</p><pre>
 // Here 'pcn5' is the branch id
 phylocanvas.branches['pcn5'].collapsed = true;
-phylocanvas.draw();</pre>
-    <a class="showExample" data-height="510" data-href="http://jsbin.com/gozede/2/embed?output">View live</a>
-  </div>
-
-  <a href="#code_samples" class='gotop'>Top</a>
-  <div id="cs_increaseNodeSize">
-    <h3>Increase Node / Label Size </h3>
-    <p>Use<code>setNodeSize()</code> and <code>setTextSize()</code> to change the size of node and text.</p>
-    <pre>
+phylocanvas.draw();</pre><a class=showExample data-height=510 data-href=http://jsbin.com/gozede/2/embed?output>View live</a></div><a href=#code_samples class=gotop>Top</a><div id=cs_increaseNodeSize><h3>Increase Node / Label Size</h3><p>Use<code>setNodeSize()</code> and <code>setTextSize()</code> to change the size of node and text.</p><pre>
 phylocanvas.setNodeSize = 10;
-phylocanvas.setTextSize = 20;</pre>
-    <a class="showExample" data-height="480" data-href="http://jsbin.com/bedese/23/embed?output">View live</a>
-  </div>
-
-  <a href="#code_samples" class='gotop'>Top</a>
-  <div id="cs_colorNodes">
-    <h3>Color Nodes</h3>
-    <p><code>setNodeColourAndShape</code> is used to set the color and shape of a node.</p>
-    <pre>
+phylocanvas.setTextSize = 20;</pre><a class=showExample data-height=480 data-href=http://jsbin.com/bedese/23/embed?output>View live</a></div><a href=#code_samples class=gotop>Top</a><div id=cs_colorNodes><h3>Color Nodes</h3><p><code>setNodeColourAndShape</code> is used to set the color and shape of a node.</p><pre>
 phylocanvas.setNodeColourAndShape("1,2,3", 'orange', 'x');
-phylocanvas.draw();</pre>
-    <dl class="dl-horizontal">
-      <dt>nodeIds: (Array/String)</dt>
-      <dd>Array / comma separated string.</dd>
-      <dt>Color</dt>
-      <dd>Color of the node in <b>rgb/hex/colornames</b> format Eg: red, rgb(255,0,0), #adadad </dd>
-      <dt>Shapes</dt>
-      <dd>
-        <ul>
-          <li>x = star</li>
-          <li>s = square</li>
-          <li>o = circle</li>
-          <li>t = triangle</li>
-        </ul>
-      </dd>
-      <dt>Size</dt>
-      <dd>Size of the node </dd>
-    </dl>
-    <a class="showExample" data-height="375" data-href="http://jsbin.com/pubozo/5/embed?output">View live</a>
-  </div>
-
-  <a href="#code_samples" class='gotop'>Top</a>
-  <div id="cs_backColour">
-    <h3>Color Branches</h3>
-    <p>Setting <code>backColour</code> to <code>true/false</code> will colour the branches of the tree based on the colour of the tips</p>
-    <pre>
+phylocanvas.draw();</pre><dl class=dl-horizontal><dt>nodeIds: (Array/String)</dt><dd>Array / comma separated string.</dd><dt>Color</dt><dd>Color of the node in <b>rgb/hex/colornames</b> format Eg: red, rgb(255,0,0), #adadad</dd><dt>Shapes</dt><dd><ul><li>x = star</li><li>s = square</li><li>o = circle</li><li>t = triangle</li></ul></dd><dt>Size</dt><dd>Size of the node</dd></dl><a class=showExample data-height=375 data-href=http://jsbin.com/pubozo/5/embed?output>View live</a></div><a href=#code_samples class=gotop>Top</a><div id=cs_backColour><h3>Color Branches</h3><p>Setting <code>backColour</code> to <code>true/false</code> will colour the branches of the tree based on the colour of the tips</p><pre>
 phylocanvas.backColour = true;
 phylocanvas.setNodeColourAndShape('1', 'rgb(250, 150, 50)', 'x');
-phylocanvas.draw();</pre>
-     <a class="showExample" data-height="480" data-href="http://jsbin.com/picequ/18/embed?output">View live</a>
-  </div>
-
-  <a href="#code_samples" class='gotop'>Top</a>
-  <div id="cs_rotateBranch">
-    <h3>Rotate Branch</h3>
-    <p>Use the branch function <code>rotate()</code> to rotate a branch.</p>
-    <pre>
+phylocanvas.draw();</pre><a class=showExample data-height=480 data-href=http://jsbin.com/picequ/18/embed?output>View live</a></div><a href=#code_samples class=gotop>Top</a><div id=cs_rotateBranch><h3>Rotate Branch</h3><p>Use the branch function <code>rotate()</code> to rotate a branch.</p><pre>
 // Here 'pcn5' is the branch id
 phylocanvas.branches['pcn5'].rotate(event);
-phylocanvas.draw();</pre>
-     <a class="showExample" data-height="480" data-href="http://jsbin.com/rigibu/5/embed?output">View live</a>
-  </div>
-
-  <a href="#code_samples" class='gotop'>Top</a>
-  <div id="cs_search">
-    <h3>Search Highlight</h3>
-    <p>Search could be done using the Tree function <code>findBranch()</code> to rotate a branch.</p>
-    <pre>
-phylocanvas.findBranch(<em>value</em>); // <em>value</em> = search pattern</pre>
-
-    <p class="cs_description">
-      The above function uses <code>Branch.setSelected()</code> to highlight the branch
-      For example, the below code makes <code>Branch.selected = false</code> for all children of root.
-    </p>
-    <pre>
+phylocanvas.draw();</pre><a class=showExample data-height=480 data-href=http://jsbin.com/rigibu/5/embed?output>View live</a></div><a href=#code_samples class=gotop>Top</a><div id=cs_search><h3>Search Highlight</h3><p>Search could be done using the Tree function <code>findBranch()</code> to rotate a branch.</p><pre>
+phylocanvas.findBranch(<em>value</em>); // <em>value</em> = search pattern</pre><p class=cs_description>The above function uses <code>Branch.setSelected()</code> to highlight the branch For example, the below code makes <code>Branch.selected = false</code> for all children of root.</p><pre>
 phylocanvas.root.setSelected(false, true);
-phylocanvas.draw();</pre>
-     <a class="showExample" data-height="480" data-href="http://jsbin.com/dazuzu/13/embed?output">View live</a>
-  </div>
-
-  <a href="#code_samples" class='gotop'>Top</a>
-  <div id="cs_contextMenu">
-    <h3>Context Menu</h3>
-    <p>Customise the right-click menu options with an array of items, configured when initialising the tree:</p>
-    <pre>
+phylocanvas.draw();</pre><a class=showExample data-height=480 data-href=http://jsbin.com/dazuzu/13/embed?output>View live</a></div><a href=#code_samples class=gotop>Top</a><div id=cs_contextMenu><h3>Context Menu</h3><p>Customise the right-click menu options with an array of items, configured when initialising the tree:</p><pre>
 // Construct tree object
 phylocanvas = new PhyloCanvas.Tree('phylocanvas', {
   // other options
@@ -216,55 +45,10 @@ phylocanvas = new PhyloCanvas.Tree('phylocanvas', {
     internal: false,
     leaf: false
   }]
-});</pre>
-
-    <dl class="dl-horizontal">
-      <dt>text</dt>
-        <dd>The label of the menu item</dd>
-
-      <dt>handler</dt>
-        <dd>The function in the Tree object that the menu item invokes. If
-        a node has been clicked on it is padded to the handler</dd>
-
-      <dt>internal</dt>
-        <dd>Does this function apply to an internal node</dd>
-
-      <dt>leaf</dt>
-        <dd>Does this function apply to a leaf</dd>
-    </dl>
-
-    <a class="showExample" data-height="480" data-href="http://jsbin.com/yicuja/11/embed?output">View live</a>
-  </div>
-
-  <a href="#code_samples" class='gotop'>Top</a>
-  <div id="cs_overlayMetadata">
-    <h3>Overlay Metadata</h3>
-    <p>If you store an object as <code>{ column_name: value }</code> in the <code>data</code> attribute of each leaf node, then you could overlay metadata on to the tree by using the function <code>viewMetadataColumns()</code></p>
-    <p> <em>value = 0/1</em>.  All true values will be drawn as a rectangular block representing a presence or absence.</p>
-    <p><code>viewMetadataColumns()</code> takes an array of column names as argument which is same as the column name stored in the <code>data</code> object. If no arguments are specified, then it will overlay all columns </p>
-    <p>See example below:</p>
-    <pre>
+});</pre><dl class=dl-horizontal><dt>text</dt><dd>The label of the menu item</dd><dt>handler</dt><dd>The function in the Tree object that the menu item invokes. If a node has been clicked on it is padded to the handler</dd><dt>internal</dt><dd>Does this function apply to an internal node</dd><dt>leaf</dt><dd>Does this function apply to a leaf</dd></dl><a class=showExample data-height=480 data-href=http://jsbin.com/yicuja/11/embed?output>View live</a></div><a href=#code_samples class=gotop>Top</a><div id=cs_overlayMetadata><h3>Overlay Metadata</h3><p>If you store an object as <code>{ column_name: value }</code> in the <code>data</code> attribute of each leaf node, then you could overlay metadata on to the tree by using the function <code>viewMetadataColumns()</code></p><p><em>value = 0/1</em>. All true values will be drawn as a rectangular block representing a presence or absence.</p><p><code>viewMetadataColumns()</code> takes an array of column names as argument which is same as the column name stored in the <code>data</code> object. If no arguments are specified, then it will overlay all columns</p><p>See example below:</p><pre>
 // Creating data object for few leaf nodes after tree load
 phylocanvas.branches['1']['data'] = {'Column1': 1, 'Column2': 0};
 phylocanvas.branches['3']['data'] = {'Column1': 0, 'Column2': 1};
 phylocanvas.branches['9']['data'] = {'Column1': 0, 'Column2': 1};
 
-phylocanvas.viewMetadataColumns();</pre>
-    <a class="showExample" data-height="480" data-href="http://jsbin.com/zefoxa/1/embed?output">View live</a>
-    <p class="cs_description"><code>showMetadata = true/false</code> is used to show or hide metadata</p>
-  </div>
-
-</section>
-
-        </div>
-      </div>
-    </div><footer class="footer">
-  <p>&copy; 2015 - Centre for Genomic Pathogen Surveillance</p>
-</footer>
-
-    <script src="//code.jquery.com/jquery-2.1.1.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
-    <script src="/assets/js/phylodoc.js"></script>
-    <script type="application/javascript" src="https://cdn.rawgit.com/PhyloCanvas/PhyloCanvas/v1.6.0/src/scripts/PhyloCanvas.js"></script>
-  </body>
-</html>
+phylocanvas.viewMetadataColumns();</pre><a class=showExample data-height=480 data-href=http://jsbin.com/zefoxa/1/embed?output>View live</a><p class=cs_description><code>showMetadata = true/false</code> is used to show or hide metadata</p></div></section></div></div></div><footer class=footer><p>&copy; 2015 - Centre for Genomic Pathogen Surveillance</p></footer><script src=//code.jquery.com/jquery-2.1.1.min.js></script><script src=https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js></script><script src=/assets/js/phylodoc.js></script><script type=application/javascript src=https://cdn.rawgit.com/PhyloCanvas/PhyloCanvas/v1.6.0/src/scripts/PhyloCanvas.js></script></body></html>
