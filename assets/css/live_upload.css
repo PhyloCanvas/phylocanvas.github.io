@@ -83,12 +83,11 @@ body {
 {
     padding: 5px 0px;
     margin: 0px;
-    color: teal;
 }
 hr {
   padding: 0px;
   margin: 10px 5px;
-  color: blue;
+  color: blue !important;
 }
 p.title {
   text-align: center;
@@ -132,7 +131,7 @@ p.title {
   display: none;
   position: absolute;
   top: 0px;
-  width:200px;
+  width:210px;
   max-height: 100%;
   height:100%;
   padding: 70px 5px 5px 5px;
@@ -148,18 +147,19 @@ p.title {
   float: right;
   right: 10px;
   display: block;
-  width: 30px;
+  width: 32px;
   list-style: none;
 }
 .slideDiv ul li {
   display: none;
   margin: 1px 0px;
+  padding: 6px 10px;
   width: 35px;
   overflow: hidden;
 }
 
 .slideDiv ul li span{
-  padding-left: 6px;
+  padding-left: 10px;
 }
 .slideDivContent {
   padding: 10px;
@@ -169,6 +169,20 @@ p.title {
   height: 85%;
   overflow: auto;
 }
+
+.rotate-90 {
+  -webkit-transform:rotate(90deg);
+  -moz-transform:rotate(90deg);
+  -o-transform:rotate(90deg);
+  .rotate(90deg);
+}
+.rotate-270 {
+  -webkit-transform:rotate(270deg);
+  -moz-transform:rotate(270deg);
+  -o-transform:rotate(270deg);
+  .rotate(270deg);
+}
+
 .footer {
   position: absolute;
   bottom: 0;

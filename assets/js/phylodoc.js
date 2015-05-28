@@ -1,5 +1,5 @@
 /********* JS for PhyloCanvas API Site **************/
-
+var phylocanvas;
 $(document).ready(function () {
   $('[data-toggle="leftMenuToggle"]').click(function () {
     $('#leftmenu').toggleClass('hidden-xs');
@@ -17,8 +17,6 @@ $(document).ready(function () {
     }
   });
 });
-
-var phylocanvas;
 
 function colour(response) {
   var colours = [ 'teal', '#762a83', '#777' ];
@@ -64,14 +62,14 @@ function createOverviewTree() {
 }
 
 
-$(document).on('click', '#pc-buttons .btn', {}, function (e) {
+$(document).on('click', '#pc-buttons .btn', {}, function () {
   $('#pc-buttons .btn').removeClass('btn-info');
   $('#pc-buttons .btn').addClass('btn-default');
   $(this).addClass('btn-info');
   phylocanvas.setTreeType(this.id);
 });
 
-$(document).on('click', '.showExample', {}, function (e) {
+$(document).on('click', '.showExample', {}, function () {
   if ($(this).html() === 'View live') {
     console.log($(this).next('#jsbin_example').length);
     $(this).next('#jsbin_example').show();
@@ -93,4 +91,3 @@ $(document).on('click', '.showExample', {}, function (e) {
     $(this).html('View live');
   }
 });
-
