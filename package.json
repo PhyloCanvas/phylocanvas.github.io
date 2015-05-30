@@ -5,12 +5,15 @@
   "main": "index.js",
   "dependencies": {},
   "devDependencies": {
-    "jade": "^1.9.2",
-    "minimize": "^1.4.1"
+    "gulp": "^3.8.11",
+    "gulp-data": "^1.2.0",
+    "gulp-jade": "^1.0.1",
+    "gulp-minify-html": "^1.0.2",
+    "jade": "^1.9.2"
   },
   "scripts": {
-    "build": "jade -o . templates/*.jade && for f in *.html; do minimize $f --output $f; done",
-    "watch": "jade -w -P -o . templates/*.jade"
+    "build": "gulp jade",
+    "watch": "gulp watch"
   },
   "repository": {
     "type": "git",

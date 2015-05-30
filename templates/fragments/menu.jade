@@ -1,20 +1,21 @@
-- var currentPage = locals.filename.replace('templates/', '').replace('.jade', '')
+- var f = locals.filename
+- var currentPage = f.substring(f.lastIndexOf('/'), f.lastIndexOf('.'))
 
 mixin menu-item(page, description)
   - var isCurrentPage = (currentPage === page)
   li
-    a(href=page === 'index' ? '/' : '/#{page}.html') #{description}
+    a(href=page === '/index' ? '/' : '#{page}.html') #{description}
     if (isCurrentPage)
       i#active-menu-item.glyphicon.glyphicon-menu-right
 
 nav#leftmenu.hidden-xs
   #accordion_menu
     ul
-      +menu-item('index', 'Overview')
-      +menu-item('code_samples', 'Code Samples')
-      +menu-item('getting_started', 'Getting Started')
-      +menu-item('api_reference', 'API Reference')
-      +menu-item('contact', 'Contact')
+      +menu-item('/index', 'Overview')
+      +menu-item('/code_samples', 'Code Samples')
+      +menu-item('/getting_started', 'Getting Started')
+      +menu-item('/api_reference', 'API Reference')
+      +menu-item('/contact', 'Contact')
       li
         a(target='_blank', href='./live_upload.html')
           i.glyphicon.glyphicon-cloud-upload(style='padding-right: .5em')
