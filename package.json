@@ -5,18 +5,16 @@
   "main": "index.js",
   "dependencies": {},
   "devDependencies": {
-    "connect-livereload": "^0.5.3",
-    "express": "^4.12.4",
     "gulp": "^3.8.11",
     "gulp-data": "^1.2.0",
     "gulp-jade": "^1.0.1",
-    "gulp-livereload": "^3.8.0",
     "gulp-minify-html": "^1.0.2",
-    "jade": "^1.9.2"
+    "jade": "^1.9.2",
+    "live-server": "git://github.com/richardgoater/live-server.git#ignore-option"
   },
   "scripts": {
     "build": "gulp jade",
-    "watch": "gulp server watch"
+    "dev-server": "gulp dev-server"
   },
   "repository": {
     "type": "git",

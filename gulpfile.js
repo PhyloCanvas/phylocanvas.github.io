@@ -2,7 +2,7 @@ var gulp = require('gulp');
 var data = require('gulp-data');
 var jade = require('gulp-jade');
 var minify = require('gulp-minify-html');
-var livereload = require('gulp-livereload');
+var path = require('path');
 
 gulp.task('jade', function () {
   gulp.src('./templates/*.jade')
@@ -15,20 +15,16 @@ gulp.task('jade', function () {
 });
 
 gulp.task('watch', function () {
-  livereload.listen();
-  gulp.watch('templates/**/*.*', [ 'jade', 'refresh' ]);
+  gulp.watch('templates/**/*.*', [ 'jade' ]);
 });
 
 gulp.task('server', function () {
-  var express = require('express');
-  var app = express();
-  app.use(require('connect-livereload')());
-  app.use(express.static(__dirname, { etag: false }));
-  app.listen(4000, '0.0.0.0');
+  require('live-server').start({
+    port: 8080,
+    host: '0.0.0.0',
+    logLevel: 0,
+    ignore: [ path.join(__dirname, 'templates') ]
+  });
 });
 
-gulp.task('refresh', [ 'jade' ], function () {
-  setTimeout(function () {
-    livereload.reload();
-  }, 200);
-});
+gulp.task('dev-server', [ 'watch', 'server' ]);
