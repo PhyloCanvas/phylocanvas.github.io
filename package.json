@@ -13,7 +13,7 @@
     "live-server": "git://github.com/richardgoater/live-server.git#ignore-option"
   },
   "scripts": {
-    "build": "gulp jade",
+    "build": "gulp jade-minify",
     "dev-server": "gulp dev-server"
   },
   "repository": {

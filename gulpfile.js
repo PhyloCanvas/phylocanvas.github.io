@@ -4,12 +4,20 @@ var jade = require('gulp-jade');
 var minify = require('gulp-minify-html');
 var path = require('path');
 
-gulp.task('jade', function () {
-  gulp.src('./templates/*.jade')
+function compileJade() {
+  return gulp.src('./templates/*.jade')
     .pipe(data(function (file) {
       return { filename: file.path };
     }))
-    .pipe(jade())
+    .pipe(jade());
+}
+
+gulp.task('jade', function () {
+  compileJade().pipe(gulp.dest('./'));
+});
+
+gulp.task('jade-minify', function () {
+  compileJade()
     .pipe(minify({ conditionals: true }))
     .pipe(gulp.dest('./'));
 });
