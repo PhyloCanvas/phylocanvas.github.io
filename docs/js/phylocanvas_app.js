@@ -38,7 +38,7 @@
 
   // output file information
   function ParseFile(filedrag, file) {
-    var fileType = /.*\.nwk|.*\.txt|.*\.tree|.*\.csv/i;
+    var fileType = /\.(nwk|tree?|txt|csv)$/i;
 
     if (file.name.match(fileType)) {
       var reader = new FileReader();
@@ -66,7 +66,7 @@
       reader.readAsText(file);
     }
      else {
-      outputMessage("File not supported!");
+      outputMessage("File not supported");
     }
   }
 
@@ -171,7 +171,7 @@
   }
   function checkIfTreeFile(tree) {
 
-    if (tree.match(/^#NEXUS[\s\n;\w\.\*\:(\),-=\[\]\/&]+$/i) || tree.match(/^[\w\.\*\:(\),-\/]+;\s?$/gi)) {
+    if (tree.match(/^#NEXUS[\s\n;\w\W\.\*\:(\),-=\[\]\/&]+$/i) || tree.match(/^[\w\W\.\*\:(\),-\/]+;\s?$/gi)) {
       return true;
     }
     else {
