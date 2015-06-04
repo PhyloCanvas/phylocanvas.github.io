@@ -74,14 +74,14 @@
 var phylocanvas = new PhyloCanvas.Tree(<i>div_name</i>, <i>[config object]</i>); // initialize your tree viewer
 var newick_str = "(A:0.1,B:0.2,(C:0.3,D:0.4)E:0.5)F;"
 phylocanvas.load(<i>newick_str</i>); // load your newick string or file</pre>
-              <a class="showExample" data-height="375" data-href="http://jsbin.com/solacu/1/embed?output">View live</a>
+              <a class="showExample" data-height="375" data-href="http://jsbin.com/solacu/5/embed?output">View live</a>
 
               <p class="title"> Using Newick file <p>
               <pre class="code">
 var phylocanvas = new PhyloCanvas.Tree(<i>div_name</i>, <i>[config object]</i>); // initialize your tree viewer
 var newick_file = "<path to your tree file>";
 phylocanvas.load(<i>newick_file</i>); // load your newick string or file</pre>
-              <a class="showExample" data-height="375" data-href="http://jsbin.com/giseta/1/embed?output">View live</a>
+              <a class="showExample" data-height="375" data-href="http://jsbin.com/giseta/2/embed?output">View live</a>
               <a class="pull-right" target="_blank" href="https://raw.githubusercontent.com/PhyloCanvas/phylocanvas.github.io/master/docs/data/tree.nwk">View Newick file</a>
             </div>
 
@@ -91,7 +91,7 @@ phylocanvas.load(<i>newick_file</i>); // load your newick string or file</pre>
               <p class="cs_description"> A <code>typechanged</code> event is fired whenever a tree type is changed which invokes addSnapShot() to add a snapshot in the history. </p>
               <pre>
 phylocanvas.setTreeType('rectangular'); // Takes radial, rectangular, circular, diagonal and hierarchy</pre>
-              <a class="showExample" data-height="450" data-href="http://jsbin.com/zudela/1/embed?output">View live</a>
+              <a class="showExample" data-height="450" data-href="http://jsbin.com/zudela/2/embed?output">View live</a>
             </div>
 
             <a href="#code_samples" class='gotop'>Top</a>
@@ -103,7 +103,7 @@ phylocanvas.displayLabels(); // Show labels
 phylocanvas.hideLabels(); // Hide labels
 // or
 phylocanvas.toggleLabels(); // Toggle labels</pre>
-              <a class="showExample" data-height="450" data-href="http://jsbin.com/dedara/1/embed?output">View live</a>
+              <a class="showExample" data-height="450" data-href="http://jsbin.com/dedara/2/embed?output">View live</a>
             </div>
 
             <a href="#code_samples" class='gotop'>Top</a>
@@ -117,7 +117,7 @@ phylocanvas.toggleLabels(); // Toggle labels</pre>
 phylocanvas.branches['pcn5'].collapsed = true;
 phylocanvas.draw();
 </pre>
-              <a class="showExample" data-height="510" data-href="http://jsbin.com/turoko/1/embed?output">View live</a>
+              <a class="showExample" data-height="510" data-href="http://jsbin.com/turoko/2/embed?output">View live</a>
 
             </div>
 
@@ -128,7 +128,7 @@ phylocanvas.draw();
               <pre>
 phylocanvas.setNodeSize = 10;
 phylocanvas.setTextSize = 20;</pre>
-              <a class="showExample" data-height="480" data-href="http://jsbin.com/putiqe/1/embed?output">View live</a>
+              <a class="showExample" data-height="480" data-href="http://jsbin.com/putiqe/2/embed?output">View live</a>
             </div>
 
             <a href="#code_samples" class='gotop'>Top</a>
@@ -155,7 +155,7 @@ phylocanvas.draw(); </pre>
                 <dt>Size</dt>
                 <dd>Size of the node </dd>
               </dl>
-              <a class="showExample" data-height="375" data-href="http://jsbin.com/tadejo/1/embed?output">View live</a>
+              <a class="showExample" data-height="375" data-href="http://jsbin.com/tadejo/2/embed?output">View live</a>
             </div>
 
             <a href="#code_samples" class='gotop'>Top</a>
@@ -166,7 +166,7 @@ phylocanvas.draw(); </pre>
 phylocanvas.backColour = true;
 phylocanvas.setNodeColourAndShape('1', 'rgb(250, 150, 50)', 'x');
 phylocanvas.draw(); </pre>
-               <a class="showExample" data-height="480" data-href="http://jsbin.com/hupujo/1/embed?output">View live</a>
+               <a class="showExample" data-height="480" data-href="http://jsbin.com/hupujo/2/embed?output">View live</a>
             </div>
 
             <a href="#code_samples" class='gotop'>Top</a>
@@ -177,7 +177,7 @@ phylocanvas.draw(); </pre>
 // Here 'pcn5' is the branch id
 phylocanvas.branches['pcn5'].rotate(event);
 phylocanvas.draw();</pre>
-               <a class="showExample" data-height="480" data-href="http://jsbin.com/luzige/3/embed?output">View live</a>
+               <a class="showExample" data-height="480" data-href="http://jsbin.com/luzige/8/embed?output">View live</a>
             </div>
 
           </section>
@@ -196,7 +196,7 @@ phylocanvas.findBranch(<i>value</i>);  // <i>value</i> = search pattern </pre>
 <pre>
 phylocanvas.root.setSelected(false, true);
 phylocanvas.draw();</pre>
-               <a class="showExample" data-height="480" data-href="http://jsbin.com/bugeqi/1/embed?output">View live</a>
+               <a class="showExample" data-height="480" data-href="http://jsbin.com/bugeqi/2/embed?output">View live</a>
             </div>
 
             <a href="#code_samples" class='gotop'>Top</a>
@@ -242,7 +242,7 @@ phylocanvas = new PhyloCanvas.Tree('phylocanvas', {
                   <dd>Does this function apply to a leaf</dd>
               </dl>
 
-              <a class="showExample" data-height="480" data-href="http://jsbin.com/jiziyo/1/embed?output">View live</a>
+              <a class="showExample" data-height="480" data-href="http://jsbin.com/jiziyo/2/embed?output">View live</a>
             </div>
 
             <a href="#code_samples" class='gotop'>Top</a>
@@ -260,7 +260,7 @@ phylocanvas.branches['9']['data'] = {'Column1': 0, 'Column2': 1};
 
 phylocanvas.viewMetadataColumns(); // Display columns
 </pre>
-              <a class="showExample" data-height="480" data-href="http://jsbin.com/mibiti/1/embed?output">View live</a>
+              <a class="showExample" data-height="480" data-href="http://jsbin.com/mibiti/2/embed?output">View live</a>
               <p class="cs_description"><code>showMetadata = true/false</code> is used to show or hide metadata</p>
             </div>
 
@@ -276,7 +276,7 @@ phylocanvas.viewMetadataColumns(); // Display columns
   <!-- Latest compiled and minified JavaScript -->
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
   <script src="js/phylodoc.js"></script>
-  <script type="application/javascript" src="https://cdn.rawgit.com/PhyloCanvas/PhyloCanvas/v1.7.0/src/scripts/PhyloCanvas.js"></script>
+  <script type="application/javascript" src="https://cdn.rawgit.com/PhyloCanvas/PhyloCanvas/v1.7.1/src/scripts/PhyloCanvas.js"></script>
   <script>
     window.onload = function() {
       createOverviewTree();
