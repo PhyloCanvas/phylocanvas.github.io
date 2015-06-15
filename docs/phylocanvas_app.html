@@ -11,33 +11,32 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
         <link href='http://fonts.googleapis.com/css?family=Roboto:400,300,700,500,100' rel='stylesheet' type='text/css'>
-		<link href="//code.jquery.com/ui/1.11.3/themes/smoothness/jquery-ui.min.css" rel="stylesheet" type="text/css" />
+    <link href="//code.jquery.com/ui/1.11.3/themes/smoothness/jquery-ui.min.css" rel="stylesheet" type="text/css" />
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
         <link rel="stylesheet" href="css/phylocanvas_app.css">
     </head>
     <body>
 
-	    <nav class="navbar navbar-inverse navbar-static-top">
-	      <div class="container">
-	        <div class="navbar-header">
-	          <a class="navbar-brand" href="/index.html">PhyloCanvas</a>
-	        </div>
-	      </div>
-	    </nav>
-			<section id="drag-and-drop">
-			  <div id="filedrag">
-			  	<div class="container centermiddle">
-				  	<i class="fa fa-arrow-circle-o-down fa-4x"></i>
-				  	<p class="info">Drag and drop a Newick tree and metadata CSV file</p>
+      <nav class="navbar navbar-inverse navbar-static-top">
+        <div class="container">
+          <div class="navbar-header">
+            <a class="navbar-brand" href="/index.html">PhyloCanvas</a>
+          </div>
+        </div>
+      </nav>
+      <section id="drag-and-drop">
+        <div id="filedrag">
+          <div class="container centermiddle">
+            <i class="fa fa-arrow-circle-o-down fa-4x"></i>
+            <p class="info h2">Drag and drop a Newick tree and metadata CSV file</p>
             <div id="file-format-guide">
-              <h3 class="text-center">File Format Guide</h3>
               <p>Optionally, binary data can be displayed next to leaves on the tree. Simply upload a CSV file together with the Newick file, ensuring that the first column contains at least one matching node ID as shown below:</p>
               <div class="file-format-example">
-                <h4>Example Newick File</h4>
+                <p>Example Newick File</p>
                 <pre>(<strong>A</strong>:0.1,<strong>B</strong>:0.2,(<strong>C</strong>:0.3,<strong>D</strong>:0.4):0.5);</pre>
               </div>
               <div class="file-format-example">
-                <h4>Example CSV File</h4>
+                <p>Example CSV File</p>
                 <pre>
 id,heading1,heading2,heading3
 <strong>A</strong>,1,0,0
@@ -46,59 +45,59 @@ id,heading1,heading2,heading3
 <strong>D</strong>,1,1,1</pre>
               </div>
             </div>
-				  	<p id="messages"></p>
-				  </div>
-			  	<div id="phylocanvas"></div>
-			  </div>
+            <p id="messages"></p>
+          </div>
+          <div id="phylocanvas"></div>
+        </div>
 
-			  <div id="slideDiv"  class="slideDiv">
-				  <ul class="slideUl">
-				  	<li id="metadata_li" data-toggle-id="metadataColumnsDiv" class="btn btn-default" data-text="Metadata Columns"><i class="fa fa-list-ul fa-xs"></i><span>Metadata</span></li>
-				  	<li id="tools_li" data-toggle-id="toolsDiv" class="btn btn-default"><i class="fa fa-cogs fa-fw"></i><span>Tools</span></li>
-				  </ul>
+        <div id="slideDiv"  class="slideDiv">
+          <ul class="slideUl">
+            <li id="metadata_li" data-toggle-id="metadataColumnsDiv" class="btn btn-default" data-text="Metadata Columns"><i class="fa fa-list-ul fa-xs"></i><span>Metadata</span></li>
+            <li id="tools_li" data-toggle-id="toolsDiv" class="btn btn-default"><i class="fa fa-cogs fa-fw"></i><span>Tools</span></li>
+          </ul>
 
-				  <div id="metadataColumnsDiv" class="slideDivContent">
-				  	<p class="title">Metadata Columns</p>
-				  	<div id="metadataColumns"></div>
-				  </div>
+          <div id="metadataColumnsDiv" class="slideDivContent">
+            <p class="title">Metadata Columns</p>
+            <div id="metadataColumns"></div>
+          </div>
 
-				  <div id="toolsDiv" class="pc-buttons slideDivContent">
-						<p class="title">Tools</p>
-	            <p>Change Tree Type </p>
-	            <button id="rectangular" class="btn btn-info btn-xs">Rectangular</button>
-	            <button id="circular" class="btn btn-default btn-xs">Circular</button>
-	            <button id="radial" class="btn btn-default btn-xs">Radial</button>
-	            <button id="diagonal" class="btn btn-default btn-xs">Diagonal</button>
-	            <button id="hierarchy" class="btn btn-default btn-xs">Hierarchical</button>
-	            <hr>
+          <div id="toolsDiv" class="pc-buttons slideDivContent">
+            <p class="title">Tools</p>
+              <p>Change Tree Type </p>
+              <button id="rectangular" class="btn btn-info btn-xs">Rectangular</button>
+              <button id="circular" class="btn btn-default btn-xs">Circular</button>
+              <button id="radial" class="btn btn-default btn-xs">Radial</button>
+              <button id="diagonal" class="btn btn-default btn-xs">Diagonal</button>
+              <button id="hierarchy" class="btn btn-default btn-xs">Hierarchical</button>
+              <hr>
 
-	            <p>Node Align </p>
-	            <button id="align" class="btn btn-default btn-xs">True/False</button>
-	            <hr>
+              <p>Node Align </p>
+              <button id="align" class="btn btn-default btn-xs">True/False</button>
+              <hr>
 
-	            <p>Metadata</p>
-	            <button id="metadata" class="btn btn-default btn-xs">Show/Hide</button>
-	            <hr>
+              <p>Metadata</p>
+              <button id="metadata" class="btn btn-default btn-xs">Show/Hide</button>
+              <hr>
 
-	            <p>Show/Hide Labels </p>
-	            <button id="show" class="btn btn-default btn-xs">Show</button>
-	            <button id="hide" class="btn btn-default btn-xs">Hide</button>
-	            <button id="toggle" class="btn btn-default btn-xs">Toggle</button>
-	            <hr>
+              <p>Show/Hide Labels </p>
+              <button id="show" class="btn btn-default btn-xs">Show</button>
+              <button id="hide" class="btn btn-default btn-xs">Hide</button>
+              <button id="toggle" class="btn btn-default btn-xs">Toggle</button>
+              <hr>
 
-	            <p>Node Size </p>
-	            Node size: <div class="slider slider_node"></div>
-	            Text size: <div class="slider slider_text"></div>
-	            <hr>
+              <p>Node Size </p>
+              Node size: <div class="slider slider_node"></div>
+              Text size: <div class="slider slider_text"></div>
+              <hr>
 
-	            <p>Search </p>
-	            <input type="text" id="searchbox">
-	          </div>
-				  </div>
-			  </div>
+              <p>Search </p>
+              <input type="text" id="searchbox">
+            </div>
+          </div>
+        </div>
 
 
-			</section>
+      </section>
       <footer class="footer">
         <p>WTSI <i class="fa fa-copyright"></i> 2015</p>
       </footer>

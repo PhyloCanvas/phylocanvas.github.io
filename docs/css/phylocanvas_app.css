@@ -59,14 +59,9 @@ body {
   right: 0;
 }
 
-#filedrag i {
-  margin-bottom: 0.25em;
-}
-
 #filedrag .info {
-  font-size: 1.6em;
   font-weight: 300;
-  margin-bottom: 2em;
+  margin-bottom: 1em;
 }
 
 #file-format-guide {
