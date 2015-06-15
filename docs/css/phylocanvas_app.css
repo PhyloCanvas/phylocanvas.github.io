@@ -39,12 +39,14 @@ body {
   margin: 0px;
   padding: 0px;
 }
+
 .hover {
   background-color: #9e9ac8;
 }
+
 #filedrag .centermiddle {
   background-image: url('img/phylocanvas_logo.png');
-  height: 250px;
+  height: 600px;
   padding: 25px;
   text-align: center;
   margin: auto;
@@ -54,9 +56,30 @@ body {
   bottom: 0;
   right: 0;
 }
+
+#filedrag i {
+  margin-bottom: 0.25em;
+}
+
 #filedrag .info {
   font-size: 1.6em;
   font-weight: 300;
+  margin-bottom: 2em;
+}
+
+#file-format-guide {
+  text-align: left;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+#file-format-guide h3,
+#file-format-guide h4 {
+  font-weight: 300;
+}
+
+#file-format-guide .file-format-example {
+  margin-top: 1em;
 }
 
 .center {
