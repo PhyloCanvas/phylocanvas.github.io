@@ -40,8 +40,10 @@ body {
   padding: 0px;
 }
 
-.hover {
+.hover,
+.hover pre {
   background-color: #9e9ac8;
+  border-color: #3E254A;
 }
 
 #filedrag .centermiddle {
