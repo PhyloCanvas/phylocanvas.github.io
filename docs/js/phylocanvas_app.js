@@ -43,12 +43,13 @@
       var reader = new FileReader();
 
       reader.onload = function () {
-        if(checkIfTreeFile(reader.result)) {
+        var content = reader.result.trim();
+        if(checkIfTreeFile(content)) {
           $('.slideDiv, #tools_li').show();
           // Clear canvas div before drawing new tree
           $(filedrag).find('#phylocanvas').children().remove();
           $('.centermiddle').remove();
-          renderPhyloCanvas(reader.result);
+          renderPhyloCanvas(content);
           if (Object.keys(metadata).length > 0) {
             renderMetadata(metadata);
           }
