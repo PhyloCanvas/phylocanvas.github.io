@@ -118,6 +118,15 @@
     checkbox.value = 'metadataColumnSelectAll';
     checkbox.id = 'metadataColumnSelectAllCheckbox';
     checkbox.checked = true;
+    checkbox.onchange = function() {
+      var checked = this.checked;
+      console.log(checked)
+      $('input[name="metadata_columns_checkbox"').each(function () {
+        this.checked = checked;
+      });
+      $('#metadata_columns_checkbox').change();
+
+    }
 
     var label = document.createElement('label');
     label.htmlFor = 'Select All';
@@ -234,13 +243,6 @@ $(document).ready(function () {
 
   /******** Metadata column checkbox functions ***************/
 
-  $(document).on('change', '#metadataColumnSelectAllCheckbox', {}, function () {
-    var checked = this.checked;
-    $('input[name="\'metadata_columns_checkbox"').each(function () {
-      this.checked = checked;
-    });
-    $('#metadata_columns_checkbox').change();
-  });
   $(document).on('change', '#metadata_columns_checkbox', {}, function () {
     var view_col_array = [];
     $('#metadata_columns_checkbox:checked').each(function () {
