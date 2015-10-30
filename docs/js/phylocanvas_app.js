@@ -4,7 +4,7 @@
 
   // output information
   function outputMessage(msg) {
-    $('#messages').html(msg).effect('highlight', { color: 'orange' }, 3000);
+    $('#messages').html(msg).effect('highlight', { color: '#3C7383' }, 3000);
   }
 
   // file drag hover

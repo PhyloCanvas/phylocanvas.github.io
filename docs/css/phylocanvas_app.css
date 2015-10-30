@@ -37,13 +37,13 @@ body {
   position: absolute;
   bottom: 30px;
   right: 20px;
-  opacity: 0.2;
+  opacity: 0.4;
   z-index: 9999;
 
 }
 .hover,
 .hover pre {
-  background-color: #9e9ac8;
+  background-color: hsl(193.5,37.2%,80.5%);
   border-color: #3E254A;
 }
 
