@@ -1,3 +1,8 @@
+:root {
+  --pcGreen: #3C7383;
+  --pcGreenLight: #9BB7BF;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -8,7 +13,7 @@ body {
   font-family: Roboto, arial, sans-serif;
   font-weight: 300;
   font-size: 100%;
-  color: #3C7383;
+  color: var(--pcGreen);
 }
 
 header {
@@ -47,15 +52,13 @@ header {
 }
 
 .menu a {
-  color: #3C7383;
+  color: var(--pcGreen);
   padding: .5em;
 }
 
 .menu a:hover,
 .menu a:focus,
 .menu a:active {
-  color: #fff;
-  background-color: #3C7383;
   text-decoration: none;
 }
 
@@ -68,7 +71,7 @@ header {
 
 .cta a {
   padding: 1em;
-  background-color: #3C7383;
+  background-color: var(--pcGreen);
   color: #fff;
   text-decoration: none;
   border-radius: 3px;
@@ -77,10 +80,10 @@ header {
 .cta a:hover,
 .cta a:focus,
 .cta a:active {
-  background-color: #9BB7BF;
+  background-color: var(--pcGreenLight);
 }
 
-html, body, section, footer {
+html, body, section, footer, #content, .full-height {
   height: 100%;
 }
 
@@ -89,7 +92,7 @@ section {
 }
 
 footer {
-  background-color: #3C7383;
+  background-color: var(--pcGreen);
   color: #fff;
   padding: 2em;
 }

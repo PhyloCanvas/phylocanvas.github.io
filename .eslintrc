@@ -1,0 +1,4 @@
+{
+  "extends": "./node_modules/cgps-style/linters/.eslintrc",
+  "rules": {}
+}
