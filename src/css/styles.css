@@ -20,6 +20,18 @@ header {
   padding-top: 2em;
 }
 
+.github-link {
+  position: absolute;
+  z-index: 1;
+  top: 0.5em;
+  left: 0.5em;
+}
+
+.github-link > img {
+  width: 2em;
+  color: var(--pcGreen);
+}
+
 .logo {
   display: block;
   width: 80%;
@@ -75,12 +87,15 @@ header {
   color: #fff;
   text-decoration: none;
   border-radius: 3px;
+  border: 2px solid transparent;
 }
 
 .cta a:hover,
 .cta a:focus,
 .cta a:active {
-  background-color: var(--pcGreenLight);
+  color: var(--pcGreen);
+  border-color: currentColor;
+  background-color: transparent;
 }
 
 html, body, section, footer, #content, .full-height {
@@ -99,4 +114,17 @@ footer {
 
 footer > p {
   line-height: 1.5;
+}
+
+footer > img {
+  max-width: 30em;
+}
+
+.acknowledgements {
+  font-size: 1em;
+  margin-top: 2em;
+}
+
+.acknowledgements > a {
+  color: #fff;
 }

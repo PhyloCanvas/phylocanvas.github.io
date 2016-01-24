@@ -5,6 +5,8 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const isProd = process.env.NODE_ENV === 'production';
 const paths = [
   '/',
+  'getting-started',
+  'api',
 ];
 
 module.exports = {
@@ -26,7 +28,7 @@ module.exports = {
         loader: 'babel',
         query: {
           presets: [ 'react', 'es2015', 'stage-0' ],
-          plugins: [
+          plugins: isProd ? [
             [ 'react-transform', {
               'transforms': [ {
                 'transform': 'react-transform-hmr',
@@ -37,7 +39,7 @@ module.exports = {
                 'imports': [ 'react', 'redbox-react' ],
               } ],
             } ],
-          ],
+          ] : [],
         },
         include: /src/,
       },
@@ -59,7 +61,10 @@ module.exports = {
     new webpack.NoErrorsPlugin(),
     new StaticSiteGeneratorPlugin('main', paths, null),
     new ExtractTextPlugin('styles.css'),
-  ],
+  ].concat(isProd ? [
+    new webpack.optimize.UglifyJsPlugin(),
+    new webpack.optimize.DedupePlugin(),
+  ] : []),
 
   postcss: [
     require('autoprefixer')({ browsers: [ 'last 2 versions' ] }),
