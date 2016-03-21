@@ -31,15 +31,23 @@ header {
 
 .github-link > img {
   width: 2em;
-  color: var(--pcGreen);
+  fill: var(--pcGreen);
 }
 
 .logo {
   display: block;
   width: 80%;
   margin: 0 auto;
-  max-width: 800px;
+  max-width: 25em;
+  transform: translateX(-5%);
 }
+
+@media (min-width: 25em) {
+  .logo {
+    width: 62.5%
+  }
+}
+
 
 .lead {
   font-size: 1.25em;
@@ -101,10 +109,16 @@ header {
   bottom: 1em;
   left: 0;
   right: 0;
+  font-size: 1.25em;
+}
+
+@media (min-width: 48em) {
+  .cta {
+    font-size: 1.5em;
+  }
 }
 
 .cta > span {
-  font-size: 1.5em;
   padding: 1em;
   background-color: var(--transparentWhite);
 }
@@ -146,6 +160,19 @@ footer > p {
 
 footer > img {
   max-width: 30em;
+}
+
+.contact-email {
+  display: block;
+  color: #fff;
+  font-size: 1.5em;
+  margin: 0.5em 0 1.5em;
+}
+
+.contact-email:hover,
+.contact-email:focus,
+.contact-email:active {
+  text-decoration: none;
 }
 
 .icon-acknowledgement {

@@ -11,6 +11,7 @@ export default React.createClass({
       });
 
       tree.branchColour = '#3C7383';
+      tree.selectedColour = '#673c90';
       tree.highlightColour = '#3C7383';
       tree.baseNodeSize = 10;
       tree.padding = 32;
@@ -70,7 +71,8 @@ export default React.createClass({
         <footer id="contact">
           <p>Phylocanvas is maintained by<br />The Centre for Genomic Pathogen Surveillance.</p>
           <img src="/img/CGPS.white_.FINAL_.svg" />
-          <div className="icon-acknowledgement">Github icon made by <a href="http://www.flaticon.com/authors/dave-gandy" title="Dave Gandy">Dave Gandy</a> from <a href="http://www.flaticon.com" title="Flaticon">www.flaticon.com</a>             is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0">CC BY 3.0</a></div>
+          <a className="contact-email" href="mailto:cgps@sanger.ac.uk">cgps@sanger.ac.uk</a>
+          <p className="icon-acknowledgement">Github icon made by <a href="http://www.flaticon.com/authors/dave-gandy" title="Dave Gandy">Dave Gandy</a> from <a href="http://www.flaticon.com" title="Flaticon">www.flaticon.com</a>             is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0">CC BY 3.0</a></p>
         </footer>
       </div>
     );
