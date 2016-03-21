@@ -5,8 +5,6 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const isProd = process.env.NODE_ENV === 'production';
 const paths = [
   '/',
-  'getting-started',
-  'api',
 ];
 
 module.exports = {
