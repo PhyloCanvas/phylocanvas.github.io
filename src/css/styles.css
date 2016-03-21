@@ -1,6 +1,7 @@
 :root {
   --pcGreen: #3C7383;
   --pcGreenLight: #9BB7BF;
+  --transparentWhite: rgba(255, 255, 255, 0.9);
 }
 
 * {
@@ -17,7 +18,8 @@ body {
 }
 
 header {
-  padding-top: 2em;
+  padding: 1.5em 0 .5em;
+  background: var(--transparentWhite);
 }
 
 .github-link {
@@ -50,8 +52,24 @@ header {
 }
 
 #phylocanvas {
-  flex-grow: 1;
-  height: auto !important;
+  position: absolute;
+  top: 25%;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 0;
+  text-align: left;
+}
+
+/* z-index-hacking to position things on top of tree */
+.home-intro > header {
+  position: relative;
+}
+.cta, .home-intro > header {
+  z-index: 1;
+}
+.github-link, .menu {
+  z-index: 2;
 }
 
 .menu {
@@ -79,6 +97,16 @@ header {
 
 .cta {
   padding: 1em 0;
+  position: absolute;
+  bottom: 1em;
+  left: 0;
+  right: 0;
+}
+
+.cta > span {
+  font-size: 1.5em;
+  padding: 1em;
+  background-color: var(--transparentWhite);
 }
 
 .cta a {
@@ -98,13 +126,8 @@ header {
   background-color: transparent;
 }
 
-html, body, section, footer, #content, .full-height {
-  min-height: 100%;
-}
-
-.flex-column {
-  display: flex;
-  flex-direction: column;
+html, body, section, #content, .full-height {
+  height: 100%;
 }
 
 section {
@@ -125,11 +148,11 @@ footer > img {
   max-width: 30em;
 }
 
-.acknowledgements {
-  font-size: 1em;
+.icon-acknowledgement {
+  font-size: .8em;
   margin-top: 2em;
 }
 
-.acknowledgements > a {
+.icon-acknowledgement > a {
   color: #fff;
 }
