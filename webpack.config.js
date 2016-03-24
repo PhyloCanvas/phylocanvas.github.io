@@ -10,10 +10,11 @@ const paths = [
 module.exports = {
 
   entry: {
-    'main': [
-      'webpack-hot-middleware/client',
-      './src/index.js',
-    ],
+    main: isProd ?
+      './src/index.js' : [
+        'webpack-hot-middleware/client',
+        './src/index.js',
+      ],
   },
 
   module: {
@@ -55,14 +56,20 @@ module.exports = {
 
   plugins: [
     new webpack.optimize.OccurenceOrderPlugin(),
-    new webpack.HotModuleReplacementPlugin(),
     new webpack.NoErrorsPlugin(),
-    new StaticSiteGeneratorPlugin('main', paths, null),
-    new ExtractTextPlugin('styles.css'),
   ].concat(isProd ? [
     new webpack.optimize.UglifyJsPlugin(),
     new webpack.optimize.DedupePlugin(),
-  ] : []),
+    new webpack.DefinePlugin({
+      'process.env': {
+        NODE_ENV: JSON.stringify('production'),
+      },
+    }),
+    new ExtractTextPlugin('styles.css'),
+    new StaticSiteGeneratorPlugin('main', paths, null),
+  ] : [
+    new webpack.HotModuleReplacementPlugin(),
+  ]),
 
   postcss: [
     require('postcss-cssnext'),
