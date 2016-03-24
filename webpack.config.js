@@ -27,7 +27,7 @@ module.exports = {
         loader: 'babel',
         query: {
           presets: [ 'react', 'es2015', 'stage-0' ],
-          plugins: isProd ? [
+          plugins: isProd ? [] : [
             [ 'react-transform', {
               'transforms': [ {
                 'transform': 'react-transform-hmr',
@@ -38,7 +38,7 @@ module.exports = {
                 'imports': [ 'react', 'redbox-react' ],
               } ],
             } ],
-          ] : [],
+          ],
         },
         include: /src/,
       },
