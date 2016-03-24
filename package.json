@@ -16,14 +16,13 @@
     "express": "^4.13.4",
     "extract-text-webpack-plugin": "^1.0.1",
     "file-loader": "^0.8.5",
-    "history": "^1.17.0",
     "phylocanvas-quickstart": "github:phylocanvas/phylocanvas-quickstart",
     "postcss": "^5.0.14",
     "postcss-cssnext": "^2.4.0",
     "postcss-loader": "^0.8.0",
     "react": "^0.14.6",
     "react-dom": "^0.14.6",
-    "react-router": "^1.0.3",
+    "react-router": "^2.0.1",
     "react-transform-catch-errors": "^1.0.1",
     "react-transform-hmr": "^1.0.1",
     "redbox-react": "^1.2.0",
@@ -31,7 +30,7 @@
     "style-loader": "^0.13.0",
     "webpack": "^1.12.12",
     "webpack-dev-middleware": "^1.5.1",
-    "webpack-hot-middleware": "richardgoater/webpack-hot-middleware"
+    "webpack-hot-middleware": "^2.10.0"
   },
   "scripts": {
     "start": "node dev-server.js",
