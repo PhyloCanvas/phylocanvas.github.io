@@ -1,12 +1,11 @@
 # Quick Start
-
 ```html
 <!DOCTYPE html>
 <html>
 <head>
   <style>
     body {
-      margin: 10px auto;
+      margin: 0.625em auto;
       max-width: 60em;
     }
     #phylocanvas {
@@ -22,17 +21,23 @@
   <script type="application/javascript">
     (function (Phylocanvas) {
       var tree = Phylocanvas.createTree('phylocanvas');
-
-      tree.on('error', function (event) { throw event.error; });
-
-      tree.on('loaded', function () {
-        console.log('loaded');
-      });
-
       tree.load('(A:0.1,B:0.2,(C:0.3,D:0.4)E:0.5)F;');
     })(window.Phylocanvas);
   </script>
 </body>
 </html>
-
 ```
+Above is an example of a simple Phylocanvas application.
+
+For simple applications and demos we recommend referencing the Quickstart package as seen above. This automatically enables the following plugins:
+
+* [Ajax](/plugins/ajax)
+* [Context Menu](/plugins/context-menu)
+* [History](/plugins/history)
+* [Metadata](/plugins/metadata)
+
+For larger applications we recommend [using a module bundler and package management system](/install) to include only the plugins you need.
+
+## Next Steps
+
+Discover [the features of Phylocanvas](/features) or [browse the API](/api)
