@@ -46,7 +46,7 @@ export default React.createClass({
     return (
       <div className="full-height">
         <a className="github-link" href="https://github.com/phylocanvas">
-          <img src="/img/github.svg"/>
+          <img src="/img/github.svg" />
         </a>
         <nav className="menu">
           <li>

@@ -5,9 +5,12 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const isProd = process.env.NODE_ENV === 'production';
 const paths = [
   '/',
+  '/quickstart',
 ];
 
 module.exports = {
+
+  devtool: isProd ? null : '#eval-source-map',
 
   entry: {
     main: isProd ?
@@ -20,7 +23,7 @@ module.exports = {
   module: {
     loaders: [
       isProd ?
-        { test: /.css$/, loader: ExtractTextPlugin.extract('style', 'css', 'postcss') } :
+        { test: /.css$/, loader: ExtractTextPlugin.extract('css!postcss') } :
         { test: /.css$/, loaders: [ 'style', 'css', 'postcss' ] },
       { test: /\.(png|jpg|jpeg|gif)$/, loader: 'file' },
       { test: /\.js$/,
@@ -29,19 +32,20 @@ module.exports = {
           presets: [ 'react', 'es2015', 'stage-0' ],
           plugins: isProd ? [] : [
             [ 'react-transform', {
-              'transforms': [ {
-                'transform': 'react-transform-hmr',
-                'imports': [ 'react' ],
-                'locals': [ 'module' ],
+              transforms: [ {
+                transform: 'react-transform-hmr',
+                imports: [ 'react' ],
+                locals: [ 'module' ],
               }, {
-                'transform': 'react-transform-catch-errors',
-                'imports': [ 'react', 'redbox-react' ],
+                transform: 'react-transform-catch-errors',
+                imports: [ 'react', 'redbox-react' ],
               } ],
             } ],
           ],
         },
         include: /src/,
       },
+      { test: /\.json$/, loader: 'json' },
     ],
   },
 
@@ -57,6 +61,7 @@ module.exports = {
   plugins: [
     new webpack.optimize.OccurenceOrderPlugin(),
     new webpack.NoErrorsPlugin(),
+    new StaticSiteGeneratorPlugin('main', paths, null),
   ].concat(isProd ? [
     new webpack.optimize.UglifyJsPlugin(),
     new webpack.optimize.DedupePlugin(),
@@ -66,7 +71,6 @@ module.exports = {
       },
     }),
     new ExtractTextPlugin('styles.css'),
-    new StaticSiteGeneratorPlugin('main', paths, null),
   ] : [
     new webpack.HotModuleReplacementPlugin(),
   ]),
