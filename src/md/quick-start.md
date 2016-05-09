@@ -36,6 +36,8 @@ For simple applications and demos we recommend referencing the Quickstart packag
 * [History](/plugins/history)
 * [Metadata](/plugins/metadata)
 
+This also includes [the Phylocanvas polyfill](/install#polyfill) for browsers that don't support certain required features.
+
 For larger applications we recommend [using a module bundler and package management system](/install) to include only the plugins you need.
 
 ## Next Steps

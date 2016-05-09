@@ -23,20 +23,20 @@ tree.alignLabels = true; // false to reset
 tree.draw();
 ```
 
-## Collapse Nodes
+## Collapse Branches
 ```JavaScript
 tree.branches.branchNameOrId.collapsed = true;
 tree.draw();
 ```
 
-## Global Node and Text Sizes
+## Global Leaf and Text Sizes
 ```JavaScript
 tree.setNodeSize(2);
 
 tree.setTextSize(20);
 ```
 
-## Style Nodes Individually
+## Style Branches Individually
 ```JavaScript
 for (let leaf of tree.leaves) {
   leaf.setDisplay({
@@ -63,4 +63,23 @@ tree.draw();
 ```JavaScript
 tree.branches.branchNameOrId.rotate();
 tree.draw();
+```
+
+## Select Branches
+```JavaScript
+tree.branches.branchNameOrId.selected = true;
+tree.branches.branchNameOrId.cascadeFlag('selected', true); // cascade to children
+tree.draw();
+```
+
+## Highlight Leaves
+```JavaScript
+tree.leaves[0].highlighted = true;
+tree.draw();
+```
+
+## Find Leaves
+```JavaScript
+tree.findLeaves(regex); // searches id by default
+tree.findLeaves(regex, 'label');
 ```
