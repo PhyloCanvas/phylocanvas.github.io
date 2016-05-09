@@ -54,7 +54,7 @@ for (let leaf of tree.leaves) {
       font: 'Arial',
       format: 'bold',
     },
-  })
+  });
 }
 tree.draw();
 ```
