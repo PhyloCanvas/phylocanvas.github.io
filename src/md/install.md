@@ -2,11 +2,11 @@
 
 ## Using npm
 ```
-npm install --save-dev phylocanvas
+npm install --save-dev github:phylocanvas/phylocanvas
 ```
 We recommend installing phylocanvas as a dev dependency as it should be included in the bundle of your application.
 
-Simply import the library to get started:
+Import the library to get started:
 ```JavaScript
 import Phylocanvas from 'phylocanvas';
 ```
@@ -20,8 +20,7 @@ Phylocanvas includes a polyfill for the following features:
 - Sets
 - `Object.assign`
 
-If your application needs to run in a environment that doesn't support one of these features, please import the polyfill *before* importing Phylocanvas as above, usually in the entry point of your application.
-
+If your application needs to run in a environment that doesn't support one of these features, please import the polyfill *before* importing Phylocanvas as above, usually in the entry point of your application:
 ```JavaScript
 import 'phylocanvas/polyfill';
 ```
