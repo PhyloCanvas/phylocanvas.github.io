@@ -13,7 +13,7 @@ tree.setTreeType('rectangular'); // or radial, circular, diagonal, hierarchical
 
 ## Show/Hide Labels
 ```JavaScript
-tree.showLabels = true; // false to hide
+tree.showLabels = false; // defaults to true
 tree.draw();
 ```
 
@@ -81,5 +81,5 @@ tree.draw();
 ## Find Leaves
 ```JavaScript
 tree.findLeaves(regex); // searches id by default
-tree.findLeaves(regex, 'label');
+tree.findLeaves(regex, 'label'); // specify a property to search as the second param
 ```
