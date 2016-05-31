@@ -12,10 +12,15 @@ import {
 import routes from './routes';
 import documentTemplate from './document';
 
+import { renderingClientSide } from './utils';
+
 // Client render (optional):
-if (typeof document !== 'undefined') {
+if (renderingClientSide()) {
   require('./css/styles.css');
-  render(<Router history={browserHistory} routes={routes} />, document.getElementById('content'));
+  render(
+    <Router history={browserHistory} routes={routes} />,
+    document.getElementById('content')
+  );
 }
 
 // Exported static site renderer:

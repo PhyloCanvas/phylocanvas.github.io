@@ -1,9 +1,11 @@
 import React from 'react';
 
+import { renderingClientSide } from './utils';
+
 export default React.createClass({
 
   componentDidMount() {
-    if (typeof document !== 'undefined') {
+    if (renderingClientSide()) {
       const Phylocanvas = require('phylocanvas-quickstart');
       const tree = Phylocanvas.createTree('phylocanvas', {
         history: false,
@@ -37,7 +39,7 @@ export default React.createClass({
   },
 
   componentWillUnmount() {
-    if (typeof document !== 'undefined') {
+    if (renderingClientSide()) {
       window.removeEventListener('resize', this.resizeEvent);
     }
   },

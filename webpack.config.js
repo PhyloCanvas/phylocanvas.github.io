@@ -5,7 +5,9 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const isProd = process.env.NODE_ENV === 'production';
 const paths = [
   '/',
-  '/quickstart',
+  '/docs/',
+  '/docs/quick-start/',
+  '/docs/migrating-from-1x/',
 ];
 
 module.exports = {
