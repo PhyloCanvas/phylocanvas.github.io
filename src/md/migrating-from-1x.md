@@ -1,4 +1,6 @@
-### Breaking Changes
+# Migrating from v1.x
+
+## Breaking Changes
 
 * Trees should be created using `Phylocanvas.createTree`
 * `canvasEl` has been renamed to `containerElement`.
@@ -9,6 +11,6 @@
 * `nodeAlign` has been renamed to `alignLabels`, which is a getter/setter.
 * `hierarchy` tree type is now `hierarchical` for consistency.
 
-### Configuration
+## Configuration
 
 As of v2.3, all configuration can now be passed via the config object parameter, as it will simply be assigned to the tree instance.

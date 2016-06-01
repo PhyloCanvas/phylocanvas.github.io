@@ -1,3 +1,4 @@
+# Quick Start
 ```html
 <!DOCTYPE html>
 <html>
@@ -28,17 +29,17 @@
 ```
 Above is an example of a simple Phylocanvas application.
 
-For simple applications and demos we recommend referencing the Quickstart package as seen above. This automatically enables the following plugins:
+For simple applications and demos we recommend linking to the [phylocanvas-quickstart package](https://github.com/phylocanvas/phylocanvas-quickstart) as shown above. This automatically enables the following plugins:
 
 * [Context Menu](https://github.com/phylocanvas/phylocanvas-plugin-context-menu)
 * [History](https://github.com/phylocanvas/phylocanvas-plugin-history)
 * [Metadata](https://github.com/phylocanvas/phylocanvas-plugin-metadata)
 * [Ajax](https://github.com/phylocanvas/phylocanvas-plugin-ajax)
 
-Also included is [the Phylocanvas polyfill](/docs/install#polyfill]] for browsers that don't support certain required features.
+Also included is [the Phylocanvas polyfill](/docs/install#polyfill) for browsers that don't support certain required features.
 
 For larger applications we recommend [using a module bundler and package management system](/install) to include only the plugins you need.
 
 ## Next Steps
 
-Discover [the features of Phylocanvas](/docs/features) or [browse the API](/docs/api)
+Discover [the features of Phylocanvas](/docs/features).

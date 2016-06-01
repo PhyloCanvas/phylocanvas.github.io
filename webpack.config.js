@@ -77,7 +77,7 @@ module.exports = {
     new webpack.HotModuleReplacementPlugin(),
   ]),
 
-  postcss: [
-    require('postcss-cssnext'),
-  ],
+  postcss() {
+    return [ require('postcss-cssnext') ];
+  },
 };

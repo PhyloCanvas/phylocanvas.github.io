@@ -1,5 +1,7 @@
 import React from 'react';
+import { Link } from 'react-router';
 
+import App from './App.react';
 import { renderingClientSide } from './utils';
 
 export default React.createClass({
@@ -27,6 +29,7 @@ export default React.createClass({
           });
         }
         tree.draw();
+        this.refs.canvas.style.opacity = 1;
       });
 
       this.resizeEvent = () => {
@@ -46,20 +49,9 @@ export default React.createClass({
 
   render() {
     return (
-      <div className="full-height">
-        <a className="github-link" href="https://github.com/phylocanvas">
-          <img src="/img/github.svg" />
-        </a>
-        <nav className="menu">
-          <li>
-            <a href="/v1.x">v1.x docs</a>
-          </li>
-          <li>
-            <a href="#contact">contact</a>
-          </li>
-        </nav>
-        <section className="home-intro">
-          <div id="phylocanvas" />
+      <App className="splash-screen">
+        <section className="home-intro text-center">
+          <div id="phylocanvas" ref="canvas" />
           <header>
             <h1>
               <img src="/img/Phylo.FINAL.svg" className="logo" alt="phylocanvas" />
@@ -67,16 +59,10 @@ export default React.createClass({
             <p className="lead">Interactive tree visualisation <br />for the web.</p>
           </header>
           <p className="cta">
-            <span>v2.x docs coming soon.</span>
+            <Link to="/docs">Get Started with v2.x</Link>
           </p>
         </section>
-        <footer id="contact">
-          <p>Phylocanvas is maintained by<br />The Centre for Genomic Pathogen Surveillance.</p>
-          <img src="/img/CGPS.white_.FINAL_.svg" />
-          <a className="contact-email" href="mailto:cgps@sanger.ac.uk">cgps@sanger.ac.uk</a>
-          <p className="icon-acknowledgement">Github icon made by <a href="http://www.flaticon.com/authors/dave-gandy" title="Dave Gandy">Dave Gandy</a> from <a href="http://www.flaticon.com" title="Flaticon">www.flaticon.com</a>             is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0">CC BY 3.0</a></p>
-        </footer>
-      </div>
+      </App>
     );
   },
 });

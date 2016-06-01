@@ -1,4 +1,4 @@
-# Phylocanvas Wiki
+# Phylocanvas v2.x Documentation
 
 * [Quick Start](/docs/quick-start)
 * [Installation]()

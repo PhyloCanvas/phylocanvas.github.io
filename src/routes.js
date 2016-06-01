@@ -1,5 +1,6 @@
 import React from 'react';
 
+import App from './App.react';
 import Home from './Home.react';
 import MarkdownContent from './MarkdownContent.react';
 
@@ -15,7 +16,7 @@ const docsChildRoutes = [
 
 export default [
   { path: 'docs',
-    component: ({ children }) => <div>{children}</div>,
+    component: App,
     indexRoute: { component: MarkdownContent },
     childRoutes: docsChildRoutes,
   },
