@@ -1,4 +1,6 @@
-### Using npm
+# Install
+
+## Using npm
 ```
 npm install --save-dev github:phylocanvas/phylocanvas
 ```
@@ -9,7 +11,7 @@ Import the library to get started:
 import Phylocanvas from 'phylocanvas';
 ```
 
-### Polyfill
+## Polyfill
 Phylocanvas includes an optional polyfill for the following features:
 
 - Symbols

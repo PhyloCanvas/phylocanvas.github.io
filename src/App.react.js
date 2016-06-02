@@ -7,33 +7,37 @@ export default React.createClass({
     return (
       <div className={`clearfix ${this.props.className || ''}`.trim()}>
         <header>
-          <a className="github-link" href="https://github.com/phylocanvas">
-            <img src="/img/github.svg" />
-          </a>
-          <nav className="menu">
+          <Link className="docs-logo" to="/">
+            <img src="/img/Phylo.Icon.FINAL.svg" alt="phylocanvas" />
+          </Link>
+          <nav className="top-nav">
             <li>
-              <a href="/v1.x">v1.x docs</a>
+              <a href="/v1.x">v1.x Docs</a>
             </li>
             <li>
-              <a href="#contact">contact</a>
+              <a href="#contact">Contact</a>
+            </li>
+            <li>
+              <a className="github-link" href="https://github.com/phylocanvas">
+                <img src="/img/github.svg" />
+              </a>
             </li>
           </nav>
-        </header>
-        <div className="margins clearfix">
           <nav className="docs-nav">
             <h2>Navigation</h2>
+            <li><Link to="/docs">Docs Home</Link></li>
             <li><Link to="/docs/quick-start">Quick Start</Link></li>
             <li><Link to="/docs/install">Installation</Link></li>
             <li><Link to="/docs/features">Features</Link></li>
             <li><Link to="/docs/events">Events</Link></li>
             <li><Link to="/docs/plugins">Plugins</Link></li>
-            <li><Link to="/docs/migrating-from-1x">Migrating from 1.x</Link></li>
+            <li><Link to="/docs/migrating-from-v1x">Migrating from v1.x</Link></li>
             <li><Link to="/docs/development">Development</Link></li>
           </nav>
-          <main>
-            {this.props.children}
-          </main>
-        </div>
+        </header>
+        <main className="margins">
+          {this.props.children}
+        </main>
         <footer id="contact" className="text-center">
           <p>Phylocanvas is maintained by<br /><strong>The Centre for Genomic Pathogen Surveillance</strong>.</p>
           <a href="http://www.pathogensurveillance.net">

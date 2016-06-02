@@ -25,6 +25,7 @@
     "react-dom": "^15.1.0",
     "react-markdown": "^2.2.0",
     "react-router": "^2.3.0",
+    "react-syntax-highlighter": "^2.1.0",
     "react-transform-catch-errors": "^1.0.1",
     "react-transform-hmr": "^1.0.1",
     "redbox-react": "^1.2.0",

@@ -49,7 +49,7 @@ export default React.createClass({
 
   render() {
     return (
-      <App className="splash-screen">
+      <App className="home-page">
         <section className="home-intro text-center">
           <div id="phylocanvas" ref="canvas" />
           <header>

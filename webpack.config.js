@@ -7,7 +7,12 @@ const paths = [
   '/',
   '/docs/',
   '/docs/quick-start/',
-  '/docs/migrating-from-1x/',
+  '/docs/install/',
+  '/docs/features/',
+  '/docs/events/',
+  '/docs/plugins/',
+  '/docs/migrating-from-v1x/',
+  '/docs/development/',
 ];
 
 module.exports = {
@@ -54,6 +59,7 @@ module.exports = {
   output: {
     filename: 'index.js',
     path: __dirname,
+    publicPath: '/',
     /* IMPORTANT!
      * You must compile to UMD or CommonJS
      * so it can be required in a Node context: */

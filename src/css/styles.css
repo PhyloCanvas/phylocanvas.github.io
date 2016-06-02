@@ -26,10 +26,6 @@ body {
 
 main {
   min-height: 100%;
-  @media(min-width: 58.75em) {
-    width: 80%;
-    float: left;
-  }
 }
 
 h1, h2, h3 {
@@ -53,8 +49,20 @@ a:active {
   text-decoration: none;
 }
 
+a > img {
+  width: 100%;
+}
+
 pre {
   overflow-x: auto;
+  padding: 1em;
+  background-color: #efefef;
+  border: 1px solid var(--pcGreenLight);
+}
+
+pre, code {
+  font-family: 'Roboto Mono', monospace;
+  font-size: .9em;
 }
 
 footer {
@@ -88,66 +96,62 @@ footer img {
 }
 
 .margins {
-  padding: 3em 2.5em 2.5em;
-  max-width: 1024px;
+  padding: 4em 2.5em 4em;
+  max-width: 58.75em;
   margin: 0 auto;
 }
 
 
 /* Homepage modifiers */
 
-.splash-screen,
-.splash-screen #content,
-.splash-screen .full-height {
+.home-page,
+.home-page #content,
+.home-page .full-height {
   height: 100%;
 }
 
 
-.splash-screen .margins {
+.home-page .margins {
   padding: 0;
   height: 100%;
   max-width: none;
 }
 
-.splash-screen main {
+.home-page main {
   float: none;
   height: 100%;
   width: 100%;
 }
 
-.splash-screen .docs-nav {
+.home-page .docs-logo,
+.home-page .docs-nav {
   display: none;
 }
 
 
 /* Content - Header */
 
-.github-link {
-  position: absolute;
-  z-index: 1;
-  top: 1em;
-  left: 1em;
-}
 
 .github-link > img {
   width: 2em;
   fill: var(--pcGreen);
 }
 
-.github-link, .menu {
+.top-nav {
   z-index: 2;
 }
 
-.menu {
+.top-nav {
   position: absolute;
   top: 1em;
   right: 1em;
   display: block;
 }
 
-.menu li {
+.top-nav li {
   list-style: none;
   display: inline-block;
+  vertical-align: middle;
   padding: .5em;
 }
 
@@ -228,10 +232,18 @@ footer img {
 
 /* Content - Docs */
 
+.docs-logo {
+  position: absolute;
+  top: 1.25em;
+  left: 1.25em;
+  width: 2.5em;
+}
+
 .docs-nav {
-  float: right;
-  width: 20%;
-  margin-right: -1em;
+  position: absolute;
+  z-index: 2;
+  top: 4em;
+  right: 2em;
   list-style: none;
   text-align: right;
   display: none;
@@ -243,6 +255,11 @@ footer img {
 .docs-nav li {
   margin-bottom: 0.5em;
 }
+
+.feature-demo {
+  height: 240px;
+}
+
 
 /* Content - Footer */
 

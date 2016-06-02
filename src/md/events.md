@@ -1,4 +1,6 @@
-### Event types and data
+# Events
+
+## Event types and data
 
 * `loading`
 * `loaded`
@@ -10,7 +12,7 @@
   * `nodeIds` - array of ids that were updated
 
 
-### Adding a Listener
+## Adding a Listener
 
 ```JavaScript
 tree.on(`updated` ({ property, nodeIds }) => {
