@@ -11,7 +11,7 @@ const noEvalDirective = '/* no-eval */\n';
 export default React.createClass({
 
   propTypes: {
-    source: React.PropTypes.string.required,
+    source: React.PropTypes.string.isRequired,
   },
 
   getInitialState() {
