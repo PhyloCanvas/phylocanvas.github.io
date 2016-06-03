@@ -2,6 +2,9 @@ import React from 'react';
 import Markdown from 'react-markdown';
 import { Link } from 'react-router';
 
+import FeatureDemo from './FeatureDemo.react';
+import SyntaxHighlighter from './SyntaxHighlighter.react';
+
 const renderers = {
   Link: ({ href, title, children }) => {
     if (href[0] === '/') {
@@ -14,6 +17,14 @@ const renderers = {
       <a href={href} title={title}>{children}</a>
     );
   },
+  CodeBlock: ({ language, literal }) => (
+    (language === 'phyloscript') ? (
+      <FeatureDemo source={literal} />
+    ) : (
+    <SyntaxHighlighter language={language}>
+      {literal}
+    </SyntaxHighlighter>
+  )),
 };
 
 export default React.createClass({

@@ -1,7 +1,7 @@
 # Install
 
 ## Using npm
-```
+```bash
 npm install --save-dev github:phylocanvas/phylocanvas
 ```
 We recommend installing phylocanvas as a dev dependency as it should be included in the bundle of your application.

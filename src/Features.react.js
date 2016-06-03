@@ -1,18 +1,16 @@
 import React from 'react';
-import SyntaxHighlighter from 'react-syntax-highlighter';
-import style from 'react-syntax-highlighter/dist/styles/color-brewer';
+import SyntaxHighlighter from './SyntaxHighlighter.react';
 
 import { renderingClientSide } from './utils';
 
-const language = {
-  javascript: require('highlight.js/lib/languages/javascript'),
+const loadNewickString = {
+  id: 'load-newick-string',
+  title: 'Load Newick String',
+  code: require('raw!./features/load-newick-string.js?'),
 };
 
 const features = [
-  { id: 'load-newick-string',
-    title: 'Load Newick String',
-    code: require('raw!./features/load-newick-string.js?'),
-  },
+  loadNewickString,
   { id: 'set-tree-type',
     title: 'Set Tree Type',
     code: require('raw!./features/set-tree-type.js?'),
@@ -39,10 +37,12 @@ function cleanRawCode(code) {
   );
 }
 
+const createDemoId = id => `demo-${id}`;
+
 function initialiseDemo(Phylocanvas, id) {
-  return require('./features/load-newick-string.js')(Phylocanvas, {
+  return require(`./features/${loadNewickString.id}.js`)(Phylocanvas, {
     newickString,
-    elementOrId: id,
+    elementOrId: createDemoId(id),
   });
 }
 
@@ -52,7 +52,7 @@ export default React.createClass({
     if (renderingClientSide()) {
       const Phylocanvas = require('phylocanvas-quickstart');
 
-      initialiseDemo(Phylocanvas, features[0].id);
+      initialiseDemo(Phylocanvas, loadNewickString.id);
 
       for (let { id } of features.slice(1)) {
         let tree = initialiseDemo(Phylocanvas, id);
@@ -66,10 +66,10 @@ export default React.createClass({
       <div>
         <h1>Features</h1>
         { features.map(({ id, title, code }) => (
-          <article key={id}>
+          <article key={id} id={id}>
             <h2>{title}</h2>
-            <div id={id} className="feature-demo"></div>
-            <SyntaxHighlighter language={language} style={style}>
+            <div id={createDemoId(id)} className="feature-demo"></div>
+            <SyntaxHighlighter language={'javascript'}>
               {cleanRawCode(code)}
             </SyntaxHighlighter>
           </article>

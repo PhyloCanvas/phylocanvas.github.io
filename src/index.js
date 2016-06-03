@@ -8,11 +8,19 @@ import {
   browserHistory,
   createMemoryHistory,
 } from 'react-router';
+import { registerLanguages } from 'react-syntax-highlighter';
 
 import routes from './routes';
 import documentTemplate from './document';
 
 import { renderingClientSide } from './utils';
+
+registerLanguages({
+  javascript: require('highlight.js/lib/languages/javascript'),
+  css: require('highlight.js/lib/languages/css'),
+  html: require('highlight.js/lib/languages/xml'),
+  bash: require('highlight.js/lib/languages/bash'),
+});
 
 // Client render (optional):
 if (renderingClientSide()) {

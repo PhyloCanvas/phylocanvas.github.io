@@ -1,4 +1,6 @@
 {
   "extends": "cgps",
-  "rules": {}
+  "rules": {
+    "react/prop-types": 0
+  }
 }

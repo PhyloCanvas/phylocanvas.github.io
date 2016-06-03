@@ -17,45 +17,46 @@ _N.B. Examples ending with `tree.draw()` below *must* call it to update the disp
 * [Fit in Panel](#fit-in-panel)
 
 ## Load Newick String
-```JavaScript
+```phyloscript
+/* no-eval */
 const tree = Phylocanvas.createTree(elementOrId, config); // see API for config options
 tree.load(newickString, () => console.log('tree loaded'));
 // calls `tree.draw()` implicitly
 ```
 
 ## Set Tree Type
-```JavaScript
+```phyloscript
 tree.setTreeType('rectangular'); // or radial, circular, diagonal, hierarchical
 // calls `tree.draw()` implicitly
 ```
 
 ## Show/Hide Labels
-```JavaScript
+```phyloscript
 tree.showLabels = false; // defaults to true
 tree.draw();
 ```
 
 ## Align Labels
-```JavaScript
+```phyloscript
 tree.alignLabels = true; // false to reset
 tree.draw();
 ```
 
 ## Collapse Branches
-```JavaScript
-tree.branches.branchNameOrId.collapsed = true;
+```phyloscript
+tree.branches.E.collapsed = true;
 tree.draw();
 ```
 
 ## Global Leaf and Text Sizes
-```JavaScript
-tree.setNodeSize(2);
-tree.setTextSize(20);
+```phyloscript
+tree.setNodeSize(20);
+tree.setTextSize(30);
 ```
 
 ## Style Branches Individually
-```JavaScript
-for (let leaf of tree.leaves) {
+```phyloscript
+tree.leaves.forEach(function (leaf) {
   leaf.setDisplay({
     colour: 'red',
     shape: 'circle', // or square, triangle, star
@@ -72,43 +73,37 @@ for (let leaf of tree.leaves) {
       format: 'bold',
     },
   });
-}
+});
 tree.draw();
 ```
 
 ## Rotate Branches
-```JavaScript
-tree.branches.branchNameOrId.rotate();
+```phyloscript
+tree.branches.E.rotate({});
 tree.draw();
 ```
 
 ## Select Branches
-```JavaScript
-tree.branches.branchNameOrId.selected = true;
-tree.branches.branchNameOrId.cascadeFlag('selected', true); // cascade to children
+```phyloscript
+tree.branches.B.selected = true;
+tree.branches.E.cascadeFlag('selected', true); // cascade to children
 tree.draw();
 ```
 
 ## Highlight Leaves
-```JavaScript
+```phyloscript
 tree.leaves[0].highlighted = true;
 tree.draw();
 ```
 
-## Find Leaves
-```JavaScript
-tree.findLeaves(regex); // searches id by default
-tree.findLeaves(regex, 'label'); // specify a property to search as the second param
-```
-
 ## Prune Branches
-```JavaScript
-tree.branches.branchNameOrId.pruned = true;
+```phyloscript
+tree.branches.E.pruned = true;
 tree.draw();
 ```
 
-## Fit in Panel
-```JavaScript
-tree.fitInPanel();
+## Fit Leaves in Panel
+```phyloscript
+tree.fitInPanel(tree.findLeaves(/C|D/));
 tree.draw();
 ```
