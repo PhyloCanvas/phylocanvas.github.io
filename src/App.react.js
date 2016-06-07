@@ -5,10 +5,11 @@ export default React.createClass({
 
   render() {
     return (
-      <div className={`clearfix ${this.props.className || ''}`.trim()}>
+      <div className={`${this.props.className || 'docs-page'}`.trim()}>
         <header>
           <Link className="docs-logo" to="/">
             <img src="/img/Phylo.Icon.FINAL.svg" alt="phylocanvas" />
+            <span>Phylocanvas</span>
           </Link>
           <nav className="top-nav">
             <li>

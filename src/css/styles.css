@@ -3,7 +3,8 @@
   --pcGreenLight: #9BB7BF;
   --transparentWhite: rgba(255, 255, 255, 0.9);
   --bodyColor: #666;
-  --largeWidth: calc(58.75em * 1.5)
+  --bodyFontFamily: Roboto, Arial, sans-serif;
+  --headingFontFamily: "Roboto Condensed", var(--bodyFontFamily);
 }
 
 * {
@@ -19,18 +20,18 @@ html, body, #content {
 
 body {
   margin: 0;
-  font-family: Roboto, Arial, sans-serif;
+  font-family: var(--bodyFontFamily);
   font-weight: 300;
   font-size: 100%;
   color: var(--bodyColor);
 }
 
 main {
-  min-height: 100%;
+  min-height: calc(100% - 340px);
 }
 
 h1, h2, h3 {
-  font-family: "Roboto Condensed", Roboto, Arial, sans-serif;
+  font-family: var(--headingFontFamily);
   font-weight: 400;
   color: var(--pcGreen);
 }
@@ -118,14 +119,14 @@ footer img {
 }
 
 
-/* Homepage modifiers */
+/* page modifiers */
 
 .home-page,
 .home-page #content,
-.home-page .full-height {
+.home-page .full-height,
+.docs-page {
   height: 100%;
 }
-
 
 .home-page .margins {
   padding: 0;
@@ -146,7 +147,6 @@ footer img {
 
 
 /* Content - Header */
-
 
 .github-link > img {
   width: 2em;
@@ -250,9 +250,29 @@ footer img {
 
 .docs-logo {
   position: absolute;
-  top: 1.25em;
-  left: 1.25em;
-  width: 2.5em;
+  top: 0.8333em;
+  left: 1em;
+  display: block;
+  font-size: 1.5em;
+}
+
+.docs-logo > img,
+.docs-logo > span {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.docs-logo > img {
+  width: 1.75em;
+}
+
+.docs-logo > span {
+  padding-left: 0.5em;
+  display: none;
+  font-family: var(--headingFontFamily);
+  @media(min-width: 28em) {
+    display: inline-block;
+  }
 }
 
 .docs-nav {
