@@ -3,6 +3,7 @@
   --pcGreenLight: #9BB7BF;
   --transparentWhite: rgba(255, 255, 255, 0.9);
   --bodyColor: #666;
+  --largeWidth: calc(58.75em * 1.5)
 }
 
 * {
@@ -55,9 +56,18 @@ a > img {
 
 pre {
   overflow-x: auto;
-  padding: 1em;
   background-color: #efefef;
   border: 1px solid var(--pcGreenLight);
+}
+
+code {
+  color: var(--pcGreen);
+}
+
+pre > code {
+  display: block;
+  padding: 1em;
+  color: inherit;
 }
 
 pre, code {
@@ -88,8 +98,8 @@ footer img {
 
 .clearfix:before,
 .clearfix:after {
-    content: " "; /* 1 */
-    display: table; /* 2 */
+    content: " ";
+    display: table;
 }
 .clearfix:after {
     clear: both;
@@ -99,6 +109,12 @@ footer img {
   padding: 4em 2.5em 4em;
   max-width: 58.75em;
   margin: 0 auto;
+  @media(min-width: 58.75em) {
+    margin-right: calc(58.75em / 4);
+  }
+  @media(min-width: 80.25em) {
+    margin-right: auto;
+  }
 }
 
 
@@ -240,20 +256,36 @@ footer img {
 }
 
 .docs-nav {
-  position: absolute;
   z-index: 2;
+  text-align: center;
   top: 4em;
-  right: 2em;
+  position: relative;
+  @media(min-width: 58.75em) {
+    text-align: right;
+    position: fixed;
+    right: 2em;
+  }
+}
+
+.docs-nav > ul {
   list-style: none;
-  text-align: right;
-  display: none;
+  margin: 0;
+  padding: 0 1em;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   @media(min-width: 58.75em) {
     display: block;
+    padding: 0;
   }
 }
 
 .docs-nav li {
-  margin-bottom: 0.5em;
+  margin: 0 0.5em 0.5em;
+  white-space: nowrap;
+  @media(min-width: 58.75em) {
+    margin-right: 0;
+  }
 }
 
 .feature-demo {

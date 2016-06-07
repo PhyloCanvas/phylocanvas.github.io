@@ -25,14 +25,16 @@ export default React.createClass({
           </nav>
           <nav className="docs-nav">
             <h2>Navigation</h2>
-            <li><Link to="/docs">Docs Home</Link></li>
-            <li><Link to="/docs/quick-start">Quick Start</Link></li>
-            <li><Link to="/docs/install">Installation</Link></li>
-            <li><Link to="/docs/features">Features</Link></li>
-            <li><Link to="/docs/events">Events</Link></li>
-            <li><Link to="/docs/plugins">Plugins</Link></li>
-            <li><Link to="/docs/migrating-from-v1x">Migrating from v1.x</Link></li>
-            <li><Link to="/docs/development">Development</Link></li>
+            <ul>
+              <li><Link to="/docs">Docs Home</Link></li>
+              <li><Link to="/docs/quick-start">Quick Start</Link></li>
+              <li><Link to="/docs/install">Installation</Link></li>
+              <li><Link to="/docs/features">Features</Link></li>
+              <li><Link to="/docs/events">Events</Link></li>
+              <li><Link to="/docs/plugins">Plugins</Link></li>
+              <li><Link to="/docs/migrating-from-v1x">Migrating from v1.x</Link></li>
+              <li><Link to="/docs/development">Development</Link></li>
+            </ul>
           </nav>
         </header>
         <main className="margins">
