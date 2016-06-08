@@ -59,7 +59,7 @@ tree.leaves.forEach(function (leaf) {
   leaf.setDisplay({
     colour: 'red',
     shape: 'circle', // or square, triangle, star
-    size: 2,
+    size: 20,
     leafStyle: {
       strokeStyle: '#0000ff',
       fillStyle: 'rgb(0, 255, 0)',

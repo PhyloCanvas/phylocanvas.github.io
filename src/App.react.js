@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router';
+import DocumentTitle from 'react-document-title';
 
 import { scrollTo } from './utils';
 
@@ -16,8 +17,8 @@ const navigationLinks = [
 
 export default React.createClass({
 
-  componentDidUpdate(previous) {
-    if (this.props.location.pathname !== previous.location.pathname) {
+  componentWillUpdate(next) {
+    if (this.props.location.pathname !== next.location.pathname) {
       scrollTo(0);
     }
   },
@@ -30,6 +31,18 @@ export default React.createClass({
         <Link to={to} className={to === pathname ? 'active' : ''}>{text}</Link>
       </li>
     ));
+  },
+
+  getDocumentTitle() {
+    const { pathname } = this.props.location || {};
+    if (pathname) {
+      for (const { to, text } of navigationLinks) {
+        if (to === pathname) {
+          return `Phylocanvas - ${text}`;
+        }
+      }
+    }
+    return 'Phylocanvas';
   },
 
   render() {
@@ -61,7 +74,9 @@ export default React.createClass({
           </nav>
         </header>
         <main className="margins">
-          {this.props.children}
+          <DocumentTitle title={this.getDocumentTitle()}>
+            {this.props.children}
+          </DocumentTitle>
         </main>
         <footer id="contact" className="text-center">
           <p>Phylocanvas is maintained by<br /><strong>The Centre for Genomic Pathogen Surveillance</strong>.</p>

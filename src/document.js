@@ -1,10 +1,11 @@
-export default (html) => `
+export default (html, title) => `
   <!doctype html>
   <html lang='en'>
     <head>
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1">
-      <title>Phylocanvas</title>
+      <meta name="description" content="Interactive tree visualisation for the web.">
+      <title>${title}</title>
       <link rel="icon" type="image/png"  href="/img/phylo.icon.final.png" />
       <link href="http://fonts.googleapis.com/css?family=Roboto:300,300italic,400|Roboto+Condensed:400|Roboto+Mono" rel="stylesheet" type="text/css" />
       ${

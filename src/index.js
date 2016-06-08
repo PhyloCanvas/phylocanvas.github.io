@@ -9,6 +9,7 @@ import {
   createMemoryHistory,
 } from 'react-router';
 import { registerLanguages } from 'react-syntax-highlighter';
+import DocumentTitle from 'react-document-title';
 
 import routes from './routes';
 import documentTemplate from './document';
@@ -37,8 +38,7 @@ export default (locals, callback) => {
   const location = history.createLocation(locals.path);
 
   match({ routes, location }, (error, redirectLocation, renderProps) => {
-    callback(null, documentTemplate(
-      renderToString(<RouterContext {...renderProps} />)
-    ));
+    const content = renderToString(<RouterContext {...renderProps} />)
+    callback(null, documentTemplate(content, DocumentTitle.rewind()));
   });
 };
