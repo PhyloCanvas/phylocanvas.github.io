@@ -14,7 +14,7 @@ const docsChildRoutes = [
   path => ({ path, component: MarkdownContent })
 );
 
-const hasTrailingSlash = /\/$/;
+const noTrailingSlash = /[^\/]$/;
 
 export default [
   { path: 'docs',
@@ -24,7 +24,7 @@ export default [
     onEnter({ location }, replace) {
       if (!location) return;
 
-      if (!hasTrailingSlash.test(location.pathname)) {
+      if (noTrailingSlash.test(location.pathname)) {
         replace(`${location.pathname}/`);
       }
     },
