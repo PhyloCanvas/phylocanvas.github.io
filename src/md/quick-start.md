@@ -38,8 +38,8 @@ For simple applications and demos we recommend linking to the [phylocanvas-quick
 
 Also included is [the Phylocanvas polyfill](/docs/install#polyfill) for browsers that don't support certain required features.
 
-For larger applications we recommend [using a module bundler and package management system](/install) to include only the plugins you need.
+For larger applications we recommend [using a module bundler and package management system](/docs/install/) to include only the plugins you need.
 
 ## Next Steps
 
-Discover [the features of Phylocanvas](/docs/features).
+Discover [the features of Phylocanvas](/docs/features/).

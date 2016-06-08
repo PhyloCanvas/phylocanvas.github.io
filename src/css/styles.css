@@ -319,11 +319,14 @@ footer img {
 
 /* Content - Footer */
 
+#contact a {
+  color: #fff;
+}
+
 .contact-email {
   display: block;
-  color: #fff;
   font-size: 1.5em;
-  margin: 0.5em 0 1.5em;
+  margin: 0.5em 0 1em;
 }
 
 .contact-email:hover,
@@ -332,11 +335,7 @@ footer img {
   text-decoration: none;
 }
 
-.icon-acknowledgement {
+.smallprint {
   font-size: .8em;
-  margin-top: 2em;
-}
-
-.icon-acknowledgement > a {
-  color: #fff;
+  margin: 0.5em 0;
 }
