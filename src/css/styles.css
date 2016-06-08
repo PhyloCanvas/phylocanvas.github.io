@@ -83,6 +83,14 @@ pre, code {
   font-size: .9em;
 }
 
+li {
+  margin-bottom: .25em;
+}
+
+article + h2 {
+  margin-top: 1.5em;
+}
+
 footer {
   background-color: var(--pcGreen);
   color: #fff;
@@ -152,6 +160,10 @@ footer img {
   display: none;
 }
 
+.home-page .top-nav {
+  position: absolute;
+}
+
 
 /* Content - Header */
 
@@ -184,19 +196,16 @@ footer img {
 
 /* Content - Home */
 
+@custom-media --large-home (min-width: 25em);
+
 .logo {
   display: block;
-  width: 80%;
   margin: 0 auto;
   max-width: 25em;
   transform: translateX(-5%);
-}
-
-@custom-media --large-logo min-width: 25em;
-
-@media (--large-logo) {
-  .logo {
-    width: 62.5%
+  width: 80%;
+  @media (--large-home) {
+    width: 62.5%;
   }
 }
 
@@ -204,7 +213,7 @@ footer img {
   font-size: 1.25em;
 }
 
-@media(--large-logo) {
+@media (--large-home) {
   .lead > br {
     display: none;
   }

@@ -8,18 +8,17 @@ export default React.createClass({
 
   componentDidMount() {
     if (renderingClientSide()) {
-      const Phylocanvas = require('phylocanvas-quickstart');
+      const Phylocanvas = require('phylocanvas').default;
       const tree = Phylocanvas.createTree('phylocanvas', {
-        history: false,
         disableZoom: true,
+        branchColour: '#3C7383',
+        selectedColour: '#673c90',
+        highlightColour: '#3C7383',
+        baseNodeSize: 10,
+        padding: 32,
       });
 
-      tree.branchColour = '#3C7383';
-      tree.selectedColour = '#673c90';
-      tree.highlightColour = '#3C7383';
-      tree.baseNodeSize = 10;
-      tree.padding = 32;
-      tree.load('/v1.x/docs/data/tree.nwk', () => {
+      tree.load(require('raw!../v1.x/docs/data/tree.nwk'), () => {
         for (const leaf of tree.leaves) {
           leaf.setDisplay({
             leafStyle: {

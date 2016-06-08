@@ -16,7 +16,7 @@
     "express": "^4.13.4",
     "extract-text-webpack-plugin": "^1.0.1",
     "json-loader": "^0.5.4",
-    "phylocanvas-quickstart": "github:phylocanvas/phylocanvas-quickstart",
+    "phylocanvas": "^2.4.0",
     "postcss": "^5.0.14",
     "postcss-cssnext": "^2.4.0",
     "postcss-loader": "^0.9.1",
