@@ -1,7 +1,45 @@
 import React from 'react';
 import { Link } from 'react-router';
 
+const navigationLinks = [
+  { to: '/docs/', text: 'Docs Home' },
+  { to: '/docs/quick-start/', text: 'Quick Start' },
+  { to: '/docs/install/', text: 'Installation' },
+  { to: '/docs/features/', text: 'Features' },
+  { to: '/docs/events/', text: 'Events' },
+  { to: '/docs/plugins/', text: 'Plugins' },
+  { to: '/docs/migrating-from-v1x/', text: 'Migrating from v1.x' },
+  { to: '/docs/development/', text: 'Development' },
+];
+
 export default React.createClass({
+
+  componentDidMount() {
+  },
+
+  componentDidUpdate(previous) {
+    if (this.props.location.pathname !== previous.location.pathname) {
+      (document.documentElement || document.body).scrollTop = 0;
+    }
+  },
+
+  getNavigationLinks() {
+    const { pathname } = this.props.location || {};
+
+    return navigationLinks.map(({ to, text }) => {
+      console.log(pathname, to, to === pathname);
+      return (
+        <li key={to}>
+          <Link
+            to={to}
+            className={to === pathname ? 'active' : ''}
+          >
+            {text}
+          </Link>
+        </li>
+      );
+    });
+  },
 
   render() {
     return (
@@ -27,14 +65,7 @@ export default React.createClass({
           <nav className="docs-nav">
             <h2>Navigation</h2>
             <ul>
-              <li><Link to="/docs">Docs Home</Link></li>
-              <li><Link to="/docs/quick-start">Quick Start</Link></li>
-              <li><Link to="/docs/install">Installation</Link></li>
-              <li><Link to="/docs/features">Features</Link></li>
-              <li><Link to="/docs/events">Events</Link></li>
-              <li><Link to="/docs/plugins">Plugins</Link></li>
-              <li><Link to="/docs/migrating-from-v1x">Migrating from v1.x</Link></li>
-              <li><Link to="/docs/development">Development</Link></li>
+              {this.getNavigationLinks()}
             </ul>
           </nav>
         </header>

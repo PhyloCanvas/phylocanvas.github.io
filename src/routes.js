@@ -14,11 +14,20 @@ const docsChildRoutes = [
   path => ({ path, component: MarkdownContent })
 );
 
+const hasTrailingSlash = /\/$/;
+
 export default [
   { path: 'docs',
     component: App,
     indexRoute: { component: MarkdownContent },
     childRoutes: docsChildRoutes,
+    onEnter({ location }, replace) {
+      if (!location) return;
+
+      if (!hasTrailingSlash.test(location.pathname)) {
+        replace(`${location.pathname}/`);
+      }
+    },
   },
   { path: '/',
     component: Home,
