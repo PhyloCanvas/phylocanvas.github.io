@@ -79,7 +79,7 @@ export default React.createClass({
           </DocumentTitle>
         </main>
         <footer id="contact" className="text-center">
-          <p>Phylocanvas is maintained by<br /><strong>The Centre for Genomic Pathogen Surveillance</strong>.</p>
+          <p>Phylocanvas is maintained by<br /><a href="http://www.pathogensurveillance.net">The Centre for Genomic Pathogen Surveillance</a>.</p>
           <a href="http://www.pathogensurveillance.net">
             <img src="/img/CGPS.white_.FINAL_.svg" />
           </a>

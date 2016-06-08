@@ -7,7 +7,7 @@ import SyntaxHighlighter from './SyntaxHighlighter.react';
 
 const renderers = {
   Link: ({ href, title, children }) => {
-    if (href[0] === '/') {
+    if (href.indexOf('/docs') === 0) {
       return (
         <Link to={href}>{children}</Link>
       );

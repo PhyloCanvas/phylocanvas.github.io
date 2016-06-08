@@ -7,6 +7,7 @@
   --headingFontFamily: "Roboto Condensed", var(--bodyFontFamily);
 }
 
+@custom-media --small-viewport (max-width: 28em);
 @custom-media --medium-viewport (min-width: 58.75em);
 @custom-media --large-viewport (min-width: 80.25em);
 
@@ -30,7 +31,11 @@ body {
 }
 
 main {
-  min-height: calc(100% - 340px);
+  min-height: calc(100% - 347px);
+}
+
+p {
+  line-height: 1.333;
 }
 
 h1, h2, h3 {
@@ -123,6 +128,10 @@ footer img {
 
 .margins {
   padding: 4em 2.5em 4em;
+  @media(--small-viewport) {
+    padding-left: 2em;
+    padding-right: 2em;
+  }
   max-width: 58.75em;
   margin: 0 auto;
   @media(--medium-viewport) {
@@ -292,10 +301,9 @@ footer img {
 
 .docs-logo > span {
   padding-left: 0.5em;
-  display: none;
   font-family: var(--headingFontFamily);
-  @media(min-width: 28em) {
-    display: inline-block;
+  @media(--small-viewport) {
+    display: none;
   }
 }
 
