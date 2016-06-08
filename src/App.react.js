@@ -1,6 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router';
 
+import { scrollTo } from './utils';
+
 const navigationLinks = [
   { to: '/docs/', text: 'Docs Home' },
   { to: '/docs/quick-start/', text: 'Quick Start' },
@@ -14,31 +16,20 @@ const navigationLinks = [
 
 export default React.createClass({
 
-  componentDidMount() {
-  },
-
   componentDidUpdate(previous) {
     if (this.props.location.pathname !== previous.location.pathname) {
-      (document.documentElement || document.body).scrollTop = 0;
+      scrollTo(0);
     }
   },
 
   getNavigationLinks() {
     const { pathname } = this.props.location || {};
 
-    return navigationLinks.map(({ to, text }) => {
-      console.log(pathname, to, to === pathname);
-      return (
-        <li key={to}>
-          <Link
-            to={to}
-            className={to === pathname ? 'active' : ''}
-          >
-            {text}
-          </Link>
-        </li>
-      );
-    });
+    return navigationLinks.map(({ to, text }) => (
+      <li key={to}>
+        <Link to={to} className={to === pathname ? 'active' : ''}>{text}</Link>
+      </li>
+    ));
   },
 
   render() {
