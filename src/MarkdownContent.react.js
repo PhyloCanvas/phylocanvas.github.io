@@ -25,6 +25,11 @@ const renderers = {
       {literal}
     </SyntaxHighlighter>
   )),
+  Heading: ({ level, children }) => (
+    level === 2 ?
+      <h2 id={children[0].toLowerCase().replace(/\W/g, '-')}>{children}</h2> :
+      React.createElement(`h${level}`, null, children)
+  ),
 };
 
 export default React.createClass({

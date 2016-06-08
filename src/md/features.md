@@ -4,7 +4,7 @@ _N.B. Examples ending with `tree.draw()` below *must* call it to update the disp
 
 * [Load Newick String](#load-newick-string)
 * [Set Tree Type](#set-tree-type)
-* [Show/Hide Labels](#showhide-labels)
+* [Show/Hide Labels](#show-hide-labels)
 * [Align Labels](#align-labels)
 * [Collapse Branches](#collapse-branches)
 * [Global Leaf and Text Sizes](#global-leaf-and-text-sizes)
@@ -12,9 +12,8 @@ _N.B. Examples ending with `tree.draw()` below *must* call it to update the disp
 * [Rotate Branches](#rotate-branches)
 * [Select Branches](#select-branches)
 * [Highlight Leaves](#highlight-leaves)
-* [Find Leaves](#find-leaves)
 * [Prune Branches](#prune-branches)
-* [Fit in Panel](#fit-in-panel)
+* [Fit Leaves in Panel](#fit-leaves-in-panel)
 
 ## Load Newick String
 ```phyloscript
