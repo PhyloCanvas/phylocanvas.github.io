@@ -42,4 +42,4 @@ For larger applications we recommend [using a module bundler and package managem
 
 ## Next Steps
 
-Discover [the features of Phylocanvas](/docs/features/).
+Customise your tree with [Phylocanvas' features](/docs/features/).

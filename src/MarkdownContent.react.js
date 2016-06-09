@@ -12,7 +12,6 @@ const renderers = {
         <Link to={href}>{children}</Link>
       );
     }
-
     return (
       <a href={href} title={title}>{children}</a>
     );
@@ -26,7 +25,7 @@ const renderers = {
     </SyntaxHighlighter>
   )),
   Heading: ({ level, children }) => (
-    level === 2 ?
+    level === 2 && children[0].toLowerCase ?
       <h2 id={children[0].toLowerCase().replace(/\W/g, '-')}>{children}</h2> :
       React.createElement(`h${level}`, null, children)
   ),
