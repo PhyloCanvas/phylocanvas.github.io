@@ -16,13 +16,13 @@ To extend the abilities of Phylocanvas, see [Plugins](/docs/plugins/).
 
 To start using v2.x from a previous version, see [Migrating from v1.x](/docs/migrating-from-1x/).
 
-To change how Phylocanvas works, see [Development](/docs/development/).
+To make improvements to Phylocanvas, see [Development](/docs/development/).
 
-## Licences
+## Licencing
 
 Phylocanvas is released under the [LGPLv3](https://raw.githubusercontent.com/phylocanvas/phylocanvas/master/LICENCE).
 This documentation is released under the [Creative Commons Attribution-ShareAlike Licence (CC BY-SA)](https://raw.githubusercontent.com/phylocanvas/phylocanvas/master/LICENCE-docs).
 
-## Contributing
+## Issues
 
 Please submit feedback and suggestions to [our Github issues page](https://github.com/phylocanvas/phylocanvas/issues).

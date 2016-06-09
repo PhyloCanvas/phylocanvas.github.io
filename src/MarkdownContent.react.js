@@ -17,8 +17,11 @@ const renderers = {
     );
   },
   CodeBlock: ({ language, literal }) => (
-    (language === 'phyloscript') ? (
-      <FeatureDemo source={literal} />
+    (language.indexOf('phyloscript') === 0) ? (
+      <FeatureDemo
+        source={literal}
+        directives={(language.split('--')[1] || '').split(',')}
+      />
     ) : (
     <SyntaxHighlighter language={language}>
       {literal}

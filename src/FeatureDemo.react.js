@@ -11,6 +11,7 @@ const treeConfig = {
   branchColour: '#3C7383',
   selectedColour: '#673c90',
   highlightColour: '#3C7383',
+  disableZoom: true,
 };
 
 export default React.createClass({

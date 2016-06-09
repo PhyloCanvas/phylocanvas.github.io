@@ -2,7 +2,7 @@
 
 ## Breaking Changes
 
-* Trees should be created using `Phylocanvas.createTree`
+* Trees should be created using `Phylocanvas.createTree`.
 * `canvasEl` has been renamed to `containerElement`.
 * `selected` event is now called `updated`, provides the updated property as event data.
 * `findBranch` is now `findLeaves`, only ever returned leaves.
