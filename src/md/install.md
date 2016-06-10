@@ -2,7 +2,7 @@
 
 ## Using npm
 ```bash
-npm install --save-dev github:phylocanvas/phylocanvas
+npm install --save-dev phylocanvas
 ```
 We recommend installing phylocanvas as a dev dependency as it should be included in the bundle of your application.
 

@@ -1,6 +1,6 @@
 # Features
 
-_N.B. Examples ending with `tree.draw()` below *must* call it to update the display. Phylocanvas 2.x gives you the responsibility to call `tree.draw()` when you need to. For best performance, it should always be called as the final step in a series of manipulations._
+_N.B. Examples ending with `tree.draw()` below indicate that `tree.draw()` must be called for the display to update. Phylocanvas 2.x gives you the responsibility to call `tree.draw()` when you need to. For best performance, it should always be called as the final step in a series of manipulations._
 
 * [Load Newick String](#load-newick-string)
 * [Set Tree Type](#set-tree-type)
@@ -16,8 +16,7 @@ _N.B. Examples ending with `tree.draw()` below *must* call it to update the disp
 * [Fit Leaves in Panel](#fit-leaves-in-panel)
 
 ## Load Newick String
-```phyloscript
-/* no-eval */
+```phyloscript--noEval
 const tree = Phylocanvas.createTree(elementOrId, config); // see API for config options
 tree.load(newickString, () => console.log('tree loaded'));
 // calls `tree.draw()` implicitly
@@ -37,6 +36,7 @@ tree.draw();
 
 ## Align Labels
 ```phyloscript
+tree.setTreeType('rectangular'); // Supported for rectangular, circular, and hierarchical tree types
 tree.alignLabels = true; // false to reset
 tree.draw();
 ```
@@ -49,29 +49,27 @@ tree.draw();
 
 ## Global Leaf and Text Sizes
 ```phyloscript
-tree.setNodeSize(20);
+tree.setNodeSize(30);
 tree.setTextSize(30);
 ```
 
 ## Style Branches Individually
 ```phyloscript
-tree.leaves.forEach(function (leaf) {
-  leaf.setDisplay({
-    colour: 'red',
-    shape: 'circle', // or square, triangle, star
-    size: 20,
-    leafStyle: {
-      strokeStyle: '#0000ff',
-      fillStyle: 'rgb(0, 255, 0)',
-      lineWidth: 2,
-    },
-    labelStyle: {
-      colour: 'black',
-      textSize: 20, // points
-      font: 'Arial',
-      format: 'bold',
-    },
-  });
+tree.leaves[0].setDisplay({
+  colour: 'red',
+  shape: 'circle', // or square, triangle, star
+  size: 3, // ratio of the base node size
+  leafStyle: {
+    strokeStyle: '#0000ff',
+    fillStyle: 'rgb(0, 255, 0)',
+    lineWidth: 2,
+  },
+  labelStyle: {
+    colour: 'black',
+    textSize: 20, // points
+    font: 'Arial',
+    format: 'bold',
+  },
 });
 tree.draw();
 ```

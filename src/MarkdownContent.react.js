@@ -5,6 +5,13 @@ import { Link } from 'react-router';
 import FeatureDemo from './FeatureDemo.react';
 import SyntaxHighlighter from './SyntaxHighlighter.react';
 
+function parseDirectives(str) {
+  return str.split(';').reduce((memo, directive) => {
+    const [ key, value = true ] = directive.split(':');
+    return { ...memo, [key]: value };
+  }, {});
+}
+
 const renderers = {
   Link: ({ href, title, children }) => {
     if (href.indexOf('/docs') === 0) {
@@ -20,7 +27,7 @@ const renderers = {
     (language.indexOf('phyloscript') === 0) ? (
       <FeatureDemo
         source={literal}
-        directives={(language.split('--')[1] || '').split(',')}
+        directives={parseDirectives(language.split('--')[1] || '')}
       />
     ) : (
     <SyntaxHighlighter language={language}>

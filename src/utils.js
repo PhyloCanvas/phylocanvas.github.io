@@ -1,3 +1,12 @@
+export const treeDefaults = {
+  branchColour: '#3C7383',
+  selectedColour: '#FF9D39',
+  highlightColour: '#3C7383',
+  baseNodeSize: 10,
+  disableZoom: true,
+  padding: 8,
+};
+
 export function renderingClientSide() {
   return typeof document !== 'undefined';
 }

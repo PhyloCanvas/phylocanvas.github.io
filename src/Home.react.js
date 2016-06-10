@@ -2,19 +2,15 @@ import React from 'react';
 import { Link } from 'react-router';
 
 import App from './App.react';
-import { renderingClientSide } from './utils';
+import { treeDefaults, renderingClientSide } from './utils';
 
 export default React.createClass({
 
   componentDidMount() {
     if (renderingClientSide()) {
-      const Phylocanvas = require('phylocanvas').default;
+      const Phylocanvas = require('phylocanvas-quickstart');
       const tree = Phylocanvas.createTree('phylocanvas', {
-        disableZoom: true,
-        branchColour: '#3C7383',
-        selectedColour: '#673c90',
-        highlightColour: '#3C7383',
-        baseNodeSize: 10,
+        ...treeDefaults,
         padding: 32,
       });
 

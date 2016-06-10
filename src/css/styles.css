@@ -2,7 +2,7 @@
   --pcGreen: #3C7383;
   --pcGreenLight: #9BB7BF;
   --transparentWhite: rgba(255, 255, 255, 0.9);
-  --bodyColor: #666;
+  --bodyColor: #555;
   --bodyFontFamily: Roboto, Arial, sans-serif;
   --headingFontFamily: "Roboto Condensed", var(--bodyFontFamily);
 }
@@ -68,7 +68,6 @@ a > img {
 }
 
 pre {
-  overflow-x: auto;
   background-color: #efefef;
   border: 1px solid var(--pcGreenLight);
 }
@@ -80,7 +79,8 @@ code {
 pre > code {
   display: block;
   padding: 1em;
-  color: inherit;
+  color: #333;
+  overflow-x: auto;
 }
 
 pre, code {

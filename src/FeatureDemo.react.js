@@ -2,40 +2,47 @@ import React from 'react';
 
 import SyntaxHighlighter from './SyntaxHighlighter.react';
 
-import { renderingClientSide } from './utils';
+import { treeDefaults, renderingClientSide } from './utils';
 
 const language = 'javascript';
 const newickString = '(A:0.1,B:0.2,(C:0.3,D:0.4)E:0.5)F;';
-const noEvalDirective = '/* no-eval */\n';
-const treeConfig = {
-  branchColour: '#3C7383',
-  selectedColour: '#673c90',
-  highlightColour: '#3C7383',
-  disableZoom: true,
+
+function standardInstance(containerElement) {
+  const Phylocanvas = require('phylocanvas-quickstart');
+  return Phylocanvas.createTree(containerElement, treeDefaults);
+}
+
+const pluginInstances = {
+  ['context-menu'](containerElement) {
+    const Phylocanvas = require('phylocanvas-quickstart');
+    return Phylocanvas.createTree(containerElement, {
+      ...treeDefaults,
+      history: false,
+    });
+  },
+  history() {
+
+  },
+  metadata() {
+
+  },
 };
 
 export default React.createClass({
 
   propTypes: {
     source: React.PropTypes.string.isRequired,
-  },
-
-  getInitialState() {
-    const { source } = this.props;
-    const noEval = source.indexOf(noEvalDirective) === 0;
-    return {
-      noEval,
-      source: noEval ? source.split(noEvalDirective)[1] : source,
-    };
+    directives: React.PropTypes.object,
   },
 
   componentDidMount() {
     if (renderingClientSide()) {
-      const Phylocanvas = require('phylocanvas').default;
-      const { noEval, source } = this.state;
+      const { source, directives } = this.props;
+      const { noEval, plugin } = directives;
 
-      const fn = noEval ? () => {} : eval(`(function(tree) {${source}})`);
-      const instance = Phylocanvas.createTree(this.refs.demo, treeConfig);
+      const fn = noEval ? () => {} : eval(`(function (tree) {${source}})`);
+
+      const instance = (pluginInstances[plugin] || standardInstance)(this.refs.demo);
       instance.load(newickString, () => fn(instance));
     }
   },
@@ -44,9 +51,12 @@ export default React.createClass({
     return (
       <article>
         <div ref="demo" className="feature-demo"></div>
-        <SyntaxHighlighter language={language}>
-          {this.state.source}
-        </SyntaxHighlighter>
+        { this.props.source ?
+          <SyntaxHighlighter language={language}>
+            {this.props.source}
+          </SyntaxHighlighter> :
+          null
+        }
       </article>
     );
   },

@@ -40,5 +40,4 @@ tree.on('updated', ({ property, nodeIds }) => {
     console.log(nodeIds);
   }
 });
-
 ```

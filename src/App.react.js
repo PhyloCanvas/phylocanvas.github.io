@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router';
 import DocumentTitle from 'react-document-title';
 
-import { scrollTo } from './utils';
+import { renderingClientSide, scrollTo } from './utils';
 
 const navigationLinks = [
   { to: '/docs/', text: 'Docs Home' },
@@ -16,6 +16,12 @@ const navigationLinks = [
 ];
 
 export default React.createClass({
+
+  componentWillMount() {
+    if (renderingClientSide()) {
+      scrollTo(0);
+    }
+  },
 
   componentWillUpdate(next) {
     if (this.props.location.pathname !== next.location.pathname) {
