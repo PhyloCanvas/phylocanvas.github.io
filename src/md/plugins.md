@@ -10,7 +10,6 @@ The following plugins are maintained by us, having started life in the core libr
 * [Ajax](#ajax)
 
 ## Context Menu
-Adds contextual functions when right-clicking.
 
 ### Install
 ```bash
@@ -25,4 +24,30 @@ Phylocanvas.plugin(contextMenu);
 ### Usage
 ```phyloscript--noEval;plugin:context-menu
 ```
-Right-click to see the context menu in action.
+Right-click anywhere to see the standard options in the context menu. Right-click while hovering over a branch to see branch-specific options.
+
+
+## History
+
+### Install
+```bash
+npm install --save-dev phylocanvas-plugin-history
+```
+### Register
+```javascript
+import history from 'phylocanvas-plugin-history';
+
+Phylocanvas.plugin(history);
+```
+### Usage
+```phyloscript--plugin:history
+tree.on('click', function (e) {
+  var node = tree.getNodeAtMousePosition(e);
+  if (node) {
+    tree.redrawFromBranch(node);
+  } else {
+    tree.redrawOriginalTree();
+  }
+});
+```
+Click on the node between Leaf C and Leaf D to redraw a subtree, then open the history tab. Click a snapshot to switch between the original tree and the subtree.

@@ -342,6 +342,7 @@ footer img {
 
 .feature-demo {
   height: 240px;
+  overflow: hidden;
 }
 
 

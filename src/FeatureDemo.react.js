@@ -7,9 +7,15 @@ import { treeDefaults, renderingClientSide } from './utils';
 const language = 'javascript';
 const newickString = '(A:0.1,B:0.2,(C:0.3,D:0.4)E:0.5)F;';
 
+const standardConfig = {
+  ...treeDefaults,
+  history: false,
+  contextMenu: false,
+};
+
 function standardInstance(containerElement) {
   const Phylocanvas = require('phylocanvas-quickstart');
-  return Phylocanvas.createTree(containerElement, treeDefaults);
+  return Phylocanvas.createTree(containerElement, standardConfig);
 }
 
 const pluginInstances = {
@@ -20,8 +26,14 @@ const pluginInstances = {
       history: false,
     });
   },
-  history() {
-
+  history(containerElement) {
+    const Phylocanvas = require('phylocanvas-quickstart');
+    const tree = Phylocanvas.createTree(containerElement, {
+      ...treeDefaults,
+      contextMenu: false,
+    });
+    tree.setTreeType('rectangular');
+    return tree;
   },
   metadata() {
 

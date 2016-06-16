@@ -14,7 +14,7 @@ export default React.createClass({
         padding: 32,
       });
 
-      tree.load(require('raw!../v1.x/docs/data/tree.nwk'), () => {
+      tree.on('loaded', () => {
         for (const leaf of tree.leaves) {
           leaf.setDisplay({
             leafStyle: {
@@ -24,6 +24,9 @@ export default React.createClass({
           });
         }
         tree.draw();
+      });
+
+      tree.load(require('raw!../v1.x/docs/data/tree.nwk'), () => {
         this.refs.canvas.style.opacity = 1;
       });
 
