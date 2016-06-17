@@ -18,13 +18,29 @@ _N.B. Examples ending with `tree.draw()` below indicate that `tree.draw()` must 
 ## Load Newick String
 ```phyloscript--noEval
 const tree = Phylocanvas.createTree(elementOrId, config); // see API for config options
-tree.load(newickString, () => console.log('tree loaded'));
+tree.load('(A:0.1,B:0.2,(C:0.3,D:0.4)E:0.5)F;', () => console.log('tree loaded'));
 // calls `tree.draw()` implicitly
 ```
 
 ## Set Tree Type
 ```phyloscript
-tree.setTreeType('rectangular'); // or radial, circular, diagonal, hierarchical
+tree.setTreeType('radial'); // The default tree type
+// calls `tree.draw()` implicitly
+```
+```phyloscript
+tree.setTreeType('rectangular');
+// calls `tree.draw()` implicitly
+```
+```phyloscript
+tree.setTreeType('circular');
+// calls `tree.draw()` implicitly
+```
+```phyloscript
+tree.setTreeType('diagonal');
+// calls `tree.draw()` implicitly
+```
+```phyloscript
+tree.setTreeType('hierarchical');
 // calls `tree.draw()` implicitly
 ```
 

@@ -32,11 +32,25 @@ const pluginInstances = {
       ...treeDefaults,
       contextMenu: false,
     });
-    tree.setTreeType('rectangular');
     return tree;
   },
-  metadata() {
-
+  metadata(containerElement) {
+    const Phylocanvas = require('phylocanvas-quickstart');
+    const tree = Phylocanvas.createTree(containerElement, {
+      ...treeDefaults,
+      history: false,
+      contextMenu: false,
+    });
+    return tree;
+  },
+  ajax(containerElement) {
+    const Phylocanvas = require('phylocanvas-quickstart');
+    const tree = Phylocanvas.createTree(containerElement, {
+      ...treeDefaults,
+      history: false,
+      contextMenu: false,
+    });
+    return tree;
   },
 };
 
@@ -50,26 +64,33 @@ export default React.createClass({
   componentDidMount() {
     if (renderingClientSide()) {
       const { source, directives } = this.props;
-      const { noEval, plugin } = directives;
+      const { noEval, noLoad, plugin } = directives;
 
       const fn = noEval ? () => {} : eval(`(function (tree) {${source}})`);
 
       const instance = (pluginInstances[plugin] || standardInstance)(this.refs.demo);
+      if (noLoad) {
+        return fn(instance);
+      }
       instance.load(newickString, () => fn(instance));
     }
   },
 
   render() {
+    const { source, directives } = this.props;
     return (
-      <article>
-        <div ref="demo" className="feature-demo"></div>
-        { this.props.source ?
+      <figure>
+        <div
+          ref="demo"
+          className={`feature-demo ${directives.plugin ? 'feature-demo--large' : ''}`.trim()}
+        ></div>
+        { source ?
           <SyntaxHighlighter language={language}>
-            {this.props.source}
+            {source}
           </SyntaxHighlighter> :
           null
         }
-      </article>
+      </figure>
     );
   },
 

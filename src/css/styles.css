@@ -44,6 +44,10 @@ h1, h2, h3 {
   color: var(--pcGreen);
 }
 
+* + h2 {
+  margin-top: 1.5em;
+}
+
 strong {
   font-weight: 400;
 }
@@ -92,8 +96,8 @@ li {
   margin-bottom: .25em;
 }
 
-article + h2 {
-  margin-top: 1.5em;
+figure {
+  margin: 0;
 }
 
 footer {
@@ -343,6 +347,10 @@ footer img {
 .feature-demo {
   height: 240px;
   overflow: hidden;
+}
+
+.feature-demo--large {
+  height: 480px;
 }
 
 

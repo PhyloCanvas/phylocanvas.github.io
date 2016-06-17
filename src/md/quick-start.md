@@ -31,10 +31,10 @@ Above is an example of a simple Phylocanvas application.
 
 For simple applications and demos we recommend linking to the [phylocanvas-quickstart package](https://github.com/phylocanvas/phylocanvas-quickstart) as shown above. This automatically enables the following plugins:
 
-* [Context Menu](https://github.com/phylocanvas/phylocanvas-plugin-context-menu)
-* [History](https://github.com/phylocanvas/phylocanvas-plugin-history)
-* [Metadata](https://github.com/phylocanvas/phylocanvas-plugin-metadata)
-* [Ajax](https://github.com/phylocanvas/phylocanvas-plugin-ajax)
+* [Context Menu](/docs/plugins#context-menu)
+* [History](/docs/plugins#history)
+* [Metadata](/docs/plugins#metadata)
+* [Ajax](/docs/plugins#ajax)
 
 Also included is [the Phylocanvas polyfill](/docs/install#polyfill) for browsers that don't support certain required features.
 
