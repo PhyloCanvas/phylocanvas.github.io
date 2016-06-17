@@ -84,7 +84,7 @@ export default React.createClass({
             {this.props.children}
           </DocumentTitle>
         </main>
-        <footer id="contact" className="text-center">
+        <footer id="contact" className="text-center section-padding">
           <p>Phylocanvas is maintained by<br /><a href="http://www.pathogensurveillance.net">The Centre for Genomic Pathogen Surveillance</a>.</p>
           <a href="http://www.pathogensurveillance.net">
             <img src="/img/CGPS.white_.FINAL_.svg" />

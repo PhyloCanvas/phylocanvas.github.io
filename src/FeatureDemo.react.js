@@ -70,7 +70,8 @@ export default React.createClass({
 
       const instance = (pluginInstances[plugin] || standardInstance)(this.refs.demo);
       if (noLoad) {
-        return fn(instance);
+        fn(instance);
+        return;
       }
       instance.load(newickString, () => fn(instance));
     }

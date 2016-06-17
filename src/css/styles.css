@@ -5,6 +5,7 @@
   --bodyColor: #555;
   --bodyFontFamily: Roboto, Arial, sans-serif;
   --headingFontFamily: "Roboto Condensed", var(--bodyFontFamily);
+  --numHomeSections: 2;
 }
 
 @custom-media --small-viewport (max-width: 28em);
@@ -103,7 +104,6 @@ figure {
 footer {
   background-color: var(--pcGreen);
   color: #fff;
-  padding: 2em;
 }
 
 footer > p {
@@ -146,6 +146,24 @@ footer img {
   }
 }
 
+.alt-section {
+  background-color: #eee;
+}
+
+.section-heading {
+  margin-top: 0;
+  padding-top: 1em;
+}
+
+.section-padding {
+  padding: 2em;
+}
+
+.flex-section {
+  display: flex;
+  flex-direction: column;
+}
+
 
 /* page modifiers */
 
@@ -158,14 +176,12 @@ footer img {
 
 .home-page .margins {
   padding: 0;
-  height: 100%;
   max-width: none;
-}
-
-.home-page main {
-  float: none;
-  height: 100%;
   width: 100%;
+  height: calc(100% * var(--numHomeSections));
+  @media(--medium-viewport) {
+    height: 150%;
+  }
 }
 
 .home-page .docs-logo,
@@ -244,6 +260,20 @@ footer img {
   opacity: 0;
 }
 
+.home-intro {
+  height: calc(100% / var(--numHomeSections));
+  @media(--medium-viewport) {
+    height: 66.666%;
+  }
+}
+
+.home-intro + section {
+  height: calc(100% / var(--numHomeSections));
+  @media(--medium-viewport) {
+    height: 33.34%;
+  }
+}
+
 .home-intro > header {
   color: var(--pcGreen);
   position: relative;
@@ -279,6 +309,34 @@ footer img {
   background-color: var(--pcGreenLight);
 }
 
+.apps {
+  list-style: none;
+  flex-grow: 1;
+  display: flex;
+  align-items: baseline;
+  justify-content: space-around;
+  margin: 0 auto;
+  padding: 2em 0;
+  max-width: 58.75em;
+  flex-direction: column;
+  @media(--medium-viewport) {
+    flex-direction: row;
+    width: 100%;
+    align-items: center;
+  }
+}
+
+.apps > li {
+  width: 75%;
+  @media(--medium-viewport) {
+    width: 25%;
+  }
+  margin: 0 auto;
+}
+
+.apps img {
+  /*filter: grayscale(1) brightness(1.25);*/
+}
 
 /* Content - Docs */
 
