@@ -1,13 +1,18 @@
 import React from 'react';
 import { Link } from 'react-router';
+import DocumentTitle from 'react-document-title';
 
-import App from './App.react';
-import { treeDefaults, renderingClientSide } from './utils';
+import Header from './Header.react';
+import Footer from './Footer.react';
+
+import { treeDefaults, renderingClientSide, scrollTo } from './utils';
 
 export default React.createClass({
 
   componentDidMount() {
     if (renderingClientSide()) {
+      scrollTo(0);
+
       const Phylocanvas = require('phylocanvas-quickstart');
       const tree = Phylocanvas.createTree('phylocanvas', {
         ...treeDefaults,
@@ -56,42 +61,46 @@ export default React.createClass({
 
   render() {
     return (
-      <App className="home-page">
-        <div className="full-height">
-          <section className="home-intro text-center">
-            <div id="phylocanvas" ref="canvas" />
-            <header>
-              <h1>
-                <img src="/img/Phylo.FINAL.svg" className="logo" alt="phylocanvas" />
-              </h1>
-              <p className="lead">Interactive tree visualisation <br />for the web.</p>
-            </header>
-            <p className="cta">
-              <Link to="/docs">Get Started with v2.x</Link>
-            </p>
-          </section>
+      <DocumentTitle title="Phylocanvas">
+        <div className="home-page">
+          <Header />
+          <div className="full-height">
+            <section className="home-intro text-center">
+              <div id="phylocanvas" ref="canvas" />
+              <header>
+                <h1>
+                  <img src="/img/Phylo.FINAL.svg" className="logo" alt="phylocanvas" />
+                </h1>
+                <p className="lead">Interactive tree visualisation <br />for the web.</p>
+              </header>
+              <p className="cta">
+                <Link to="/docs">Get Started with v2.x</Link>
+              </p>
+            </section>
+          </div>
           <section className="alt-section section-padding text-center flex-section">
             <h2 className="section-heading">Phylocanvas in Action</h2>
             <ul className="apps">
               <li>
-                <a href="http://www.wgsa.net">
-                  <img src="http://www.wgsa.net/assets/img/WGSA.FINAL.svg" />
+                <a href="https://www.wgsa.net" target="_blank">
+                  <img src="/img/wgsa.svg" />
                 </a>
               </li>
               <li>
-                <a href="https://microreact.org">
-                  <img src="https://microreact.org/images/Micro.FINAL.svg" />
+                <a href="https://microreact.org" target="_blank">
+                  <img src="/img/microreact.svg" />
                 </a>
               </li>
               <li>
-                <a href="http://jameshadfield.github.io/phandango">
+                <a href="http://jameshadfield.github.io/phandango" target="_blank">
                   <img src="/img/phandango.png" />
                 </a>
               </li>
             </ul>
           </section>
+          <Footer />
         </div>
-      </App>
+      </DocumentTitle>
     );
   },
 });

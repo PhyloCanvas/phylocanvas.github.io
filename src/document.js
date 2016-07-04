@@ -15,6 +15,7 @@ export default (html, title) => `
     </head>
     <body>
       <div id="content">${html}</div>
+      <script src="/scrollmenu.min.js"></script>
       <script src="/index.js"></script>
       <script>
         (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){

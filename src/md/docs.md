@@ -1,6 +1,6 @@
 # Documentation Home
 
-Welcome to the Phylocanvas documentation site. These pages detail how to use the Phylocanvas version 2 and above, but [the v1.x docs](/v1.x) are still available.
+Welcome to the Phylocanvas documentation site. Please note that this site is intended for web developers and assumes a knowledge of modern web development workflow practises. These pages detail how to use the Phylocanvas version 2 and above, but [the v1.x docs](/v1.x) are still available.
 
 ## Sections
 
