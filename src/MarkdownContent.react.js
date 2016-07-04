@@ -4,6 +4,7 @@ import { Link } from 'react-router';
 
 import FeatureDemo from './FeatureDemo.react';
 import SyntaxHighlighter from './SyntaxHighlighter.react';
+import SmoothLink from './SmoothLink.react.js';
 
 function parseDirectives(str) {
   return str.split(';').reduce((memo, directive) => {
@@ -17,6 +18,11 @@ const renderers = {
     if (href.indexOf('/docs') === 0) {
       return (
         <Link to={href}>{children}</Link>
+      );
+    }
+    if (title === '--smooth') {
+      return (
+        <SmoothLink href={href}>{children}</SmoothLink>
       );
     }
     return (

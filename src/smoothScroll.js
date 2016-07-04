@@ -1,3 +1,5 @@
+// Adapted from https://github.com/denislins/scrollmenu/
+
 const options = {
   duration: 400,
   activeOffset: 40,

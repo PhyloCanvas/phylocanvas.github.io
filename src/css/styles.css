@@ -5,6 +5,7 @@
   --bodyColor: #555;
   --bodyFontFamily: Roboto, Arial, sans-serif;
   --headingFontFamily: "Roboto Condensed", var(--bodyFontFamily);
+  --transitionTiming: 0.2s cubic-bezier(.4,0,.2,1);
 }
 
 @custom-media --small-viewport (max-width: 28em);
@@ -165,7 +166,7 @@ footer img {
 }
 
 
-/* page modifiers */
+/* Page Modifiers */
 
 .home-page,
 .home-page #content,

@@ -4,10 +4,10 @@ A plugin system allows developers to add functionality to Phylocanvas without ha
 
 The following plugins are maintained by us, having started life in the core library, but now exist as separate entities in the spirit of the new philosophy:
 
-* [Context Menu](#context-menu)
-* [History](#history)
-* [Metadata](#metadata)
-* [Ajax](#ajax)
+* [Context Menu](#context-menu "--smooth")
+* [History](#history "--smooth")
+* [Metadata](#metadata "--smooth")
+* [Ajax](#ajax "--smooth")
 
 ## Context Menu
 

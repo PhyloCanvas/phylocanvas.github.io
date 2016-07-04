@@ -2,18 +2,18 @@
 
 _N.B. Examples ending with `tree.draw()` below indicate that `tree.draw()` must be called for the display to update. Phylocanvas 2.x gives you the responsibility to call `tree.draw()` when you need to. For best performance, it should always be called as the final step in a series of manipulations._
 
-* [Load Newick String](#load-newick-string)
-* [Set Tree Type](#set-tree-type)
-* [Show/Hide Labels](#show-hide-labels)
-* [Align Labels](#align-labels)
-* [Collapse Branches](#collapse-branches)
-* [Global Leaf and Text Sizes](#global-leaf-and-text-sizes)
-* [Style Branches Individually](#style-branches-individually)
-* [Rotate Branches](#rotate-branches)
-* [Select Branches](#select-branches)
-* [Highlight Leaves](#highlight-leaves)
-* [Prune Branches](#prune-branches)
-* [Fit Leaves in Panel](#fit-leaves-in-panel)
+* [Load Newick String](#load-newick-string "--smooth")
+* [Set Tree Type](#set-tree-type "--smooth")
+* [Show/Hide Labels](#show-hide-labels "--smooth")
+* [Align Labels](#align-labels "--smooth")
+* [Collapse Branches](#collapse-branches "--smooth")
+* [Global Leaf and Text Sizes](#global-leaf-and-text-sizes "--smooth")
+* [Style Branches Individually](#style-branches-individually "--smooth")
+* [Rotate Branches](#rotate-branches "--smooth")
+* [Select Branches](#select-branches "--smooth")
+* [Highlight Leaves](#highlight-leaves "--smooth")
+* [Prune Branches](#prune-branches "--smooth")
+* [Fit Leaves in Panel](#fit-leaves-in-panel "--smooth")
 
 ## Load Newick String
 ```phyloscript--noEval
