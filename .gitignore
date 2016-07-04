@@ -10,6 +10,5 @@ npm*
 src
 package.json
 .eslintrc
-.gitignore
 *.js
 !index.js
