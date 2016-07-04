@@ -5,11 +5,3 @@ node_modules
 dist
 
 npm*
-
-# Prevent serving
-src
-package.json
-.eslintrc
-.gitignore
-*.js
-!index.js
