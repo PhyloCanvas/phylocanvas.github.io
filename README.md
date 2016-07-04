@@ -1,6 +1,6 @@
 # Phylocanvas Documentation Site
 
-See it at **phylocanvas.org**.
+See it at **[phylocanvas.org](http://phylocanvas.org)**.
 
 © 2016 Centre for Genomic Pathogen Surveillance
 
