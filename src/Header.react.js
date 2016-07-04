@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router';
 
-import smoothScroll from './smoothScroll';
+import SmoothLink from './SmoothLink.react';
 
 export const navigationLinks = [
   { to: '/docs/', text: 'Docs Home' },
@@ -29,10 +29,6 @@ export const Nav = ({ pathname }) => (
 
 export default React.createClass({
 
-  componentDidMount() {
-    smoothScroll([ this.refs.contact ]);
-  },
-
   render() {
     return (
       <header>
@@ -45,7 +41,13 @@ export default React.createClass({
             <a href="/v1.x">v1.x Docs</a>
           </li>
           <li>
-            <a ref="contact" href="#contact">Contact</a>
+            <SmoothLink
+              ref="contact"
+              href="#contact"
+              rebindOn={this.props.pathname}
+            >
+              Contact
+            </SmoothLink>
           </li>
           <li>
             <a className="github-link" href="https://github.com/phylocanvas">
