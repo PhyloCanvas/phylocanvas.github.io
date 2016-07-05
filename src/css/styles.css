@@ -221,6 +221,72 @@ footer img {
 }
 
 
+/* Component: Toggle */
+
+.material-toggle {
+  display: block;
+  position: relative;
+  height: 1.25em;
+  width: 2.75em;
+  background: #898989;
+  border-radius: 100px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin: 1em;
+  margin-left: 6.5em;
+}
+
+.material-toggle::after {
+  position: absolute;
+  left: -0.125em;
+  top: -0.1875em;
+  display: block;
+  width: 1.625em;
+  height: 1.625em;
+  border-radius: 100px;
+  background: #ccc;
+  box-shadow: 0em 0.1875em 0.1875em rgba(0,0,0,0.05);
+  content: '';
+  transition: all 0.3s ease;
+}
+
+.material-toggle:active::after {
+  transform: scale(1.15, 0.85);
+}
+
+.material-toggle--checked {
+  background: var(--pcGreenLight);
+  color: var(--pcGreen);
+}
+
+.material-toggle--checked::after {
+  left: 1.25em;
+  background: var(--pcGreen);
+}
+
+.material-toggle > input {
+  display: none;
+}
+
+.material-toggle__label {
+  position: absolute;
+  right: 2.75em;
+  display: block;
+  width: 9em;
+  padding-right: 1.5em;
+  text-align: right;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 0.75em;
+  line-height: 1.25rem;
+}
+
+.zoom-wrapper {
+  position: absolute;
+  right: 0;
+  background: var(--transparentWhite);
+}
+
 /* Content - Home */
 
 @custom-media --large-home (min-width: 25em);

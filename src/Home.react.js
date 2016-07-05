@@ -4,6 +4,7 @@ import DocumentTitle from 'react-document-title';
 
 import Header from './Header.react';
 import Footer from './Footer.react';
+import Toggle from './Toggle.react';
 
 import { treeDefaults, renderingClientSide, scrollTo } from './utils';
 
@@ -50,6 +51,8 @@ export default React.createClass({
       };
 
       window.addEventListener('resize', this.resizeEvent);
+
+      this.tree = tree;
     }
   },
 
@@ -59,10 +62,14 @@ export default React.createClass({
     }
   },
 
+  toggleZoom(checked) {
+    this.tree.disableZoom = !checked;
+  },
+
   render() {
     return (
       <DocumentTitle title="Phylocanvas">
-        <div className="home-page">
+        <div ref="parent" className="home-page">
           <Header />
           <div className="full-height">
             <section className="home-intro text-center">
@@ -73,6 +80,9 @@ export default React.createClass({
                 </h1>
                 <p className="lead">Interactive tree visualisation <br />for the web.</p>
               </header>
+              <div className="zoom-wrapper">
+                <Toggle onChange={this.toggleZoom}>Toggle Zoom</Toggle>
+              </div>
               <p className="cta">
                 <Link to="/docs">Get Started with v2.x</Link>
               </p>

@@ -92,7 +92,7 @@ tree.draw();
 
 ## Rotate Branches
 ```phyloscript
-tree.branches.E.rotate({});
+tree.branches.E.rotate();
 tree.draw();
 ```
 
