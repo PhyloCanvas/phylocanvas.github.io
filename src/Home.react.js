@@ -4,7 +4,7 @@ import DocumentTitle from 'react-document-title';
 
 import Header from './Header.react';
 import Footer from './Footer.react';
-import Toggle from './Toggle.react';
+import ToggleZoom from './ToggleZoom.react';
 
 import { treeDefaults, renderingClientSide, scrollTo } from './utils';
 
@@ -62,8 +62,8 @@ export default React.createClass({
     }
   },
 
-  toggleZoom(checked) {
-    this.tree.disableZoom = !checked;
+  getTree() {
+    return this.tree;
   },
 
   render() {
@@ -81,7 +81,7 @@ export default React.createClass({
                 <p className="lead">Interactive tree visualisation <br />for the web.</p>
               </header>
               <div className="zoom-wrapper">
-                <Toggle onChange={this.toggleZoom}>Toggle Zoom</Toggle>
+                <ToggleZoom getTree={this.getTree}>Toggle Zoom</ToggleZoom>
               </div>
               <p className="cta">
                 <Link to="/docs">Get Started with v2.x</Link>

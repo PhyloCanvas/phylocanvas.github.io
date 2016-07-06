@@ -75,6 +75,7 @@ a > img {
 pre {
   background-color: #efefef;
   border: 1px solid var(--pcGreenLight);
+  border-radius: 2px;
 }
 
 code {
@@ -226,23 +227,23 @@ footer img {
 .material-toggle {
   display: block;
   position: relative;
-  height: 1.25em;
-  width: 2.75em;
+  height: 1em;
+  width: 2.2em;
   background: #898989;
   border-radius: 100px;
   cursor: pointer;
   transition: all 0.3s ease;
   margin: 1em;
-  margin-left: 6.5em;
+  margin-left: 7.5em;
 }
 
 .material-toggle::after {
   position: absolute;
-  left: -0.125em;
-  top: -0.1875em;
+  left: -0.1em;
+  top: -0.15em;
   display: block;
-  width: 1.625em;
-  height: 1.625em;
+  width: 1.3em;
+  height: 1.3em;
   border-radius: 100px;
   background: #ccc;
   box-shadow: 0em 0.1875em 0.1875em rgba(0,0,0,0.05);
@@ -260,7 +261,7 @@ footer img {
 }
 
 .material-toggle--checked::after {
-  left: 1.25em;
+  left: 1em;
   background: var(--pcGreen);
 }
 
@@ -269,23 +270,25 @@ footer img {
 }
 
 .material-toggle__label {
-  position: absolute;
-  right: 2.75em;
-  display: block;
-  width: 9em;
-  padding-right: 1.5em;
+  font-size: 0.75em;
+  font-weight: 700;
   text-align: right;
   text-transform: uppercase;
-  font-weight: 700;
-  font-size: 0.75em;
-  line-height: 1.25rem;
+  line-height: 1.2rem;
+  position: absolute;
+  right: 2rem;
+  display: block;
+  width: 7rem;
+  padding-right: 1rem;
 }
 
 .zoom-wrapper {
   position: absolute;
   right: 0;
+  z-index: 2;
   background: var(--transparentWhite);
 }
+
 
 /* Content - Home */
 
