@@ -83,18 +83,23 @@ export default React.createClass({
             <h2 className="section-heading">Phylocanvas in Action</h2>
             <ul className="apps">
               <li>
-                <a href="https://www.wgsa.net" target="_blank">
-                  <img src="/img/wgsa.svg" />
+                <a href="https://www.wgsa.net" target="_blank" title="WGSA - Whole Genome Sequence Analysis">
+                  <img src="/img/wgsa.svg" alt="WGSA Logo" />
                 </a>
               </li>
               <li>
-                <a href="https://microreact.org" target="_blank">
-                  <img src="/img/microreact.svg" />
+                <a href="https://microreact.org" target="_blank" title="Microreact">
+                  <img src="/img/microreact.svg" alt="Microreact Logo" />
                 </a>
               </li>
               <li>
-                <a href="http://jameshadfield.github.io/phandango" target="_blank">
-                  <img src="/img/phandango.png" />
+                <a href="http://jameshadfield.github.io/phandango" target="_blank" title="Phandango">
+                  <img src="/img/phandango.png" alt="Phandango Logo" />
+                </a>
+              </li>
+              <li>
+                <a href="http://www.irida.ca" target="_blank" title="IRIDA">
+                  <img src="/img/irida.png" alt="IRIDA Logo" />
                 </a>
               </li>
             </ul>

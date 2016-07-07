@@ -2,7 +2,7 @@ import React from 'react';
 
 export default () => (
   <footer id="contact" className="text-center section-padding">
-    <p>Phylocanvas is maintained by<br /><a href="http://www.pathogensurveillance.net">The Centre for Genomic Pathogen Surveillance</a>.</p>
+    <p>Phylocanvas is maintained by</p>
     <a href="http://www.pathogensurveillance.net">
       <img src="/img/CGPS.white_.FINAL_.svg" />
     </a>
