@@ -70,6 +70,9 @@ module.exports = {
     new webpack.optimize.OccurenceOrderPlugin(),
     new webpack.NoErrorsPlugin(),
     new StaticSiteGeneratorPlugin('main', paths, null),
+    new webpack.DefinePlugin({
+      PHYLOCANVAS_VERSION: JSON.stringify('2.5.0'),
+    }),
   ].concat(isProd ? [
     new webpack.optimize.UglifyJsPlugin(),
     new webpack.optimize.DedupePlugin(),

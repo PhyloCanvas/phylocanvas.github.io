@@ -8,7 +8,7 @@
   --transitionTiming: 0.2s cubic-bezier(.4,0,.2,1);
 }
 
-@custom-media --small-viewport (max-width: 28em);
+@custom-media --small-viewport (max-width: 29em);
 @custom-media --medium-viewport (min-width: 58.75em);
 @custom-media --large-viewport (min-width: 80.25em);
 
@@ -278,8 +278,8 @@ footer img {
   position: absolute;
   right: 2rem;
   display: block;
-  width: 7rem;
   padding-right: 1rem;
+  white-space: nowrap;
 }
 
 .zoom-wrapper {
@@ -413,6 +413,7 @@ footer img {
   @media(--large-viewport) {
     position: fixed;
   }
+  text-decoration: none;
 }
 
 .docs-logo > img,
@@ -430,6 +431,14 @@ footer img {
   font-family: var(--headingFontFamily);
   @media(--small-viewport) {
     display: none;
+  }
+}
+
+.docs-logo > sup {
+  font-size: 0.6em;
+  padding-left: 0.25rem;
+  @media(--small-viewport) {
+    vertical-align: baseline;
   }
 }
 

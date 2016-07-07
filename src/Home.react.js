@@ -34,15 +34,6 @@ export default React.createClass({
 
       tree.load(require('raw!../v1.x/docs/data/tree.nwk'), () => {
         this.refs.canvas.style.opacity = 1;
-        // for (const leaf of tree.leaves) {
-        //   leaf.data = {
-        //     column1: '#673c90',
-        //     column2: '#a386bd',
-        //     column3: '#673c90',
-        //     column4: '#a386bd',
-        //   };
-        // }
-        // tree.viewMetadataColumns();
       });
 
       this.resizeEvent = () => {
@@ -84,7 +75,7 @@ export default React.createClass({
                 <ToggleZoom getTree={this.getTree}>Toggle Zoom</ToggleZoom>
               </div>
               <p className="cta">
-                <Link to="/docs">Get Started with v2.x</Link>
+                <Link to="/docs">Get Started with v{PHYLOCANVAS_VERSION}</Link>
               </p>
             </section>
           </div>
