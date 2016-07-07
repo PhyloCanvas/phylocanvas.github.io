@@ -17,7 +17,7 @@
 <body>
   <h1>Phylocanvas Quickstart</h1>
   <div id="phylocanvas"></div>
-  <script type="application/javascript" src="https://cdn.rawgit.com/phylocanvas/phylocanvas-quickstart/v2.3.0/phylocanvas-quickstart.js"></script>
+  <script type="application/javascript" src="https://cdn.rawgit.com/phylocanvas/phylocanvas-quickstart/v${PHYLOCANVAS_VERSION}/phylocanvas-quickstart.js"></script>
   <script type="application/javascript">
     (function (Phylocanvas) {
       var tree = Phylocanvas.createTree('phylocanvas');
