@@ -8,11 +8,19 @@ tree.on('loading', () => {
 });
 ```
 
+## beforeFirstDraw
+Fired after `tree.load()` has been called, but before the tree is drawn for the first time.
+```JavaScript
+tree.on('beforeFirstDraw', () => {
+  // Do setup that could not be added by config. Branches and leaves are now available.
+});
+```
+
 ## loaded
-Fired when a tree has successfuly loaded.
+Fired when a tree has successfuly loaded and drawn for the first time.
 ```JavaScript
 tree.on('loaded', () => {
-  // Branches and leaves now available
+  // Respond to fully-loaded tree.
 });
 ```
 

@@ -1,6 +1,7 @@
 import React from 'react';
 
 import SyntaxHighlighter from './SyntaxHighlighter.react';
+import ToggleZoom from './ToggleZoom.react';
 
 import { treeDefaults, renderingClientSide } from './utils';
 
@@ -54,6 +55,8 @@ const pluginInstances = {
   },
 };
 
+const style = { position: 'relative' };
+
 export default React.createClass({
 
   propTypes: {
@@ -68,19 +71,24 @@ export default React.createClass({
 
       const fn = noEval ? () => {} : eval(`(function (tree) {${source}})`);
 
-      const instance = (pluginInstances[plugin] || standardInstance)(this.refs.demo);
+      this.instance = (pluginInstances[plugin] || standardInstance)(this.refs.demo);
       if (noLoad) {
-        fn(instance);
+        fn(this.instance);
         return;
       }
-      instance.load(newickString, () => fn(instance));
+      this.instance.load(newickString, () => fn(this.instance));
     }
+  },
+
+  getInstance() {
+    return this.instance;
   },
 
   render() {
     const { source, directives } = this.props;
     return (
-      <figure>
+      <figure style={style}>
+        <ToggleZoom getTree={this.getInstance} />
         <div
           ref="demo"
           className={`feature-demo ${directives.plugin ? 'feature-demo--large' : ''}`.trim()}

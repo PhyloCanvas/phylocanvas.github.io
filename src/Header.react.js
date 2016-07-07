@@ -33,8 +33,9 @@ export default React.createClass({
     return (
       <header>
         <Link className="docs-logo" to="/">
-          <img src="/img/Phylo.Icon.FINAL.svg" alt="phylocanvas" />
+          <img src="/img/Phylo.Icon.FINAL.svg" alt="Phylocanvas Icon" />
           <span>Phylocanvas</span>
+          <sup>v{PHYLOCANVAS_VERSION}</sup>
         </Link>
         <nav className="top-nav">
           <li>
@@ -50,8 +51,8 @@ export default React.createClass({
             </SmoothLink>
           </li>
           <li>
-            <a className="github-link" href="https://github.com/phylocanvas">
-              <img src="/img/github.svg" />
+            <a className="github-link" href="https://github.com/phylocanvas" title="Phylocanvas on Github">
+              <img src="/img/github.svg" alt="Github logo" />
             </a>
           </li>
         </nav>

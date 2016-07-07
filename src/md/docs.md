@@ -1,16 +1,18 @@
 # Documentation Home
 
-Welcome to the Phylocanvas documentation site. Please note that this site is intended for web developers and assumes a knowledge of modern web development workflow practises. These pages detail how to use the Phylocanvas version 2 and above, but [the v1.x docs](/v1.x) are still available.
+Welcome to the Phylocanvas documentation site. These pages detail how to use the Phylocanvas version 2 and above, but [the v1.x docs](/v1.x) are still available.
+
+*Please note that this site is intended for web developers. It is possible to use Phylocanvas with a basic knowledge of HTML, CSS, and JavaScript by starting from the [Quick Start](/docs/quick-start/) page.*
 
 ## Sections
 
-To get a demo up and running, see [Quick Start](/docs/quick-start/).
+To get a simple application or demo running, see [Quick Start](/docs/quick-start/).
 
-To start using Phylocanvas in your app, see [Installation](/docs/install/).
+To use Phylocanvas in a more complex application, see [Installation](/docs/install/).
 
 To customise trees and interactions, see [Features](/docs/features/).
 
-To respond to user interactions with a tree, see [Events](/docs/events/).
+To respond to user interaction on a tree, see [Events](/docs/events/).
 
 To extend the abilities of Phylocanvas, see [Plugins](/docs/plugins/).
 

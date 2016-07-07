@@ -2,5 +2,8 @@
   "extends": "cgps",
   "rules": {
     "react/prop-types": 0
+  },
+  "globals": {
+    "PHYLOCANVAS_VERSION": false
   }
 }

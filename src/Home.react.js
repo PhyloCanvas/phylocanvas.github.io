@@ -4,6 +4,7 @@ import DocumentTitle from 'react-document-title';
 
 import Header from './Header.react';
 import Footer from './Footer.react';
+import ToggleZoom from './ToggleZoom.react';
 
 import { treeDefaults, renderingClientSide, scrollTo } from './utils';
 
@@ -33,15 +34,6 @@ export default React.createClass({
 
       tree.load(require('raw!../v1.x/docs/data/tree.nwk'), () => {
         this.refs.canvas.style.opacity = 1;
-        // for (const leaf of tree.leaves) {
-        //   leaf.data = {
-        //     column1: '#673c90',
-        //     column2: '#a386bd',
-        //     column3: '#673c90',
-        //     column4: '#a386bd',
-        //   };
-        // }
-        // tree.viewMetadataColumns();
       });
 
       this.resizeEvent = () => {
@@ -50,6 +42,8 @@ export default React.createClass({
       };
 
       window.addEventListener('resize', this.resizeEvent);
+
+      this.tree = tree;
     }
   },
 
@@ -59,10 +53,14 @@ export default React.createClass({
     }
   },
 
+  getTree() {
+    return this.tree;
+  },
+
   render() {
     return (
       <DocumentTitle title="Phylocanvas">
-        <div className="home-page">
+        <div ref="parent" className="home-page">
           <Header />
           <div className="full-height">
             <section className="home-intro text-center">
@@ -73,8 +71,11 @@ export default React.createClass({
                 </h1>
                 <p className="lead">Interactive tree visualisation <br />for the web.</p>
               </header>
+              <div className="zoom-wrapper">
+                <ToggleZoom getTree={this.getTree}>Toggle Zoom</ToggleZoom>
+              </div>
               <p className="cta">
-                <Link to="/docs">Get Started with v2.x</Link>
+                <Link to="/docs">Get Started with v{PHYLOCANVAS_VERSION}</Link>
               </p>
             </section>
           </div>
