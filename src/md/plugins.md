@@ -25,7 +25,8 @@ Phylocanvas.plugin(contextMenu);
 ```phyloscript--noEval;plugin:context-menu
 ```
 Right-click anywhere to see the standard options in the context menu. Right-click while hovering over a branch to see branch-specific options.
-[More details on Github](https://github.com/phylocanvas/phylocanvas-plugin-context-menu).
+
+[Context menu plugin on Github](https://github.com/phylocanvas/phylocanvas-plugin-context-menu)
 
 ## History
 
@@ -53,6 +54,7 @@ tree.on('click', function (e) {
 ```
 Click on the node between Leaf C and Leaf D to redraw a subtree, then open the history tab. Click a snapshot to switch between the original tree and the subtree.
 
+[History plugin on Github](https://github.com/phylocanvas/phylocanvas-plugin-history)
 
 ## Metadata
 
@@ -67,20 +69,29 @@ import metadata from 'phylocanvas-plugin-metadata';
 Phylocanvas.plugin(metadata);
 ```
 ### Usage
-```phyloscript--plugin:metadata
+```phyloscript--noLoad;plugin:metadata
 tree.setTreeType('rectangular');
 tree.alignLabels = true;
-for (var i = 0; i < tree.leaves.length; i++) {
-  tree.leaves[i].data = {
-    column1: '#3C7383',
-    column2: '#9BB7BF',
-    column3: '#3C7383',
-    column4: '#9BB7BF',
-  };
-}
-tree.viewMetadataColumns();
+
+tree.on('beforeFirstDraw', function () {
+  for (var i = 0; i < tree.leaves.length; i++) {
+    tree.leaves[i].data = {
+      column1: {
+        colour: '#3C7383',
+        label: 'Label' + (i + 1),
+      },
+      column2: '#9BB7BF',
+      column3: '#3C7383',
+      column4: '#9BB7BF',
+    };
+  }
+});
+
+tree.load('(A:0.1,B:0.2,(C:0.3,D:0.4)E:0.5)F;');
 ```
-Assign data to each leaf as above and call `viewMetadataColumns` to see the result.
+*N.B. It's more efficient to configure metadata before loading a newick string.*
+
+[Metadata plugin on Github](https://github.com/phylocanvas/phylocanvas-plugin-metadata).
 
 ## Ajax
 
