@@ -7,7 +7,7 @@ _N.B. Examples ending with `tree.draw()` below indicate that `tree.draw()` must 
 * [Show/Hide Labels](#show-hide-labels "--smooth")
 * [Align Labels](#align-labels "--smooth")
 * [Collapse Branches](#collapse-branches "--smooth")
-* [Global Leaf and Text Sizes](#global-leaf-and-text-sizes "--smooth")
+* [Global Styles](#global-styles "--smooth")
 * [Style Branches Individually](#style-branches-individually "--smooth")
 * [Rotate Branches](#rotate-branches "--smooth")
 * [Select Branches](#select-branches "--smooth")
@@ -63,10 +63,12 @@ tree.branches.E.collapsed = true;
 tree.draw();
 ```
 
-## Global Leaf and Text Sizes
+## Global Styles
 ```phyloscript
 tree.setNodeSize(30);
 tree.setTextSize(30);
+tree.lineWidth = 3;
+tree.draw();
 ```
 
 ## Style Branches Individually
