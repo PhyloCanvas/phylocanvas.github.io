@@ -2,6 +2,8 @@ const webpack = require('webpack');
 const StaticSiteGeneratorPlugin = require('static-site-generator-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
+const PHYLOCANVAS_VERSION =
+  require('./package.json').devDependencies.phylocanvas;
 const isProd = process.env.NODE_ENV === 'production';
 const paths = [
   '/',
@@ -71,7 +73,7 @@ module.exports = {
     new webpack.NoErrorsPlugin(),
     new StaticSiteGeneratorPlugin('main', paths, null),
     new webpack.DefinePlugin({
-      PHYLOCANVAS_VERSION: JSON.stringify('2.5.0'),
+      PHYLOCANVAS_VERSION: JSON.stringify(PHYLOCANVAS_VERSION),
     }),
   ].concat(isProd ? [
     new webpack.optimize.UglifyJsPlugin(),
