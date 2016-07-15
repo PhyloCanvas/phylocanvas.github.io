@@ -3,55 +3,44 @@ import React from 'react';
 import SyntaxHighlighter from './SyntaxHighlighter.react';
 import ToggleZoom from './ToggleZoom.react';
 
-import { treeDefaults, renderingClientSide } from './utils';
+import * as utils from './utils';
 
 const language = 'javascript';
-const newickString = '(A:0.1,B:0.2,(C:0.3,D:0.4)E:0.5)F;';
+const newickString = '(A:1,B:2,(C:3,D:4)E:5)F;';
 
-const standardConfig = {
-  ...treeDefaults,
-  history: false,
-  contextMenu: false,
-};
-
-function standardInstance(containerElement) {
-  const Phylocanvas = require('phylocanvas-quickstart');
-  return Phylocanvas.createTree(containerElement, standardConfig);
+function standardConfig() {
+  return {
+    ...utils.treeDefaults,
+    history: false,
+    contextMenu: false,
+    scalebar: {
+      active: false,
+    },
+  };
 }
 
-const pluginInstances = {
-  ['context-menu'](containerElement) {
-    const Phylocanvas = require('phylocanvas-quickstart');
-    return Phylocanvas.createTree(containerElement, {
-      ...treeDefaults,
-      history: false,
-    });
+const pluginConfigs = {
+  ['context-menu']() {
+    return {
+      ...standardConfig(),
+      contextMenu: true,
+    };
   },
-  history(containerElement) {
-    const Phylocanvas = require('phylocanvas-quickstart');
-    const tree = Phylocanvas.createTree(containerElement, {
-      ...treeDefaults,
-      contextMenu: false,
-    });
-    return tree;
+  history() {
+    return {
+      ...standardConfig(),
+      history: true,
+    };
   },
-  metadata(containerElement) {
-    const Phylocanvas = require('phylocanvas-quickstart');
-    const tree = Phylocanvas.createTree(containerElement, {
-      ...treeDefaults,
-      history: false,
-      contextMenu: false,
-    });
-    return tree;
-  },
-  ajax(containerElement) {
-    const Phylocanvas = require('phylocanvas-quickstart');
-    const tree = Phylocanvas.createTree(containerElement, {
-      ...treeDefaults,
-      history: false,
-      contextMenu: false,
-    });
-    return tree;
+  metadata: standardConfig,
+  ajax: standardConfig,
+  scalebar() {
+    const scalebarConfig = utils.scalebarDefaults;
+    scalebarConfig.digits = 2;
+    return {
+      ...standardConfig(),
+      scalebar: scalebarConfig,
+    };
   },
 };
 
@@ -65,13 +54,18 @@ export default React.createClass({
   },
 
   componentDidMount() {
-    if (renderingClientSide()) {
+    if (utils.renderingClientSide()) {
       const { source, directives } = this.props;
       const { noEval, noLoad, plugin } = directives;
 
       const fn = noEval ? () => {} : eval(`(function (tree) {${source}})`);
 
-      this.instance = (pluginInstances[plugin] || standardInstance)(this.refs.demo);
+      const Phylocanvas = utils.getPhylocanvasModule();
+      this.instance = Phylocanvas.createTree(
+        this.refs.demo,
+        (pluginConfigs[plugin] || standardConfig)()
+      );
+
       if (noLoad) {
         fn(this.instance);
         return;

@@ -35,6 +35,7 @@ For simple applications and demos we recommend linking to the [phylocanvas-quick
 * [History](/docs/plugins/#history)
 * [Metadata](/docs/plugins/#metadata)
 * [Ajax](/docs/plugins/#ajax)
+* [Scale-bar](/docs/plugins/#scale-bar)
 
 Also included is [the Phylocanvas polyfill](/docs/install#polyfill) for browsers that don't support certain required features.
 

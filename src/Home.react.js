@@ -6,17 +6,18 @@ import Header from './Header.react';
 import Footer from './Footer.react';
 import ToggleZoom from './ToggleZoom.react';
 
-import { treeDefaults, renderingClientSide, scrollTo } from './utils';
+import * as utils from './utils';
 
 export default React.createClass({
 
   componentDidMount() {
-    if (renderingClientSide()) {
-      scrollTo(0);
+    if (utils.renderingClientSide()) {
+      utils.scrollTo(0);
 
-      const Phylocanvas = require('phylocanvas-quickstart');
+      const Phylocanvas = utils.getPhylocanvasModule();
       const tree = Phylocanvas.createTree('phylocanvas', {
-        ...treeDefaults,
+        ...utils.treeDefaults,
+        scalebar: utils.scalebarDefaults,
         padding: 32,
       });
 
@@ -48,7 +49,7 @@ export default React.createClass({
   },
 
   componentWillUnmount() {
-    if (renderingClientSide()) {
+    if (utils.renderingClientSide()) {
       window.removeEventListener('resize', this.resizeEvent);
     }
   },

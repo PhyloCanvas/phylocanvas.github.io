@@ -8,6 +8,7 @@ The following plugins are maintained by us, having started life in the core libr
 * [History](#history "--smooth")
 * [Metadata](#metadata "--smooth")
 * [Ajax](#ajax "--smooth")
+* [Scale-bar](#scale-bar "--smooth")
 
 ## Context Menu
 
@@ -110,3 +111,21 @@ Phylocanvas.plugin(ajax);
 tree.load('/v1.x/docs/data/tree.nwk');
 ```
 Pass a URL to `tree.load` instead of a newick string. The plugin then uses XHR to fetch the string before attempting to build the tree.
+
+## Scale-bar
+
+### Install
+```bash
+npm install --save-dev phylocanvas-plugin-scalebar
+```
+### Register
+```javascript
+import scalebar from 'phylocanvas-plugin-scalebar';
+
+Phylocanvas.plugin(scalebar);
+```
+### Usage
+```phyloscript--noEval;plugin:scalebar
+```
+
+[Scale-bar plugin on Github](https://github.com/phylocanvas/phylocanvas-plugin-scalebar)
