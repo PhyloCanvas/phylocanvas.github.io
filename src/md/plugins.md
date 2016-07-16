@@ -127,5 +127,6 @@ Phylocanvas.plugin(scalebar);
 ### Usage
 ```phyloscript--noEval;plugin:scalebar
 ```
+Enable zoom and scroll on the canvas to see the value of the scale-bar chaange dynamically.
 
 [Scale-bar plugin on Github](https://github.com/phylocanvas/phylocanvas-plugin-scalebar)
