@@ -16,7 +16,7 @@
     "express": "^4.13.4",
     "extract-text-webpack-plugin": "^1.0.1",
     "json-loader": "^0.5.4",
-    "phylocanvas": "2.6.0",
+    "phylocanvas": "2.6.1",
     "phylocanvas-plugin-ajax": "^1.0.0",
     "phylocanvas-plugin-context-menu": "^3.8.0",
     "phylocanvas-plugin-history": "^2.1.1",

@@ -23,6 +23,9 @@ export const Nav = ({ pathname }) => (
           <Link to={to} className={to === pathname ? 'active' : ''}>{text}</Link>
         </li>
       ))}
+      <li>
+        <a href="/docs/api/">API</a>
+      </li>
     </ul>
   </nav>
 );

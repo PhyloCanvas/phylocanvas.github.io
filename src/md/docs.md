@@ -18,7 +18,7 @@ To extend the abilities of Phylocanvas, see [Plugins](/docs/plugins/).
 
 To start using v2.x from a previous version, see [Migrating from v1.x](/docs/migrating-from-1x/).
 
-To make improvements to Phylocanvas, see [Development](/docs/development/) and the [API](/docs/api/).
+To make improvements to Phylocanvas, see [Development](/docs/development/) and the [API](/docs/api/ "--native").
 
 ## Licencing
 

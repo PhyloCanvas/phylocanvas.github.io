@@ -14,8 +14,8 @@ function parseDirectives(str) {
 }
 
 const renderers = {
-  Link: ({ href, title, children }) => {
-    if (href.indexOf('/docs') === 0) {
+  Link: ({ href, title = '', children }) => {
+    if (href.indexOf('/docs') === 0 && title !== '--native') {
       return (
         <Link to={href}>{children}</Link>
       );
@@ -26,7 +26,9 @@ const renderers = {
       );
     }
     return (
-      <a href={href} title={title}>{children}</a>
+      <a href={href} title={title.indexOf('--') !== 0 ? title : ''}>
+        {children}
+      </a>
     );
   },
   CodeBlock: ({ language, literal }) => (
