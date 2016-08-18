@@ -52,11 +52,8 @@ const renderers = {
 export default React.createClass({
 
   render() {
-    const path =
-      this.props.route.path ||
-      this.props.location.pathname.replace(/\//g, '');
     const content =
-      require(`raw!./md/${path}.md`).
+      require('raw!./md/docs.md').
         replace(/\${PHYLOCANVAS_VERSION}/g, PHYLOCANVAS_VERSION);
     return (
       <Markdown source={content} renderers={renderers} />

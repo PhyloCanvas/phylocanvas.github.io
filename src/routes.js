@@ -1,5 +1,5 @@
-import React from 'react';
-import { Link } from 'react-router';
+// import React from 'react';
+// import { Link } from 'react-router';
 // import App from './App.react';
 import Home from './Home.react';
 // import MarkdownContent from './MarkdownContent.react';
@@ -21,7 +21,13 @@ const noTrailingSlash = /[^\/]$/;
 export default [
   { path: 'docs',
     component: ({ children }) => children,
-    indexRoute: { component: () => <Link to="/docs/test">Test</Link> },
+    getIndexRoute(partialNextState, cb) {
+      require.ensure([], require => {
+        cb(null, [
+          require('./testIndexRoute'),
+        ]);
+      });
+    },
     getChildRoutes(partialNextState, cb) {
       require.ensure([], require => {
         cb(null, [

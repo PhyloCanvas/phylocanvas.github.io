@@ -122,8 +122,7 @@ const prodConfig = Object.assign({}, commonConfig, {
 const paths = [
   '/',
   '/docs/',
-  '/docs/test/',
-  // '/docs/install/',
+  '/docs/install/',
   // '/docs/features/',
   // '/docs/events/',
   // '/docs/plugins/',
@@ -152,6 +151,16 @@ const staticSiteConfig = Object.assign({}, prodConfig, {
     ...prodConfig.plugins,
     new StaticSiteGeneratorPlugin('main', paths, null),
   ],
+
+  output: {
+    filename: 'static.js',
+    path: __dirname,
+    publicPath: '/',
+    /* IMPORTANT!
+     * You must compile to UMD or CommonJS
+     * so it can be required in a Node context: */
+    libraryTarget: 'umd',
+  },
 
 });
 

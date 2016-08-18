@@ -1,6 +1,6 @@
 import React from 'react';
 
 module.exports = {
-  path: 'test',
-  component: () => <h1>Test</h1>,
+  path: 'install',
+  component: () => <h1>Install</h1>,
 };

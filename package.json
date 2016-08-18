@@ -44,7 +44,8 @@
   },
   "scripts": {
     "start": "node dev-server.js",
-    "build": "NODE_ENV=production webpack && rsync -a ./node_modules/phylocanvas/docs/* ./docs/api"
+    "stats": "webpack --json > stats.json",
+    "build": "NODE_ENV=production webpack && rm static.js && rsync -a ./node_modules/phylocanvas/docs/* ./docs/api"
   },
   "repository": {
     "type": "git",
