@@ -76,7 +76,11 @@ module.exports = {
       PHYLOCANVAS_VERSION: JSON.stringify(PHYLOCANVAS_VERSION),
     }),
   ].concat(isProd ? [
-    new webpack.optimize.UglifyJsPlugin(),
+    new webpack.optimize.UglifyJsPlugin({
+      compress: {
+        warnings: false,
+      },
+    }),
     new webpack.optimize.DedupePlugin(),
     new webpack.DefinePlugin({
       'process.env': {
